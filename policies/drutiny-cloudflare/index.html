@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#cloudflare-always-use-https-cloudflarealways_use_https" tabindex="1" class="md-skip">
+      <a href="#cloudflare-always-use-https" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -472,8 +472,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cloudflare-always-use-https-cloudflarealways_use_https" title="Cloudflare always use HTTPS (cloudflare:always_use_https)" class="md-nav__link">
-    Cloudflare always use HTTPS (cloudflare:always_use_https)
+  <a href="#cloudflare-always-use-https" title="Cloudflare always use HTTPS" class="md-nav__link">
+    Cloudflare always use HTTPS
   </a>
   
     <nav class="md-nav">
@@ -492,8 +492,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2819197-cloudflare-workaround-for-drupal-8-urlgenerator-cloudflaredrupal-urlgenerator-workaround" title="#2819197 - Cloudflare workaround for Drupal 8 urlGenerator (cloudflare:drupal-urlGenerator-workaround)" class="md-nav__link">
-    #2819197 - Cloudflare workaround for Drupal 8 urlGenerator (cloudflare:drupal-urlGenerator-workaround)
+  <a href="#2819197-cloudflare-workaround-for-drupal-8-urlgenerator" title="#2819197 - Cloudflare workaround for Drupal 8 urlGenerator" class="md-nav__link">
+    #2819197 - Cloudflare workaround for Drupal 8 urlGenerator
   </a>
   
     <nav class="md-nav">
@@ -512,8 +512,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cloudflare-redirect-apex-to-primary-domain-cloudflareredirect_apex" title="Cloudflare redirect Apex to primary domain (cloudflare:redirect_apex)" class="md-nav__link">
-    Cloudflare redirect Apex to primary domain (cloudflare:redirect_apex)
+  <a href="#cloudflare-redirect-apex-to-primary-domain" title="Cloudflare redirect Apex to primary domain" class="md-nav__link">
+    Cloudflare redirect Apex to primary domain
   </a>
   
     <nav class="md-nav">
@@ -602,8 +602,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cloudflare-always-use-https-cloudflarealways_use_https" title="Cloudflare always use HTTPS (cloudflare:always_use_https)" class="md-nav__link">
-    Cloudflare always use HTTPS (cloudflare:always_use_https)
+  <a href="#cloudflare-always-use-https" title="Cloudflare always use HTTPS" class="md-nav__link">
+    Cloudflare always use HTTPS
   </a>
   
     <nav class="md-nav">
@@ -622,8 +622,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2819197-cloudflare-workaround-for-drupal-8-urlgenerator-cloudflaredrupal-urlgenerator-workaround" title="#2819197 - Cloudflare workaround for Drupal 8 urlGenerator (cloudflare:drupal-urlGenerator-workaround)" class="md-nav__link">
-    #2819197 - Cloudflare workaround for Drupal 8 urlGenerator (cloudflare:drupal-urlGenerator-workaround)
+  <a href="#2819197-cloudflare-workaround-for-drupal-8-urlgenerator" title="#2819197 - Cloudflare workaround for Drupal 8 urlGenerator" class="md-nav__link">
+    #2819197 - Cloudflare workaround for Drupal 8 urlGenerator
   </a>
   
     <nav class="md-nav">
@@ -642,8 +642,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cloudflare-redirect-apex-to-primary-domain-cloudflareredirect_apex" title="Cloudflare redirect Apex to primary domain (cloudflare:redirect_apex)" class="md-nav__link">
-    Cloudflare redirect Apex to primary domain (cloudflare:redirect_apex)
+  <a href="#cloudflare-redirect-apex-to-primary-domain" title="Cloudflare redirect Apex to primary domain" class="md-nav__link">
+    Cloudflare redirect Apex to primary domain
   </a>
   
     <nav class="md-nav">
@@ -682,8 +682,9 @@
                 
                   <h1>drutiny/cloudflare</h1>
                 
-                <h2 id="cloudflare-always-use-https-cloudflarealways_use_https">Cloudflare always use HTTPS (cloudflare:always_use_https)</h2>
-<p><strong>Package</strong>: <code>drutiny/cloudflare</code><br />
+                <h2 id="cloudflare-always-use-https">Cloudflare always use HTTPS</h2>
+<p><strong>Name</strong>: <code>cloudflare:always_use_https</code><br />
+<strong>Package</strong>: <code>drutiny/cloudflare</code><br />
 <strong>Class</strong>: <code>\Drutiny\Cloudflare\Audit\PageRuleMatch</code></p>
 <p>To ensure all traffic to  is secured over an SSL connection, Cloudflare
 comes with a feature to force any insecure traffic to redirect to a secure
@@ -702,20 +703,21 @@ all traffic to  is secured between the browser and Cloudflare.</p>
 <tbody>
 <tr>
 <td>rule</td>
-<td></td>
-<td></td>
-<td>http://:host/*</td>
+<td>string</td>
+<td>The page rule pattern to look up.</td>
+<td>'http://:host/*'</td>
 </tr>
 <tr>
 <td>settings</td>
-<td></td>
-<td></td>
-<td>Array</td>
+<td>array</td>
+<td>A keyed list of actions the page rule should action.</td>
+<td>always_use_https: true<br></td>
 </tr>
 </tbody>
 </table>
-<h2 id="2819197-cloudflare-workaround-for-drupal-8-urlgenerator-cloudflaredrupal-urlgenerator-workaround">#2819197 - Cloudflare workaround for Drupal 8 urlGenerator (cloudflare:drupal-urlGenerator-workaround)</h2>
-<p><strong>Package</strong>: <code>drutiny/cloudflare</code><br />
+<h2 id="2819197-cloudflare-workaround-for-drupal-8-urlgenerator">#2819197 - Cloudflare workaround for Drupal 8 urlGenerator</h2>
+<p><strong>Name</strong>: <code>cloudflare:drupal-urlGenerator-workaround</code><br />
+<strong>Package</strong>: <code>drutiny/cloudflare</code><br />
 <strong>Class</strong>: <code>\Drutiny\Cloudflare\Audit\PageRuleMatch</code></p>
 <p>By accessing a site an an unexpected base path (e.g. with index.php) a site may
 cache links in a way that could be considered a minor site defacement and
@@ -734,20 +736,21 @@ caching strategy.</p>
 <tbody>
 <tr>
 <td>rule</td>
-<td></td>
-<td></td>
-<td>https://:host/index.php/*</td>
+<td>string</td>
+<td>The page rule pattern to look up.</td>
+<td>'https://:host/index.php/*'</td>
 </tr>
 <tr>
 <td>settings</td>
-<td></td>
-<td></td>
-<td>Array</td>
+<td>array</td>
+<td>A keyed list of actions the page rule should action.</td>
+<td>forwarding_url:<br>    url: 'https://:host/$1'<br>    status_code: 301<br></td>
 </tr>
 </tbody>
 </table>
-<h2 id="cloudflare-redirect-apex-to-primary-domain-cloudflareredirect_apex">Cloudflare redirect Apex to primary domain (cloudflare:redirect_apex)</h2>
-<p><strong>Package</strong>: <code>drutiny/cloudflare</code><br />
+<h2 id="cloudflare-redirect-apex-to-primary-domain">Cloudflare redirect Apex to primary domain</h2>
+<p><strong>Name</strong>: <code>cloudflare:redirect_apex</code><br />
+<strong>Package</strong>: <code>drutiny/cloudflare</code><br />
 <strong>Class</strong>: <code>\Drutiny\Cloudflare\Audit\PageRuleMatch</code></p>
 <p>If  is the primary site under the  domain then you may want all
 traffic to https:/// to be redirected to https:///. This ensures
@@ -767,15 +770,15 @@ the likelihood of strange behaviour due to Page Rules.</p>
 <tbody>
 <tr>
 <td>rule</td>
-<td></td>
-<td></td>
-<td>https://:zone/*</td>
+<td>string</td>
+<td>The page rule pattern to look up.</td>
+<td>'https://:zone/*'</td>
 </tr>
 <tr>
 <td>settings</td>
-<td></td>
-<td></td>
-<td>Array</td>
+<td>array</td>
+<td>A keyed list of actions the page rule should action.</td>
+<td>forwarding_url:<br>    url: 'https://:host/$1'<br>    status_code: 301<br></td>
 </tr>
 </tbody>
 </table>
