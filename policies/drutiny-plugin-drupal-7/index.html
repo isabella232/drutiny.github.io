@@ -931,6 +931,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#untrusted-roles-with-administrative-permissions" title="Untrusted Roles with administrative permissions" class="md-nav__link">
+    Untrusted Roles with administrative permissions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_23" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update" title="Update" class="md-nav__link">
     Update
   </a>
@@ -939,7 +959,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_23" title="Parameters" class="md-nav__link">
+  <a href="#parameters_24" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -959,7 +979,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_24" title="Parameters" class="md-nav__link">
+  <a href="#parameters_25" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -979,7 +999,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_25" title="Parameters" class="md-nav__link">
+  <a href="#parameters_26" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1006,7 +1026,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_26" title="Parameters" class="md-nav__link">
+  <a href="#parameters_27" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1026,7 +1046,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_27" title="Parameters" class="md-nav__link">
+  <a href="#parameters_28" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1046,7 +1066,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_28" title="Parameters" class="md-nav__link">
+  <a href="#parameters_29" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1666,6 +1686,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#untrusted-roles-with-administrative-permissions" title="Untrusted Roles with administrative permissions" class="md-nav__link">
+    Untrusted Roles with administrative permissions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_23" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update" title="Update" class="md-nav__link">
     Update
   </a>
@@ -1674,7 +1714,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_23" title="Parameters" class="md-nav__link">
+  <a href="#parameters_24" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1694,7 +1734,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_24" title="Parameters" class="md-nav__link">
+  <a href="#parameters_25" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1714,7 +1754,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_25" title="Parameters" class="md-nav__link">
+  <a href="#parameters_26" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1741,7 +1781,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_26" title="Parameters" class="md-nav__link">
+  <a href="#parameters_27" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1761,7 +1801,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_27" title="Parameters" class="md-nav__link">
+  <a href="#parameters_28" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1781,7 +1821,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_28" title="Parameters" class="md-nav__link">
+  <a href="#parameters_29" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -2532,13 +2572,37 @@ inccurate and not worth the performance impact it causes.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="untrusted-roles-with-administrative-permissions">Untrusted Roles with administrative permissions</h2>
+<p><strong>Name</strong>: <code>Drupal-7:UntrustedRoles</code><br />
+<strong>Package</strong>: <code>drutiny/plugin-drupal-7</code><br />
+<strong>Class</strong>: <code>\Drutiny\Plugin\Drupal7\Audit\UntrustedRoles</code></p>
+<p>Make sure administrative permissions has not been assigned to untrusted roles.</p>
+<h3 id="parameters_23">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>untrusted_roles</td>
+<td>array</td>
+<td>The names of untrusted Roles.</td>
+<td>- 'anonymous user'<br>- 'authenticated user'<br></td>
+</tr>
+</tbody>
+</table>
 <h2 id="update">Update</h2>
 <p><strong>Name</strong>: <code>Drupal-7:UpdateModuleDisabled</code><br />
 <strong>Package</strong>: <code>drutiny/plugin-drupal-7</code><br />
 <strong>Class</strong>: <code>\Drutiny\Plugin\Drupal7\Audit\ModuleDisabled</code></p>
 <p>The update module fetches the latest module information from Drupal.org and
 reports on the module statuses used on the site.</p>
-<h3 id="parameters_23">Parameters</h3>
+<h3 id="parameters_24">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -2563,7 +2627,7 @@ reports on the module statuses used on the site.</p>
 <strong>Class</strong>: <code>\Drutiny\Plugin\Drupal7\Audit\User1</code></p>
 <p>It is important to lock down user #1 in Drupal, this user is special an
 ignores access control.</p>
-<h3 id="parameters_24">Parameters</h3>
+<h3 id="parameters_25">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -2636,7 +2700,7 @@ ignores access control.</p>
 <strong>Class</strong>: <code>\Drutiny\Plugin\Drupal7\Audit\VariableCompare</code></p>
 <p>Anonymous sites should have user registration set to off to prevent spam
 registrations.</p>
-<h3 id="parameters_25">Parameters</h3>
+<h3 id="parameters_26">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -2671,7 +2735,7 @@ registrations.</p>
 <strong>Package</strong>: <code>drutiny/plugin-drupal-7</code><br />
 <strong>Class</strong>: <code>\Drutiny\Plugin\Drupal7\Audit\ViewsPagination</code></p>
 <p>Ensure views pagination is not over a threshold</p>
-<h3 id="parameters_26">Parameters</h3>
+<h3 id="parameters_27">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -2696,7 +2760,7 @@ registrations.</p>
 <strong>Class</strong>: <code>\Drutiny\Plugin\Drupal7\Audit\VariableCompare</code></p>
 <p>Ensure that Views SQL queries contain a signature that will identify the view
 the SQL query came from. Useful for database performance debugging.</p>
-<h3 id="parameters_27">Parameters</h3>
+<h3 id="parameters_28">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -2728,7 +2792,7 @@ the SQL query came from. Useful for database performance debugging.</p>
 <p>The XML sitemap module adds a sitemap on the URL <code>/sitemap.xml</code>.
 If not properly configured, the sitemap will point to an incorrect or
 possibly broken site.</p>
-<h3 id="parameters_28">Parameters</h3>
+<h3 id="parameters_29">Parameters</h3>
 <table>
 <thead>
 <tr>
