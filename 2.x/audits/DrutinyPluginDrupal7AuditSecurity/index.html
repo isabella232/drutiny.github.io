@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/tweaks.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
     
   </head>
   
@@ -580,6 +582,19 @@
     Policies
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -754,6 +769,19 @@
     Policies
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -783,6 +811,9 @@
                   <h1>Drutiny\Plugin\Drupal7\Audit\Security</h1>
                 
                 <h2 id="drutinyplugindrupal7auditsecuritywebformpsa_2016_003">Drutiny\Plugin\Drupal7\Audit\Security\WebformPSA_2016_003</h2>
+<p>Extends: <code>Drutiny\Audit\Drupal\ModuleEnabled</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<p>This class can <strong>remediate</strong> failed audits.</p>
 <h3 id="policies">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
@@ -799,6 +830,42 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    // Use the audit from ModuleEnable to validate check.
+    $sandbox-&gt;setParameter('module', 'webform');
+    if (!parent::audit($sandbox)) {
+      return NULL;
+    }
+
+    // Look for NFL uploads.
+    // See https://www.drupal.org/forum/newsletters/security-public-service-announcements/2016-10-10/drupal-file-upload-by-anonymous
+    $output = $sandbox-&gt;drush()-&gt;sqlq(&quot;SELECT filename FROM {file_managed} WHERE UPPER(filename) LIKE '%NFL%' AND status = 0;&quot;);
+
+    if (empty($output)) {
+      $number_of_silly_uploads = 0;
+      $sandbox-&gt;setParameter('files', '');
+    }
+    else {
+      $output = explode(PHP_EOL, $output);
+      $output = array_filter($output);
+      $number_of_silly_uploads = count($output);
+
+      // Format with markdown code backticks.
+      $output = array_map(function ($filepath) {
+        return &quot;`$filepath`&quot;;
+      }, $output);
+
+      $sandbox-&gt;setParameter('files', '- ' . implode(&quot;\n- &quot;, $output) . '&lt;/code&gt;');
+    }
+    $sandbox-&gt;setParameter('number_of_silly_uploads', $number_of_silly_uploads);
+    $sandbox-&gt;setParameter('plural', $number_of_silly_uploads &gt; 1 ? 's' : '');
+    $sandbox-&gt;setParameter('prefix', $number_of_silly_uploads &gt; 1 ? 'are' : 'is');
+
+    return $number_of_silly_uploads === 0;
+  }
+
+</code></pre>
                 
                   
                 
@@ -873,6 +940,12 @@
       <script src="../../assets/javascripts/application.8eb9be28.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
       
     
     

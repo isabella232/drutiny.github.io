@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/tweaks.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
     
   </head>
   
@@ -637,6 +639,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -796,6 +811,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -825,7 +853,12 @@
                   <h1>Drutiny\Cloudflare\Audit</h1>
                 
                 <h2 id="drutinycloudflareauditapienabledaudit">Drutiny\Cloudflare\Audit\ApiEnabledAudit</h2>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/cloudflare</code></p>
+<p><strong>NOTE</strong>: This Audit is <strong>abstract</strong> and cannot be used directly by a policy.</p>
 <h2 id="drutinycloudflareauditpagerulematch">Drutiny\Cloudflare\Audit\PageRuleMatch</h2>
+<p>Extends: <code>Drutiny\Cloudflare\Audit\ApiEnabledAudit</code><br />
+Package: <code>drutiny/cloudflare</code></p>
 <h3 id="policies">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
@@ -930,6 +963,83 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox)
+  {
+    $uri = $sandbox-&gt;drush()-&gt;getGlobalDefaultOption('uri');
+    $host = strpos($uri, 'http') === 0 ? parse_url($uri, PHP_URL_HOST) : $uri;
+    $sandbox-&gt;setParameter('host', $host);
+
+    $zone  = $this-&gt;zoneInfo($sandbox-&gt;getParameter('zone', $host));
+    $sandbox-&gt;setParameter('zone', $zone['name']);
+
+    $response = $this-&gt;api()-&gt;request('GET', &quot;zones/{$zone['id']}/pagerules&quot;);
+
+    // Create a reusable translation function to allow settings to use variables.
+    $t = function ($v) use ($zone, $host) {
+      return strtr($v, [
+        ':zone' =&gt; $zone['name'],
+        ':host' =&gt; $host
+      ]);
+    };
+
+    $constraint = $t($sandbox-&gt;getParameter('rule'));
+    $sandbox-&gt;setParameter('rule', $constraint);
+
+
+    $rules = array_filter($response['result'], function ($rule) use ($constraint) {
+      return $rule['targets'][0]['constraint']['value'] == $constraint;
+    });
+
+    if (!count($rules)) {
+      return FALSE;
+    }
+
+    // Build action array.
+    $rule = array_shift($rules);
+    foreach ($rule['actions'] as $action) {
+      $actions[$action['id']] = isset($action['value']) ? $action['value'] : TRUE;
+    }
+    $this-&gt;recurKsort($actions);
+    $sandbox-&gt;setParameter('actions', $actions);
+
+    // Build settings array.
+    $settings = $sandbox-&gt;getParameter('settings');
+    if (isset($settings['forwarding_url'])) {
+      $settings['forwarding_url']['url'] = $t($settings['forwarding_url']['url']);
+    }
+    $this-&gt;recurKsort($settings);
+    $sandbox-&gt;setParameter('settings', $settings);
+
+    // Format parameters so that array_diff_(key|assoc) can do the correct job.
+    $settings = array_map(['Symfony\Component\Yaml\Yaml', 'dump'], $settings);
+    $actions = array_map(['Symfony\Component\Yaml\Yaml', 'dump'], $actions);
+
+    // Calculate the differences.
+    $extra_actions = array_diff_key($actions, $settings);
+    $test_actions = array_diff_key($actions, $extra_actions);
+    $invalid_actions = array_diff_assoc($test_actions, $settings);
+
+    // Format parameters so that array_diff_(key|assoc) can do the correct job.
+    $extra_actions = array_map(['Symfony\Component\Yaml\Yaml', 'parse'], $extra_actions);
+    $invalid_actions = array_map(['Symfony\Component\Yaml\Yaml', 'parse'], $invalid_actions);
+
+    $sandbox-&gt;setParameter('extra_actions', $extra_actions);
+    $sandbox-&gt;setParameter('invalid_actions', $invalid_actions);
+    $sandbox-&gt;setParameter('invalid_actions_array', array_map(function ($key, $value) {
+      return ['id' =&gt; $key, 'value' =&gt; Yaml::dump($value)];
+    }, array_keys($invalid_actions), array_values($invalid_actions)));
+
+    $sandbox-&gt;setParameter('settings_array', array_map(function ($key, $value) {
+      return ['id' =&gt; $key, 'value' =&gt; $value];
+    }, array_keys($settings), array_values($settings)));
+
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . PHP_EOL . Yaml::dump(['parameters' =&gt; $sandbox-&gt;getParameterTokens()], 6));
+
+    return empty($invalid_actions);
+  }
+
+</code></pre>
                 
                   
                 
@@ -1004,6 +1114,12 @@
       <script src="../../assets/javascripts/application.8eb9be28.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
       
     
     

@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/tweaks.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
     
   </head>
   
@@ -666,6 +668,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -782,6 +797,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -811,6 +839,9 @@
                   <h1>Drutiny\Audit\Apache</h1>
                 
                 <h2 id="drutinyauditapachehtaccessredirects">Drutiny\Audit\Apache\HtaccessRedirects</h2>
+<p>.htaccess redirects</p>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
 <h3 id="policies">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
@@ -871,6 +902,25 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $patterns = array(
+      'RedirectPermanent',
+      'Redirect(Match)?.*?(301|permanent) *$',
+      'RewriteRule.*\[.*R=(301|permanent).*\] *$',
+    );
+    $regex = '^ *(' . implode('|', $patterns) . ')';
+    $command = &quot;grep -Ei '${regex}' %docroot%/.htaccess | wc -l&quot;;
+
+    $total_redirects = (int) $sandbox-&gt;exec($command);
+
+    $sandbox-&gt;setParameter('total_redirects', $total_redirects);
+
+    return $total_redirects &lt; $sandbox-&gt;getParameter('max_redirects', 10);
+  }
+
+</code></pre>
                 
                   
                 
@@ -945,6 +995,12 @@
       <script src="../../assets/javascripts/application.8eb9be28.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
       
     
     

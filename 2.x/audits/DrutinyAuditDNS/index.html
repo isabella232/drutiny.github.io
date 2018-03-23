@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/tweaks.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
     
   </head>
   
@@ -707,6 +709,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -768,6 +783,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -797,6 +825,8 @@
                   <h1>Drutiny\Audit\DNS</h1>
                 
                 <h2 id="drutinyauditdnsspf">Drutiny\Audit\DNS\SPF</h2>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
 <h3 id="parameters">Parameters</h3>
 <table>
 <thead>
@@ -859,6 +889,32 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox)
+  {
+    $type = $sandbox-&gt;getParameter('type', 'A');
+    $uri = $sandbox-&gt;getTarget()-&gt;uri();
+    $domain = preg_match('/^http/', $uri) ? parse_url($uri, PHP_URL_HOST) : $uri;
+    $zone = $sandbox-&gt;getParameter('zone', $domain);
+
+    // Set the zone incase it wasn't set.
+    $sandbox-&gt;setParameter('zone', $zone);
+
+    $values = $sandbox-&gt;localExec(strtr('dig +short @type @zone', [
+      '@type' =&gt; $type,
+      '@zone' =&gt; $zone,
+    ]));
+
+    $values = array_map('trim', explode(PHP_EOL, $values));
+    $values = array_filter($values);
+
+    $matching_value = $sandbox-&gt;getParameter('matching_value');
+    return (bool) count(array_filter($values, function ($txt) use ($matching_value) {
+      return strpos($txt, $matching_value) !== FALSE;
+    }));
+  }
+
+</code></pre>
                 
                   
                 
@@ -919,6 +975,12 @@
       <script src="../../assets/javascripts/application.8eb9be28.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
       
     
     

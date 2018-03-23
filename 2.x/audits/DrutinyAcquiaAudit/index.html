@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/tweaks.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
     
   </head>
   
@@ -628,6 +630,19 @@
     Policies
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -648,6 +663,19 @@
     Policies
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -659,6 +687,19 @@
   <a href="#drutinyacquiaauditcloudapiawarecheck" title="Drutiny\Acquia\Audit\CloudApiAwareCheck" class="md-nav__link">
     Drutiny\Acquia\Audit\CloudApiAwareCheck
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -674,6 +715,19 @@
   <a href="#policies_2" title="Policies" class="md-nav__link">
     Policies
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_3" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -694,6 +748,19 @@
   <a href="#policies_3" title="Policies" class="md-nav__link">
     Policies
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_4" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -821,6 +888,19 @@
     Policies
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -841,6 +921,19 @@
     Policies
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -852,6 +945,19 @@
   <a href="#drutinyacquiaauditcloudapiawarecheck" title="Drutiny\Acquia\Audit\CloudApiAwareCheck" class="md-nav__link">
     Drutiny\Acquia\Audit\CloudApiAwareCheck
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -867,6 +973,19 @@
   <a href="#policies_2" title="Policies" class="md-nav__link">
     Policies
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_3" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -887,6 +1006,19 @@
   <a href="#policies_3" title="Policies" class="md-nav__link">
     Policies
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_4" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -917,6 +1049,9 @@
                   <h1>Drutiny\Acquia\Audit</h1>
                 
                 <h2 id="drutinyacquiaauditacsfdefaultthemepath">Drutiny\Acquia\Audit\AcsfDefaultThemePath</h2>
+<p>ACSF default theme path.</p>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/acquia</code></p>
 <h3 id="policies">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
@@ -933,7 +1068,34 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $stat = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;status();
+
+    $root = $stat['root'];
+    $site = $stat['site'];
+
+    $look_out_for = &quot;sites\/all\/themes\/&quot;;
+
+    $command = &quot;grep -nrI --exclude=*.txt --exclude=*.md $look_out_for $root/$site/themes/site/ || exit 0;&quot;;
+
+    $output = $sandbox-&gt;exec($command);
+    $lines = array_filter(explode(PHP_EOL, $output));
+
+    $sandbox-&gt;setParameter('issues', $lines);
+    $sandbox-&gt;setParameter('plural', count($lines) &gt; 1 ? 's' : '');
+    $sandbox-&gt;setParameter('prefix', count($lines) &gt; 1 ? 'were' : 'was');
+
+    return empty($lines);
+  }
+
+</code></pre>
+
 <h2 id="drutinyacquiaauditacsfdeployworkspacecleaned">Drutiny\Acquia\Audit\AcsfDeployWorkspaceCleaned</h2>
+<p>ACSF default theme path.</p>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/acquia</code></p>
+<p>This class can <strong>remediate</strong> failed audits.</p>
 <h3 id="policies_1">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
@@ -950,8 +1112,33 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source_1">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $output = $sandbox-&gt;exec('find /mnt/tmp/repo_* -maxdepth 1 -mindepth 1 -ctime +1 -type d');
+    $lines = array_filter(explode(PHP_EOL, $output));
+
+    $sandbox-&gt;setParameter('directories', $lines);
+
+    return empty($lines);
+  }
+
+</code></pre>
+
 <h2 id="drutinyacquiaauditcloudapiawarecheck">Drutiny\Acquia\Audit\CloudApiAwareCheck</h2>
+<p>ACSF default theme path.</p>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/acquia</code></p>
+<p><strong>NOTE</strong>: This Audit is <strong>abstract</strong> and cannot be used directly by a policy.</p>
+<h4 id="source_2">Source</h4>
+<pre><code class="php">      // Check again locally, if this fails then we cannot run this check.
+
+</code></pre>
+
 <h2 id="drutinyacquiaauditproductionmode">Drutiny\Acquia\Audit\ProductionMode</h2>
+<p>ACSF default theme path.</p>
+<p>Extends: <code>Drutiny\Acquia\Audit\CloudApiAwareCheck</code><br />
+Package: <code>drutiny/acquia</code></p>
 <h3 id="policies_2">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
@@ -968,7 +1155,29 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source_3">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $opts = $sandbox-&gt;drush()-&gt;getOptions();
+
+    $sitename = $opts['ac-realm'] . ':' . $opts['ac-site'];
+
+    $site = $this-&gt;api($sandbox, 'sites/' . $sitename . '.json');
+    $enabled = (bool) $site['production_mode'];
+
+    // ACE = prod, ACSF = [0-9]{2}live
+    if (!in_array($opts['ac-env'], ['prod', '01live', '02live', '03live', '04live'])) {
+      return $enabled ? Audit::WARNING : Audit::WARNING_FAIL;
+    }
+
+    return $enabled;
+  }
+
+</code></pre>
+
 <h2 id="drutinyacquiaauditsearchdb">Drutiny\Acquia\Audit\SearchDB</h2>
+<p>Extends: <code>Drutiny\Plugin\Drupal7\Audit\ModuleDisabled</code><br />
+Package: <code>drutiny/acquia</code></p>
+<p>This class can <strong>remediate</strong> failed audits.</p>
 <h3 id="policies_3">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
@@ -985,6 +1194,36 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source_4">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $sandbox-&gt;setParameter('module', 'search_api_db');
+    if (parent::audit($sandbox)) {
+      return TRUE;
+    }
+
+    // Find out if there are active indexes using the db service class.
+    $output = $sandbox-&gt;drush()-&gt;sqlq(&quot;SELECT COUNT(i.machine_name) as count FROM {search_api_index} i LEFT JOIN {search_api_server} s ON i.server = s.machine_name WHERE i.status &gt; 0 AND s.class = 'search_api_db_service';&quot;);
+    if (empty($output)) {
+      return TRUE;
+    }
+    elseif (count($output) == 1) {
+      $number_of_db_indexes = (int) $output[0];
+    }
+    else {
+      $number_of_db_indexes = (int) $output[1];
+    }
+
+    $sandbox-&gt;setParameter('indexes', $number_of_db_indexes);
+
+    $output = $sandbox-&gt;drush()-&gt;sqlq('SELECT COUNT(item_id) FROM {search_api_db_default_node_index};');
+
+    $sandbox-&gt;setParameter('items', $output);
+
+    return FALSE;
+  }
+
+</code></pre>
                 
                   
                 
@@ -1059,6 +1298,12 @@
       <script src="../../assets/javascripts/application.8eb9be28.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
       
     
     

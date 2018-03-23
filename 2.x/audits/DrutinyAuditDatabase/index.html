@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/tweaks.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
     
   </head>
   
@@ -690,6 +692,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -782,6 +797,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -811,6 +839,9 @@
                   <h1>Drutiny\Audit\Database</h1>
                 
                 <h2 id="drutinyauditdatabasedatabasesize">Drutiny\Audit\Database\DatabaseSize</h2>
+<p>Large databases can negatively impact your production site, and slow down things like database dumps.</p>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
 <h3 id="policies">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
@@ -889,6 +920,34 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $stat = $sandbox-&gt;drush(['format' =&gt; 'json'])
+      -&gt;status();
+
+    $name = $stat['db-name'];
+    $sql = &quot;SELECT ROUND(SUM(data_length + index_length) / 1024 / 1024, 1) 'DB Size in MB'
+            FROM information_schema.tables
+            WHERE table_schema='{$name}'
+            GROUP BY table_schema;&quot;;
+
+    $size = (float) $sandbox-&gt;drush()-&gt;sqlq($sql);
+
+    $sandbox-&gt;setParameter('db', $name)
+            -&gt;setParameter('size', $size);
+
+    if ($sandbox-&gt;getParameter('max_size') &lt; $size) {
+      return FALSE;
+    }
+
+    if ($sandbox-&gt;getParameter('warning_size') &lt; $size) {
+      return Audit::WARNING;
+    }
+
+    return TRUE;
+  }
+
+</code></pre>
                 
                   
                 
@@ -963,6 +1022,12 @@
       <script src="../../assets/javascripts/application.8eb9be28.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
       
     
     

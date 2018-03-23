@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/tweaks.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
     
   </head>
   
@@ -671,6 +673,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -682,6 +697,19 @@
   <a href="#drutinyauditfilesystemfssize" title="Drutiny\Audit\Filesystem\FsSize" class="md-nav__link">
     Drutiny\Audit\Filesystem\FsSize
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -711,6 +739,19 @@
   <a href="#tokens_1" title="Tokens" class="md-nav__link">
     Tokens
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -745,6 +786,19 @@
   <a href="#tokens_2" title="Tokens" class="md-nav__link">
     Tokens
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_3" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -843,6 +897,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -854,6 +921,19 @@
   <a href="#drutinyauditfilesystemfssize" title="Drutiny\Audit\Filesystem\FsSize" class="md-nav__link">
     Drutiny\Audit\Filesystem\FsSize
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -883,6 +963,19 @@
   <a href="#tokens_1" title="Tokens" class="md-nav__link">
     Tokens
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -918,6 +1011,19 @@
     Tokens
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_3" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -947,6 +1053,9 @@
                   <h1>Drutiny\Audit\Filesystem</h1>
                 
                 <h2 id="drutinyauditfilesystemcodescan">Drutiny\Audit\Filesystem\CodeScan</h2>
+<p>Scan files in a directory for matching criteria.</p>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
 <h3 id="parameters">Parameters</h3>
 <table>
 <thead>
@@ -1039,8 +1148,122 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $directory = $sandbox-&gt;getParameter('directory', '%root');
+    $stat = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;status();
+
+    $directory =  strtr($directory, $stat['%paths']);
+
+
+    $command = ['find', $stat['%paths']['%root']];
+
+    $types = $sandbox-&gt;getParameter('filetypes', []);
+
+    if (!empty($types)) {
+      $command[] = '-regex';
+      $command[] = &quot;'.*\.\(&quot; . implode('\|', $sandbox-&gt;getParameter('filetypes', ['php'])) . &quot;\)'&quot;;
+    }
+
+    foreach ($sandbox-&gt;getParameter('exclude', []) as $filepath) {
+      $filepath = strtr($filepath, $stat['%paths']);
+      $command[] = &quot;! -path '$filepath'&quot;;
+    }
+
+    $command[] = '| xargs grep -nE';
+    $command[] = '&quot;' . implode('|', $sandbox-&gt;getParameter('patterns', [])) . '&quot; || exit 0';
+
+    $whitelist = $sandbox-&gt;getParameter('whitelist', []);
+    if (!empty($whitelist)) {
+      $command[] = &quot;| grep -vE '&quot; . implode('|', $whitelist) . &quot;'&quot;;
+    }
+
+
+    $command = implode(' ', $command);
+    // echo $command;die;
+    $output = $sandbox-&gt;exec($command);
+
+    if (empty($output)) {
+      return TRUE;
+    }
+
+    $matches = array_filter(explode(PHP_EOL, $output));
+    $matches = array_map(function ($line) {
+      list($filepath, $line_number, $code) = explode(':', $line, 3);
+      return [
+        'file' =&gt; $filepath,
+        'line' =&gt; $line_number,
+        'code' =&gt; trim($code),
+        'basename' =&gt; basename($filepath)
+      ];
+    }, $matches);
+
+    $results = [
+      'found' =&gt; count($matches),
+      'findings' =&gt; $matches,
+      'filepaths' =&gt; array_values(array_unique(array_map(function ($match) use ($stat) {
+        return str_replace($stat['%paths']['%root'], '', $match['file']);
+      }, $matches)))
+    ];
+
+    $sandbox-&gt;setParameter('results', $results);
+
+    return empty($matches);
+  }
+
+</code></pre>
+
 <h2 id="drutinyauditfilesystemfssize">Drutiny\Audit\Filesystem\FsSize</h2>
+<p>Large files</p>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
+<h4 id="source_1">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $path = $sandbox-&gt;getParameter('path', '%files');
+    $stat = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;status();
+
+    $path = strtr($path, $stat['%paths']);
+
+    $root = $stat['root'];
+    $files = $stat['files'];
+
+    $max_size = (int) $sandbox-&gt;getParameter('max_size', 20);
+
+    $command = &quot;find @location -type f -size +@sizeM -printf '@print-format'&quot;;
+    $command .= &quot; | sort -nr&quot;;
+    $command = strtr($command, [
+      '@location' =&gt; &quot;{$root}/{$files}/&quot;,
+      '@size' =&gt; $max_size,
+      '@print-format' =&gt; '%k\t%p\n',
+    ]);
+
+    $output = $sandbox-&gt;exec($command);
+
+    if (empty($output)) {
+      return TRUE;
+    }
+
+    // Output from find is a giant string with newlines to seperate the files.
+    $rows = array_map(function ($line) {
+      $parts = array_map('trim', explode(&quot;\t&quot;, $line));
+      $size = number_format((float) $parts[0] / 1024, 2);
+      $filename = trim($parts[1]);
+      return &quot;{$filename} [{$size} MB]&quot;;
+    },
+    array_filter(explode(&quot;\n&quot;, $output)));
+
+    $sandbox-&gt;setParameter('issues', $rows);
+    $sandbox-&gt;setParameter('plural', count($rows) &gt; 1 ? 's' : '');
+
+    return Audit::WARNING;
+  }
+
+</code></pre>
+
 <h2 id="drutinyauditfilesystemlargefiles">Drutiny\Audit\Filesystem\LargeFiles</h2>
+<p>Large files</p>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
 <h3 id="policies">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
@@ -1107,7 +1330,50 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source_2">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $stat = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;status();
+
+    $root = $stat['root'];
+    $files = $stat['files'];
+
+    $max_size = (int) $sandbox-&gt;getParameter('max_size', 20);
+
+    $command = &quot;find @location -type f -size +@sizeM -printf '@print-format'&quot;;
+    $command .= &quot; | sort -nr&quot;;
+    $command = strtr($command, [
+      '@location' =&gt; &quot;{$root}/{$files}/&quot;,
+      '@size' =&gt; $max_size,
+      '@print-format' =&gt; '%k\t%p\n',
+    ]);
+
+    $output = $sandbox-&gt;exec($command);
+
+    if (empty($output)) {
+      return TRUE;
+    }
+
+    // Output from find is a giant string with newlines to seperate the files.
+    $rows = array_map(function ($line) {
+      $parts = array_map('trim', explode(&quot;\t&quot;, $line));
+      $size = number_format((float) $parts[0] / 1024, 2);
+      $filename = trim($parts[1]);
+      return &quot;{$filename} [{$size} MB]&quot;;
+    },
+    array_filter(explode(&quot;\n&quot;, $output)));
+
+    $sandbox-&gt;setParameter('issues', $rows);
+    $sandbox-&gt;setParameter('plural', count($rows) &gt; 1 ? 's' : '');
+
+    return Audit::WARNING;
+  }
+
+</code></pre>
+
 <h2 id="drutinyauditfilesystemsensitivepublicfiles">Drutiny\Audit\Filesystem\SensitivePublicFiles</h2>
+<p>Sensitive public files</p>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
 <h3 id="policies_1">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
@@ -1174,6 +1440,54 @@
 </tr>
 </tbody>
 </table>
+<h4 id="source_3">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $stat = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;status();
+
+    $root = $stat['root'];
+    $files = $stat['files'];
+
+    $extensions = $sandbox-&gt;getParameter('extensions');
+    $extensions = array_map('trim', explode(',', $extensions));
+
+    // Output is in the format:
+    //
+    // 7048 ./iStock_000017426795Large-2.jpg
+    // 6370 ./portrait-small-1.png
+    //
+    // Note, the size is in KB in the response, we convert to MB later on in
+    // this check.
+
+    $command = &quot;cd @location ; find . -type f \( @name-lookups \) -printf '@print-format'&quot;;
+    $command .= &quot; | grep -v -E '/js/js_|/css/css_|/php/twig/|/php/html_purifier_serializer/' | sort -nr&quot;;
+    $command = strtr($command, [
+      '@location' =&gt; &quot;{$root}/{$files}/&quot;,
+      '@name-lookups' =&gt; &quot;-name '*.&quot; . implode(&quot;' -o -name '*.&quot;, $extensions) . &quot;'&quot;,
+      '@print-format' =&gt; '%k\t%p\n',
+    ]);
+
+    $output = $sandbox-&gt;exec($command);
+
+    if (empty($output)) {
+      return Audit::SUCCESS;
+    }
+
+    // Output from find is a giant string with newlines to separate the files.
+    $rows = array_map(function ($line) {
+      $parts = array_map('trim', explode(&quot;\t&quot;, $line));
+      $size = number_format((float) $parts[0] / 1024, 2);
+      $filename = trim($parts[1]);
+      return &quot;{$filename} [{$size} MB]&quot;;
+    },
+    array_filter(explode(&quot;\n&quot;, $output)));
+
+    $sandbox-&gt;setParameter('issues', $rows);
+    $sandbox-&gt;setParameter('plural', count($rows) &gt; 1 ? 's' : '');
+
+    return Audit::FAIL;
+  }
+
+</code></pre>
                 
                   
                 
@@ -1248,6 +1562,12 @@
       <script src="../../assets/javascripts/application.8eb9be28.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
       
     
     

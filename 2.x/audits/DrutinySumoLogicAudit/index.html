@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/tweaks.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
     
   </head>
   
@@ -680,6 +682,19 @@
     Drutiny\SumoLogic\Audit\ApiEnabledAudit
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -687,12 +702,38 @@
     Drutiny\SumoLogic\Audit\NoLogsFound
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#drutinysumologicauditquery" title="Drutiny\SumoLogic\Audit\Query" class="md-nav__link">
     Drutiny\SumoLogic\Audit\Query
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -747,6 +788,19 @@
     Drutiny\SumoLogic\Audit\ApiEnabledAudit
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -754,12 +808,38 @@
     Drutiny\SumoLogic\Audit\NoLogsFound
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#drutinysumologicauditquery" title="Drutiny\SumoLogic\Audit\Query" class="md-nav__link">
     Drutiny\SumoLogic\Audit\Query
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -785,8 +865,69 @@
                   <h1>Drutiny\SumoLogic\Audit</h1>
                 
                 <h2 id="drutinysumologicauditapienabledaudit">Drutiny\SumoLogic\Audit\ApiEnabledAudit</h2>
+<p>Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/sumologic</code></p>
+<p><strong>NOTE</strong>: This Audit is <strong>abstract</strong> and cannot be used directly by a policy.</p>
+<h4 id="source">Source</h4>
+<pre><code class="php">        }
+
+</code></pre>
+
 <h2 id="drutinysumologicauditnologsfound">Drutiny\SumoLogic\Audit\NoLogsFound</h2>
+<p>Extends: <code>Drutiny\SumoLogic\Audit\ApiEnabledAudit</code><br />
+Package: <code>drutiny/sumologic</code></p>
+<h4 id="source_1">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox)
+  {
+    list($sitegroup, $env) = explode('.', str_replace('@', '', $sandbox-&gt;drush()-&gt;getAlias()), 2);
+    $tokens['@sitegroup'] = $sitegroup;
+    $tokens['@environment'] = $env;
+
+    $query = $sandbox-&gt;getParameter('query');
+
+    $query = strtr($query, $tokens);
+
+    $records = $this-&gt;search($sandbox, $query);
+
+    if ($globals = $sandbox-&gt;getParameter('globals', []) &amp;&amp; $row = reset($records)) {
+      foreach ($globals as $key) {
+        $sandbox-&gt;setParameter($key, $row[$key]);
+      }
+    }
+
+    $sandbox-&gt;setParameter('count', count($records));
+
+    return count($records) === 0;
+  }
+
+</code></pre>
+
 <h2 id="drutinysumologicauditquery">Drutiny\SumoLogic\Audit\Query</h2>
+<p>Extends: <code>Drutiny\SumoLogic\Audit\ApiEnabledAudit</code><br />
+Package: <code>drutiny/sumologic</code></p>
+<h4 id="source_2">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox)
+  {
+    list($sitegroup, $env) = explode('.', str_replace('@', '', $sandbox-&gt;drush()-&gt;getAlias()), 2);
+    $tokens['@sitegroup'] = $sitegroup;
+    $tokens['@environment'] = $env;
+
+    $query = $sandbox-&gt;getParameter('query');
+
+    $query = strtr($query, $tokens);
+
+    $records = $this-&gt;search($sandbox, $query);
+
+    if ($globals = $sandbox-&gt;getParameter('globals', []) &amp;&amp; $row = reset($records)) {
+      foreach ($globals as $key) {
+        $sandbox-&gt;setParameter($key, $row[$key]);
+      }
+    }
+
+    return count($records) === 0 ? self::NOT_APPLICABLE : self::NOTICE;
+  }
+
+</code></pre>
                 
                   
                 
@@ -861,6 +1002,12 @@
       <script src="../../assets/javascripts/application.8eb9be28.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
       
     
     
