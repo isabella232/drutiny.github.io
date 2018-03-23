@@ -1504,6 +1504,871 @@
             "location": "/policies/drutiny-drutiny/#parameters_5", 
             "text": "Name  Type  Description  Default      max_size  integer  Report files larger than this value measured in megabytes.  50", 
             "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/", 
+            "text": "Drutiny\\Plugin\\Drupal7\\Audit\\BlacklistPermissions\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:BlackListPermissions\n\n\nBlackList Permissions\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\CronLast\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:CronLast\n\n\nCron running regularly\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\DuplicateModules\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:NoDuplicateModules\n\n\nDuplicate modules\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\MissingModules\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:MissingModules\n\n\nMissing modules\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\ModuleDisabled\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:DblogModuleDisabled\n\n\nDatabase logging disabled\n\n\n\n\n\n\nDrupal-7:StatisticsModuleDisabled\n\n\nStatistics\n\n\n\n\n\n\nDrupal-7:PhpModuleDisabled\n\n\nPHP\n\n\n\n\n\n\nDrupal-7:Search404ModuleDisabled\n\n\nSearch404 module disabled\n\n\n\n\n\n\nDrupal-7:UpdateModuleDisabled\n\n\nUpdate\n\n\n\n\n\n\nDrupal-7:ShieldModuleDisabled\n\n\nShield Disabled\n\n\n\n\n\n\nDrupal-7:SimpletestModuleDisabled\n\n\nSimpletest\n\n\n\n\n\n\nDrupal-7:OverlayModuleDisabled\n\n\nOverlay module disabled\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\ModulesEnabled\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:ModulesEnabled\n\n\nModules enabled\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\NoAdministrators\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:NoAdmins\n\n\nNo Administrators\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\SearchApiDb\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:SearchApiDb\n\n\nSearch API Database\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\UntrustedRoles\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:UntrustedRoles\n\n\nUntrusted Roles with administrative permissions\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nuntrusted_roles\n\n\narray\n\n\nThe names of untrusted Roles.\n\n\n'[''anonymous user'',''authenticated user'']'\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nuntrusted_roles\n\n\narray\n\n\nThe names of untrusted Roles.\n\n\n'[''anonymous user'',''authenticated user'']'\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\User1\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:User1LockDown\n\n\nUser #1 Locked Down\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\VariableCompare\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:JsAggregation\n\n\nJs Aggregation\n\n\n\n\n\n\nDrupal-7:ViewsSqlSignature\n\n\nViews SQL Signature\n\n\n\n\n\n\nDrupal-7:CSSAggregation\n\n\nCSS Aggregation\n\n\n\n\n\n\nDrupal-7:ImageDerivatives\n\n\nImage Derivatives\n\n\n\n\n\n\nDrupal-7:SecurePagesListed\n\n\nSecure Pages Listed\n\n\n\n\n\n\nDrupal-7:UserRegistrationDisabled\n\n\nUser Registration Disabled\n\n\n\n\n\n\nDrupal-7:ErrorLevel\n\n\nError Level\n\n\n\n\n\n\nDrupal-7:PoorMansCronDisabled\n\n\nPoor Mans Cron Disabled\n\n\n\n\n\n\nDrupal-7:CacheLifetime\n\n\nApplication Page Cache\n\n\n\n\n\n\nDrupal-7:SecurePagesConfig:NoDowngrade\n\n\nSecure Pages Config: No Downgrade\n\n\n\n\n\n\nDrupal-7:InstallTaskCompleted\n\n\nInstallation Complete\n\n\n\n\n\n\nDrupal-7:SecureHTTPRedirect\n\n\nSecure Pages: HTTP Redirect\n\n\n\n\n\n\nDrupal-7:PageCacheMaximumAge\n\n\nPage Cache Control Max Age\n\n\n\n\n\n\nDrupal-7:SecurePagesConfig:Enabled\n\n\nSecure Pages Config: Enabled\n\n\n\n\n\n\nDrupal-7:NoPageCompression\n\n\nNo Page Compression\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\ViewsCache\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:ViewsCache\n\n\nViews Cache\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\ViewsPagination\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:ViewsPagination\n\n\nViews Pagination\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\XMLSiteMapBaseUrl\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:XMLSitemapBaseURL\n\n\nXML sitemap base URL\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal7\\Audit\\ZenRebuildRegistry\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:ZenRegistryRebuild\n\n\nZen rebuild registry disabled", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditblacklistpermissions", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\BlacklistPermissions"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:BlackListPermissions  BlackList Permissions", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditcronlast", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\CronLast"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_1", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:CronLast  Cron running regularly", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditduplicatemodules", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\DuplicateModules"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_2", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:NoDuplicateModules  Duplicate modules", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditmissingmodules", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\MissingModules"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_3", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:MissingModules  Missing modules", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditmoduledisabled", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\ModuleDisabled"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_4", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:DblogModuleDisabled  Database logging disabled    Drupal-7:StatisticsModuleDisabled  Statistics    Drupal-7:PhpModuleDisabled  PHP    Drupal-7:Search404ModuleDisabled  Search404 module disabled    Drupal-7:UpdateModuleDisabled  Update    Drupal-7:ShieldModuleDisabled  Shield Disabled    Drupal-7:SimpletestModuleDisabled  Simpletest    Drupal-7:OverlayModuleDisabled  Overlay module disabled", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditmodulesenabled", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\ModulesEnabled"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_5", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:ModulesEnabled  Modules enabled", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditnoadministrators", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\NoAdministrators"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_6", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:NoAdmins  No Administrators", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditsearchapidb", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\SearchApiDb"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_7", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:SearchApiDb  Search API Database", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7audituntrustedroles", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\UntrustedRoles"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_8", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:UntrustedRoles  Untrusted Roles with administrative permissions", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#parameters", 
+            "text": "Name  Type  Description  Default      untrusted_roles  array  The names of untrusted Roles.  '[''anonymous user'',''authenticated user'']'", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#tokens", 
+            "text": "Name  Type  Description  Default      untrusted_roles  array  The names of untrusted Roles.  '[''anonymous user'',''authenticated user'']'", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7audituser1", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\User1"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_9", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:User1LockDown  User #1 Locked Down", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditvariablecompare", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\VariableCompare"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_10", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:JsAggregation  Js Aggregation    Drupal-7:ViewsSqlSignature  Views SQL Signature    Drupal-7:CSSAggregation  CSS Aggregation    Drupal-7:ImageDerivatives  Image Derivatives    Drupal-7:SecurePagesListed  Secure Pages Listed    Drupal-7:UserRegistrationDisabled  User Registration Disabled    Drupal-7:ErrorLevel  Error Level    Drupal-7:PoorMansCronDisabled  Poor Mans Cron Disabled    Drupal-7:CacheLifetime  Application Page Cache    Drupal-7:SecurePagesConfig:NoDowngrade  Secure Pages Config: No Downgrade    Drupal-7:InstallTaskCompleted  Installation Complete    Drupal-7:SecureHTTPRedirect  Secure Pages: HTTP Redirect    Drupal-7:PageCacheMaximumAge  Page Cache Control Max Age    Drupal-7:SecurePagesConfig:Enabled  Secure Pages Config: Enabled    Drupal-7:NoPageCompression  No Page Compression", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditviewscache", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\ViewsCache"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_11", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:ViewsCache  Views Cache", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditviewspagination", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\ViewsPagination"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_12", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:ViewsPagination  Views Pagination", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditxmlsitemapbaseurl", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\XMLSiteMapBaseUrl"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_13", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:XMLSitemapBaseURL  XML sitemap base URL", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#drutinyplugindrupal7auditzenrebuildregistry", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\ZenRebuildRegistry"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7Audit/#policies_14", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:ZenRegistryRebuild  Zen rebuild registry disabled", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/", 
+            "text": "Drutiny\\Audit\\Drupal\\IniGet\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nsetting\n\n\nstring\n\n\nThe name of the ini setting to check.\n\n\nnull\n\n\n\n\n\n\nvalue\n\n\nmixed\n\n\nThe local value of the ini setting to compare for.\n\n\nnull\n\n\n\n\n\n\ncomp_type\n\n\nstring\n\n\nThe comparison operator to use for the comparison.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nsetting\n\n\nstring\n\n\nThe name of the ini setting to check.\n\n\nnull\n\n\n\n\n\n\nvalue\n\n\nmixed\n\n\nThe local value of the ini setting to compare for.\n\n\nnull\n\n\n\n\n\n\ncomp_type\n\n\nstring\n\n\nThe comparison operator to use for the comparison.\n\n\nnull\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\Drupal\\LargeDrupalFiles\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal:largeFiles\n\n\nLarge Drupal Files\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmax_size\n\n\ninteger\n\n\nReport files larger than this value measured in megabytes.\n\n\n20\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmax_size\n\n\ninteger\n\n\nReport files larger than this value measured in megabytes.\n\n\n20\n\n\n\n\n\n\ntotal\n\n\ninteger\n\n\nTotal number of large files found\n\n\nnull\n\n\n\n\n\n\ntoo_many_files\n\n\ninteger\n\n\nText to display if there are more than 10 files found.\n\n\nnull\n\n\n\n\n\n\nfiles\n\n\ninteger\n\n\nA list of up to 10 files that are too large.\n\n\nnull\n\n\n\n\n\n\nplural\n\n\nstring\n\n\nThis variable will contain an 's' if there is more than one issue found.\n\n\n''\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\Drupal\\ModuleEnabled\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:SecurePagesEnabled\n\n\nSecure Pages Enabled\n\n\n\n\n\n\nDrupal-8:MemcacheEnabled\n\n\nMemcache module enabled\n\n\n\n\n\n\nDrupal-8:PurgeEnabled\n\n\nPurge module enabled\n\n\n\n\n\n\nDistro:PasswordPolicyEnabled\n\n\nPassword Policy\n\n\n\n\n\n\nDistro:RobotstxtEnabled\n\n\nRobotstxt\n\n\n\n\n\n\nDistro:GoogleAnalyticsEnabled\n\n\nGoogle Analytics\n\n\n\n\n\n\nAcquia:SPIEnabled\n\n\nAcquia SPI\n\n\n\n\n\n\nAcquia:AgentEnabled\n\n\nAcquia Agent\n\n\n\n\n\n\nAcquia:SiteFactoryOpenID\n\n\nAcquia Cloud Site Factory OpenID\n\n\n\n\n\n\nAcquia:SiteFactory:Variables\n\n\nAcquia Cloud Site Factory Variables\n\n\n\n\n\n\nAcquia:SiteFactoryDuplication\n\n\nAcquia Cloud Site Factory Duplication\n\n\n\n\n\n\nAcquia:SiteFactory:ThemeEnabled\n\n\nAcquia Cloud Site Factory Theme\n\n\n\n\n\n\nAcquia:SiteFactory:Pingdom\n\n\nAcquia Cloud Site Factory Pingdom\n\n\n\n\n\n\nAcquia:ACSF\n\n\nAcquia Cloud Site Factory\n\n\n\n\n\n\nAcquia:MemcacheEnabled\n\n\nMemcache module enabled\n\n\n\n\n\n\nAcquia:PurgeEnabled\n\n\nAcquia Purge Enabled\n\n\n\n\n\n\nAcquia:Connected\n\n\nAcquia Connector\n\n\n\n\n\n\nDrupal:SyslogEnabled\n\n\nSyslog\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmodule\n\n\nstring\n\n\nThe module to check is enabled.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmodule\n\n\nstring\n\n\nThe module to check is enabled.\n\n\nnull\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\Drupal\\ModuleUpdateStatus\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal:moduleUpdates\n\n\nModule updates\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\Drupal\\SessionsAnon\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal:AnonSession\n\n\nAnonymous sessions\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\Drupal\\SqlResultAudit\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nquery\n\n\nstring\n\n\nThe SQL query to run. Can use other parameters for variable replacement.\n\n\nnull\n\n\n\n\n\n\nfield\n\n\nstring\n\n\nThe name of the field in the result row to pull the value from\n\n\nnull\n\n\n\n\n\n\nvalue\n\n\nmixed\n\n\nThe value to compare against\n\n\nnull\n\n\n\n\n\n\ncomp_type\n\n\nstring\n\n\nThe comparison operator to use for the comparison.\n\n\n'='\n\n\n\n\n\n\ndefault_value\n\n\nstring\n\n\nIf no SQL result set is returned, what should the default value of the field be?\n\n\n''\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nquery\n\n\nstring\n\n\nThe SQL query to run. Can use other parameters for variable replacement.\n\n\nnull\n\n\n\n\n\n\nfield\n\n\nstring\n\n\nThe name of the field in the result row to pull the value from\n\n\nnull\n\n\n\n\n\n\nvalue\n\n\nmixed\n\n\nThe value to compare against\n\n\nnull\n\n\n\n\n\n\ncomp_type\n\n\nstring\n\n\nThe comparison operator to use for the comparison.\n\n\n'='\n\n\n\n\n\n\ndefault_value\n\n\nstring\n\n\nIf no SQL result set is returned, what should the default value of the field be?\n\n\n''\n\n\n\n\n\n\nresult\n\n\nstring\n\n\nThe comparison operator to use for the comparison.\n\n\nnull\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\Drupal\\StatusInformation\n\n\nDrutiny\\Audit\\Drupal\\UpdateDBStatus\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal:updates\n\n\nDatabase updates", 
+            "title": "Drutiny\\Audit\\Drupal"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#drutinyauditdrupaliniget", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Drupal\\IniGet"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#parameters", 
+            "text": "Name  Type  Description  Default      setting  string  The name of the ini setting to check.  null    value  mixed  The local value of the ini setting to compare for.  null    comp_type  string  The comparison operator to use for the comparison.  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#tokens", 
+            "text": "Name  Type  Description  Default      setting  string  The name of the ini setting to check.  null    value  mixed  The local value of the ini setting to compare for.  null    comp_type  string  The comparison operator to use for the comparison.  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#drutinyauditdrupallargedrupalfiles", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Drupal\\LargeDrupalFiles"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal:largeFiles  Large Drupal Files", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#parameters_1", 
+            "text": "Name  Type  Description  Default      max_size  integer  Report files larger than this value measured in megabytes.  20", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#tokens_1", 
+            "text": "Name  Type  Description  Default      max_size  integer  Report files larger than this value measured in megabytes.  20    total  integer  Total number of large files found  null    too_many_files  integer  Text to display if there are more than 10 files found.  null    files  integer  A list of up to 10 files that are too large.  null    plural  string  This variable will contain an 's' if there is more than one issue found.  ''", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#drutinyauditdrupalmoduleenabled", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Drupal\\ModuleEnabled"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#policies_1", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:SecurePagesEnabled  Secure Pages Enabled    Drupal-8:MemcacheEnabled  Memcache module enabled    Drupal-8:PurgeEnabled  Purge module enabled    Distro:PasswordPolicyEnabled  Password Policy    Distro:RobotstxtEnabled  Robotstxt    Distro:GoogleAnalyticsEnabled  Google Analytics    Acquia:SPIEnabled  Acquia SPI    Acquia:AgentEnabled  Acquia Agent    Acquia:SiteFactoryOpenID  Acquia Cloud Site Factory OpenID    Acquia:SiteFactory:Variables  Acquia Cloud Site Factory Variables    Acquia:SiteFactoryDuplication  Acquia Cloud Site Factory Duplication    Acquia:SiteFactory:ThemeEnabled  Acquia Cloud Site Factory Theme    Acquia:SiteFactory:Pingdom  Acquia Cloud Site Factory Pingdom    Acquia:ACSF  Acquia Cloud Site Factory    Acquia:MemcacheEnabled  Memcache module enabled    Acquia:PurgeEnabled  Acquia Purge Enabled    Acquia:Connected  Acquia Connector    Drupal:SyslogEnabled  Syslog", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#parameters_2", 
+            "text": "Name  Type  Description  Default      module  string  The module to check is enabled.  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#tokens_2", 
+            "text": "Name  Type  Description  Default      module  string  The module to check is enabled.  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#drutinyauditdrupalmoduleupdatestatus", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Drupal\\ModuleUpdateStatus"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#policies_2", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal:moduleUpdates  Module updates", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#drutinyauditdrupalsessionsanon", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Drupal\\SessionsAnon"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#policies_3", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal:AnonSession  Anonymous sessions", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#drutinyauditdrupalsqlresultaudit", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Drupal\\SqlResultAudit"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#parameters_3", 
+            "text": "Name  Type  Description  Default      query  string  The SQL query to run. Can use other parameters for variable replacement.  null    field  string  The name of the field in the result row to pull the value from  null    value  mixed  The value to compare against  null    comp_type  string  The comparison operator to use for the comparison.  '='    default_value  string  If no SQL result set is returned, what should the default value of the field be?  ''", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#tokens_3", 
+            "text": "Name  Type  Description  Default      query  string  The SQL query to run. Can use other parameters for variable replacement.  null    field  string  The name of the field in the result row to pull the value from  null    value  mixed  The value to compare against  null    comp_type  string  The comparison operator to use for the comparison.  '='    default_value  string  If no SQL result set is returned, what should the default value of the field be?  ''    result  string  The comparison operator to use for the comparison.  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#drutinyauditdrupalstatusinformation", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Drupal\\StatusInformation"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#drutinyauditdrupalupdatedbstatus", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Drupal\\UpdateDBStatus"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDrupal/#policies_4", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal:updates  Database updates", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7AuditSecurity/", 
+            "text": "Drutiny\\Plugin\\Drupal7\\Audit\\Security\\WebformPSA_2016_003\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-7:PSA-2016-003\n\n\nPSA-2016-003: Scan webform files for anon PDF uploads", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\Security"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7AuditSecurity/#drutinyplugindrupal7auditsecuritywebformpsa_2016_003", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal7\\Audit\\Security\\WebformPSA_2016_003"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal7AuditSecurity/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-7:PSA-2016-003  PSA-2016-003: Scan webform files for anon PDF uploads", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/", 
+            "text": "Drutiny\\Plugin\\Drupal8\\Audit\\ConfigCheck\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-8:Fast404Enabled\n\n\nCore Fast 404 Enabled\n\n\n\n\n\n\nDrupal-8:UserRegistrationAdminOnly\n\n\nUser registration available to administrators only\n\n\n\n\n\n\nDrupal-8:ErrorLevel\n\n\nHide errors from screen (log only)\n\n\n\n\n\n\nDrupal-8:JsAggregation\n\n\nJavascript aggregation\n\n\n\n\n\n\nDrupal-8:CssAggregation\n\n\nCSS aggregation is enabled\n\n\n\n\n\n\nDrupal-8:PageCacheExpiry\n\n\nPage cache expiry is set\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\ncollection\n\n\nstring\n\n\nThe collection the config belongs to.\n\n\nnull\n\n\n\n\n\n\nkey\n\n\nstring\n\n\nThe key the config belongs to.\n\n\nnull\n\n\n\n\n\n\nvalue\n\n\nmixed\n\n\nThe value to compare against the retrived value.\n\n\nnull\n\n\n\n\n\n\ncomp_type\n\n\nstring\n\n\nThe type of comparison to conduct. Defaults to equals. See Drutiny\\Audit\\AbstractComparison\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\ncollection\n\n\nstring\n\n\nThe collection the config belongs to.\n\n\nnull\n\n\n\n\n\n\nkey\n\n\nstring\n\n\nThe key the config belongs to.\n\n\nnull\n\n\n\n\n\n\nvalue\n\n\nmixed\n\n\nThe value to compare against the retrived value.\n\n\nnull\n\n\n\n\n\n\ncomp_type\n\n\nstring\n\n\nThe type of comparison to conduct. Defaults to equals. See Drutiny\\Audit\\AbstractComparison\n\n\nnull\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\CronHasRun\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-8:CronHasRun\n\n\nCron last run\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\CronLast\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-8:CronLast\n\n\nCron running regularly\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\DuplicateModules\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-8:DuplicateModules\n\n\nNo duplicate modules found\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\ModuleDisabled\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-8:NoBackupAndMigrate\n\n\nBackup and Migrate is not installed\n\n\n\n\n\n\nDrupal-8:WebprofilerDisabled\n\n\nWebprofiler module is not installed\n\n\n\n\n\n\nDrupal-8:DblogDisabled\n\n\nDatabase logging is not installed\n\n\n\n\n\n\nDrupal-8:ConfigDevelDisabled\n\n\nConfiguration development module is not installed\n\n\n\n\n\n\nDrupal-8:StatisticsDisabled\n\n\nStatistics module is not installed\n\n\n\n\n\n\nDrupal-8:PhpDisabled\n\n\nPHP module is not installed\n\n\n\n\n\n\nDrupal-8:NoAutomatedCron\n\n\nAutomated Cron module is not installed\n\n\n\n\n\n\nDrupal-8:DevelDisabled\n\n\nDevel module is not installed\n\n\n\n\n\n\nDrupal-8:UpdateDisabled\n\n\nUpdate module is not installed\n\n\n\n\n\n\nDrupal-8:ShieldDisabled\n\n\nShield module is not installed\n\n\n\n\n\n\nDrupal-8:SimpleTestDisabled\n\n\nSimpletest module is not installed\n\n\n\n\n\n\nDrupal-8:KnitDisabled\n\n\nKnit module is not installed\n\n\n\n\n\n\nAcquia:CloudEdgeNoPurge\n\n\nAcquia Cloud Edge Purging Enabled\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmodule\n\n\nstring\n\n\nThe module to check is enabled.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmodule\n\n\nstring\n\n\nThe module to check is enabled.\n\n\nnull\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\NoExperimentalCore\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-8:NoExperimental\n\n\nNo Experimental Modules in Use\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\PurgePluginExists\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nAcquia:PurgePlugin\n\n\nAcquia Purge Plugin Exists\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nplugin\n\n\nstring\n\n\nThe plugins to check exists\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nplugin\n\n\nstring\n\n\nThe plugins to check exists\n\n\nnull\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\PurgePluginNotExists\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\SettingCompare\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-8:DefaultCacheMemcache\n\n\nMemcache set as default cache backend\n\n\n\n\n\n\nDrupal-8:MemcachedExtension\n\n\nMemcache extension set\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\UntrustedRoles\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-8:UntrustedRoles\n\n\nUntrusted Roles with administrative permissions\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\UnusedModules\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-8:UnusedModules\n\n\nUnused modules in the codebase\n\n\n\n\n\n\n\n\nDrutiny\\Plugin\\Drupal8\\Audit\\User1\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDrupal-8:User1LockDown\n\n\nAdministrator login is locked down (uid:1)", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8auditconfigcheck", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\ConfigCheck"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-8:Fast404Enabled  Core Fast 404 Enabled    Drupal-8:UserRegistrationAdminOnly  User registration available to administrators only    Drupal-8:ErrorLevel  Hide errors from screen (log only)    Drupal-8:JsAggregation  Javascript aggregation    Drupal-8:CssAggregation  CSS aggregation is enabled    Drupal-8:PageCacheExpiry  Page cache expiry is set", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#parameters", 
+            "text": "Name  Type  Description  Default      collection  string  The collection the config belongs to.  null    key  string  The key the config belongs to.  null    value  mixed  The value to compare against the retrived value.  null    comp_type  string  The type of comparison to conduct. Defaults to equals. See Drutiny\\Audit\\AbstractComparison  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#tokens", 
+            "text": "Name  Type  Description  Default      collection  string  The collection the config belongs to.  null    key  string  The key the config belongs to.  null    value  mixed  The value to compare against the retrived value.  null    comp_type  string  The type of comparison to conduct. Defaults to equals. See Drutiny\\Audit\\AbstractComparison  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8auditcronhasrun", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\CronHasRun"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies_1", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-8:CronHasRun  Cron last run", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8auditcronlast", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\CronLast"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies_2", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-8:CronLast  Cron running regularly", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8auditduplicatemodules", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\DuplicateModules"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies_3", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-8:DuplicateModules  No duplicate modules found", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8auditmoduledisabled", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\ModuleDisabled"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies_4", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-8:NoBackupAndMigrate  Backup and Migrate is not installed    Drupal-8:WebprofilerDisabled  Webprofiler module is not installed    Drupal-8:DblogDisabled  Database logging is not installed    Drupal-8:ConfigDevelDisabled  Configuration development module is not installed    Drupal-8:StatisticsDisabled  Statistics module is not installed    Drupal-8:PhpDisabled  PHP module is not installed    Drupal-8:NoAutomatedCron  Automated Cron module is not installed    Drupal-8:DevelDisabled  Devel module is not installed    Drupal-8:UpdateDisabled  Update module is not installed    Drupal-8:ShieldDisabled  Shield module is not installed    Drupal-8:SimpleTestDisabled  Simpletest module is not installed    Drupal-8:KnitDisabled  Knit module is not installed    Acquia:CloudEdgeNoPurge  Acquia Cloud Edge Purging Enabled", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#parameters_1", 
+            "text": "Name  Type  Description  Default      module  string  The module to check is enabled.  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#tokens_1", 
+            "text": "Name  Type  Description  Default      module  string  The module to check is enabled.  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8auditnoexperimentalcore", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\NoExperimentalCore"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies_5", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-8:NoExperimental  No Experimental Modules in Use", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8auditpurgepluginexists", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\PurgePluginExists"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies_6", 
+            "text": "These are the policies that use this class:     Name  Title      Acquia:PurgePlugin  Acquia Purge Plugin Exists", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#parameters_2", 
+            "text": "Name  Type  Description  Default      plugin  string  The plugins to check exists  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#tokens_2", 
+            "text": "Name  Type  Description  Default      plugin  string  The plugins to check exists  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8auditpurgepluginnotexists", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\PurgePluginNotExists"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8auditsettingcompare", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\SettingCompare"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies_7", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-8:DefaultCacheMemcache  Memcache set as default cache backend    Drupal-8:MemcachedExtension  Memcache extension set", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8audituntrustedroles", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\UntrustedRoles"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies_8", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-8:UntrustedRoles  Untrusted Roles with administrative permissions", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8auditunusedmodules", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\UnusedModules"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies_9", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-8:UnusedModules  Unused modules in the codebase", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#drutinyplugindrupal8audituser1", 
+            "text": "", 
+            "title": "Drutiny\\Plugin\\Drupal8\\Audit\\User1"
+        }, 
+        {
+            "location": "/audits/DrutinyPluginDrupal8Audit/#policies_10", 
+            "text": "These are the policies that use this class:     Name  Title      Drupal-8:User1LockDown  Administrator login is locked down (uid:1)", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/", 
+            "text": "Drutiny\\Audit\\AbstractComparison\n\n\nDrutiny\\Audit\\AlwaysError\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Error\n\n\nAlways error test policy\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\AlwaysFail\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Fail\n\n\nAlways fail test policy\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\AlwaysNA\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:NA\n\n\nNot applicable test policy\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\AlwaysNotice\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Notice\n\n\nAlways notice test policy\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\AlwaysPass\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Pass\n\n\nAlways pass test policy\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\AlwaysWarn\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Warning\n\n\nAlways warn test policy", 
+            "title": "Drutiny\\Audit"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#drutinyauditabstractcomparison", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\AbstractComparison"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#drutinyauditalwayserror", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\AlwaysError"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      Test:Error  Always error test policy", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#drutinyauditalwaysfail", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\AlwaysFail"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#policies_1", 
+            "text": "These are the policies that use this class:     Name  Title      Test:Fail  Always fail test policy", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#drutinyauditalwaysna", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\AlwaysNA"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#policies_2", 
+            "text": "These are the policies that use this class:     Name  Title      Test:NA  Not applicable test policy", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#drutinyauditalwaysnotice", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\AlwaysNotice"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#policies_3", 
+            "text": "These are the policies that use this class:     Name  Title      Test:Notice  Always notice test policy", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#drutinyauditalwayspass", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\AlwaysPass"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#policies_4", 
+            "text": "These are the policies that use this class:     Name  Title      Test:Pass  Always pass test policy", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#drutinyauditalwayswarn", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\AlwaysWarn"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#policies_5", 
+            "text": "These are the policies that use this class:     Name  Title      Test:Warning  Always warn test policy", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyCloudflareAudit/", 
+            "text": "Drutiny\\Cloudflare\\Audit\\ApiEnabledAudit\n\n\nDrutiny\\Cloudflare\\Audit\\PageRuleMatch\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\ncloudflare:redirect_apex\n\n\nCloudflare redirect Apex to primary domain\n\n\n\n\n\n\ncloudflare:always_use_https\n\n\nCloudflare always use HTTPS\n\n\n\n\n\n\ncloudflare:drupal-urlGenerator-workaround\n\n\n#2819197 - Cloudflare workaround for Drupal 8 urlGenerator\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nzone\n\n\nstring\n\n\nThe apex domain registered with Cloudflare.\n\n\nnull\n\n\n\n\n\n\nrule\n\n\nstring\n\n\nThe page rule pattern to look up.\n\n\nnull\n\n\n\n\n\n\nsettings\n\n\narray\n\n\nA keyed list of actions the page rule should action.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nzone\n\n\nstring\n\n\nThe apex domain registered with Cloudflare.\n\n\nnull\n\n\n\n\n\n\nrule\n\n\nstring\n\n\nThe page rule pattern to look up.\n\n\nnull\n\n\n\n\n\n\nsettings\n\n\narray\n\n\nA keyed list of actions the page rule should action.\n\n\nnull\n\n\n\n\n\n\nactions\n\n\narray\n\n\nA keyed list of actions the page rule contains.\n\n\nnull\n\n\n\n\n\n\nextra_actions\n\n\narray\n\n\nA keyed list of actions the page rule contains that are not listed in the settings parameter.\n\n\nnull\n\n\n\n\n\n\ninvalid_actions\n\n\narray\n\n\nA keyed list of actions the page rule that don't match the values set in the settings parameter.\n\n\nnull", 
+            "title": "Drutiny\\Cloudflare\\Audit"
+        }, 
+        {
+            "location": "/audits/DrutinyCloudflareAudit/#drutinycloudflareauditapienabledaudit", 
+            "text": "", 
+            "title": "Drutiny\\Cloudflare\\Audit\\ApiEnabledAudit"
+        }, 
+        {
+            "location": "/audits/DrutinyCloudflareAudit/#drutinycloudflareauditpagerulematch", 
+            "text": "", 
+            "title": "Drutiny\\Cloudflare\\Audit\\PageRuleMatch"
+        }, 
+        {
+            "location": "/audits/DrutinyCloudflareAudit/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      cloudflare:redirect_apex  Cloudflare redirect Apex to primary domain    cloudflare:always_use_https  Cloudflare always use HTTPS    cloudflare:drupal-urlGenerator-workaround  #2819197 - Cloudflare workaround for Drupal 8 urlGenerator", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyCloudflareAudit/#parameters", 
+            "text": "Name  Type  Description  Default      zone  string  The apex domain registered with Cloudflare.  null    rule  string  The page rule pattern to look up.  null    settings  array  A keyed list of actions the page rule should action.  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyCloudflareAudit/#tokens", 
+            "text": "Name  Type  Description  Default      zone  string  The apex domain registered with Cloudflare.  null    rule  string  The page rule pattern to look up.  null    settings  array  A keyed list of actions the page rule should action.  null    actions  array  A keyed list of actions the page rule contains.  null    extra_actions  array  A keyed list of actions the page rule contains that are not listed in the settings parameter.  null    invalid_actions  array  A keyed list of actions the page rule that don't match the values set in the settings parameter.  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAcquiaAudit/", 
+            "text": "Drutiny\\Acquia\\Audit\\AcsfDefaultThemePath\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nAcquia:SiteFactoryDefaultThemePath\n\n\nACSF default theme path\n\n\n\n\n\n\n\n\nDrutiny\\Acquia\\Audit\\AcsfDeployWorkspaceCleaned\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nAcquia:CheckSiteFactoryWorkspace\n\n\nACSF Deployment Workspace\n\n\n\n\n\n\n\n\nDrutiny\\Acquia\\Audit\\CloudApiAwareCheck\n\n\nDrutiny\\Acquia\\Audit\\ProductionMode\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nAcquia:ProductionMode\n\n\nAcquia Production Mode\n\n\n\n\n\n\n\n\nDrutiny\\Acquia\\Audit\\SearchDB\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nAcquia:Drupal7:NoDbSearch\n\n\nNo Database Search Indexes for Drupal 7", 
+            "title": "Drutiny\\Acquia\\Audit"
+        }, 
+        {
+            "location": "/audits/DrutinyAcquiaAudit/#drutinyacquiaauditacsfdefaultthemepath", 
+            "text": "", 
+            "title": "Drutiny\\Acquia\\Audit\\AcsfDefaultThemePath"
+        }, 
+        {
+            "location": "/audits/DrutinyAcquiaAudit/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      Acquia:SiteFactoryDefaultThemePath  ACSF default theme path", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAcquiaAudit/#drutinyacquiaauditacsfdeployworkspacecleaned", 
+            "text": "", 
+            "title": "Drutiny\\Acquia\\Audit\\AcsfDeployWorkspaceCleaned"
+        }, 
+        {
+            "location": "/audits/DrutinyAcquiaAudit/#policies_1", 
+            "text": "These are the policies that use this class:     Name  Title      Acquia:CheckSiteFactoryWorkspace  ACSF Deployment Workspace", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAcquiaAudit/#drutinyacquiaauditcloudapiawarecheck", 
+            "text": "", 
+            "title": "Drutiny\\Acquia\\Audit\\CloudApiAwareCheck"
+        }, 
+        {
+            "location": "/audits/DrutinyAcquiaAudit/#drutinyacquiaauditproductionmode", 
+            "text": "", 
+            "title": "Drutiny\\Acquia\\Audit\\ProductionMode"
+        }, 
+        {
+            "location": "/audits/DrutinyAcquiaAudit/#policies_2", 
+            "text": "These are the policies that use this class:     Name  Title      Acquia:ProductionMode  Acquia Production Mode", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAcquiaAudit/#drutinyacquiaauditsearchdb", 
+            "text": "", 
+            "title": "Drutiny\\Acquia\\Audit\\SearchDB"
+        }, 
+        {
+            "location": "/audits/DrutinyAcquiaAudit/#policies_3", 
+            "text": "These are the policies that use this class:     Name  Title      Acquia:Drupal7:NoDbSearch  No Database Search Indexes for Drupal 7", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/", 
+            "text": "Drutiny\\Http\\Audit\\Http\n\n\nDrutiny\\Http\\Audit\\HttpHeaderExists\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nHTTP:Content-Security-Policy\n\n\nHTTP Content-Security-Policy\n\n\n\n\n\n\nHTTP:HSTS\n\n\nHTTP HSTS\n\n\n\n\n\n\nHTTP:ReferrerPolicy\n\n\nHTTP Referrer Policy\n\n\n\n\n\n\nHTTP:X-Frame-Options\n\n\nHTTP X-Frame-Options\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nheader\n\n\nstring\n\n\nThe HTTP header to check the value of.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nheader\n\n\nstring\n\n\nThe HTTP header to check the value of.\n\n\nnull\n\n\n\n\n\n\nheader_value\n\n\nstring\n\n\nThe value to check against.\n\n\nnull\n\n\n\n\n\n\n\n\nDrutiny\\Http\\Audit\\HttpHeaderMatch\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nAcquia:CloudEdgeCaching\n\n\nCloud Edge Caching\n\n\n\n\n\n\nHTTP:X-Content-Type-Options\n\n\nHTTP X-Content-Type-Options\n\n\n\n\n\n\nHTTP:X-XSS-Protection\n\n\nHTTP X-XSS-Protection\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nheader\n\n\nstring\n\n\nThe HTTP header to check the value of.\n\n\nnull\n\n\n\n\n\n\nheader_value\n\n\nstring\n\n\nThe value to check against.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nheader\n\n\nstring\n\n\nThe HTTP header to check the value of.\n\n\nnull\n\n\n\n\n\n\nheader_value\n\n\nstring\n\n\nThe value to check against.\n\n\nnull\n\n\n\n\n\n\n\n\nDrutiny\\Http\\Audit\\HttpHeaderNotExists\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nHTTP:Authorization\n\n\nHTTP Authorization Disabled\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nheader\n\n\nstring\n\n\nThe HTTP header to check the value of.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nheader\n\n\nstring\n\n\nThe HTTP header to check the value of.\n\n\nnull\n\n\n\n\n\n\nheader_value\n\n\nstring\n\n\nThe value to check against.\n\n\nnull\n\n\n\n\n\n\n\n\nDrutiny\\Http\\Audit\\HttpHeaderRegex\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nHTTP:Cache-Control\n\n\nHTTP Cache-Control\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nheader\n\n\nstring\n\n\nThe HTTP header to check the value of.\n\n\nnull\n\n\n\n\n\n\nregex\n\n\nstring\n\n\nA regular expressions to validate the header value against.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nheader\n\n\nstring\n\n\nThe HTTP header to check the value of.\n\n\nnull\n\n\n\n\n\n\nregex\n\n\nstring\n\n\nA regular expressions to validate the header value against.\n\n\nnull\n\n\n\n\n\n\n\n\nDrutiny\\Http\\Audit\\HttpStatusCode\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nHTTP:ValidSSL\n\n\nHTTPS Valid SSL Certificate\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nstatus_code\n\n\nstring\n\n\nThe expected status code from the HTTP response\n\n\n200\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nstatus_code\n\n\nstring\n\n\nThe expected status code from the HTTP response\n\n\n200\n\n\n\n\n\n\n\n\nDrutiny\\Http\\Audit\\HttpsRedirect\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nHTTP:ForceHTTPS\n\n\nForce HTTPS", 
+            "title": "Drutiny\\Http\\Audit"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#drutinyhttpaudithttp", 
+            "text": "", 
+            "title": "Drutiny\\Http\\Audit\\Http"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#drutinyhttpaudithttpheaderexists", 
+            "text": "", 
+            "title": "Drutiny\\Http\\Audit\\HttpHeaderExists"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      HTTP:Content-Security-Policy  HTTP Content-Security-Policy    HTTP:HSTS  HTTP HSTS    HTTP:ReferrerPolicy  HTTP Referrer Policy    HTTP:X-Frame-Options  HTTP X-Frame-Options", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#parameters", 
+            "text": "Name  Type  Description  Default      header  string  The HTTP header to check the value of.  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#tokens", 
+            "text": "Name  Type  Description  Default      header  string  The HTTP header to check the value of.  null    header_value  string  The value to check against.  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#drutinyhttpaudithttpheadermatch", 
+            "text": "", 
+            "title": "Drutiny\\Http\\Audit\\HttpHeaderMatch"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#policies_1", 
+            "text": "These are the policies that use this class:     Name  Title      Acquia:CloudEdgeCaching  Cloud Edge Caching    HTTP:X-Content-Type-Options  HTTP X-Content-Type-Options    HTTP:X-XSS-Protection  HTTP X-XSS-Protection", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#parameters_1", 
+            "text": "Name  Type  Description  Default      header  string  The HTTP header to check the value of.  null    header_value  string  The value to check against.  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#tokens_1", 
+            "text": "Name  Type  Description  Default      header  string  The HTTP header to check the value of.  null    header_value  string  The value to check against.  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#drutinyhttpaudithttpheadernotexists", 
+            "text": "", 
+            "title": "Drutiny\\Http\\Audit\\HttpHeaderNotExists"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#policies_2", 
+            "text": "These are the policies that use this class:     Name  Title      HTTP:Authorization  HTTP Authorization Disabled", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#parameters_2", 
+            "text": "Name  Type  Description  Default      header  string  The HTTP header to check the value of.  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#tokens_2", 
+            "text": "Name  Type  Description  Default      header  string  The HTTP header to check the value of.  null    header_value  string  The value to check against.  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#drutinyhttpaudithttpheaderregex", 
+            "text": "", 
+            "title": "Drutiny\\Http\\Audit\\HttpHeaderRegex"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#policies_3", 
+            "text": "These are the policies that use this class:     Name  Title      HTTP:Cache-Control  HTTP Cache-Control", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#parameters_3", 
+            "text": "Name  Type  Description  Default      header  string  The HTTP header to check the value of.  null    regex  string  A regular expressions to validate the header value against.  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#tokens_3", 
+            "text": "Name  Type  Description  Default      header  string  The HTTP header to check the value of.  null    regex  string  A regular expressions to validate the header value against.  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#drutinyhttpaudithttpstatuscode", 
+            "text": "", 
+            "title": "Drutiny\\Http\\Audit\\HttpStatusCode"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#policies_4", 
+            "text": "These are the policies that use this class:     Name  Title      HTTP:ValidSSL  HTTPS Valid SSL Certificate", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#parameters_4", 
+            "text": "Name  Type  Description  Default      status_code  string  The expected status code from the HTTP response  200", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#tokens_4", 
+            "text": "Name  Type  Description  Default      status_code  string  The expected status code from the HTTP response  200", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#drutinyhttpaudithttpsredirect", 
+            "text": "", 
+            "title": "Drutiny\\Http\\Audit\\HttpsRedirect"
+        }, 
+        {
+            "location": "/audits/DrutinyHttpAudit/#policies_5", 
+            "text": "These are the policies that use this class:     Name  Title      HTTP:ForceHTTPS  Force HTTPS", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditApache/", 
+            "text": "Drutiny\\Audit\\Apache\\HtaccessRedirects\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nApache:LimitHtacessRedirects\n\n\n.htaccess redirects\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmax_redirects\n\n\ninteger\n\n\nThe maximum number of redirects to allow.\n\n\n10\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmax_redirects\n\n\ninteger\n\n\nThe maximum number of redirects to allow.\n\n\n10\n\n\n\n\n\n\ntotal_redirects\n\n\ninteger\n\n\nThe number of redirects counted.\n\n\n10", 
+            "title": "Drutiny\\Audit\\Apache"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditApache/#drutinyauditapachehtaccessredirects", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Apache\\HtaccessRedirects"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditApache/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      Apache:LimitHtacessRedirects  .htaccess redirects", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditApache/#parameters", 
+            "text": "Name  Type  Description  Default      max_redirects  integer  The maximum number of redirects to allow.  10", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditApache/#tokens", 
+            "text": "Name  Type  Description  Default      max_redirects  integer  The maximum number of redirects to allow.  10    total_redirects  integer  The number of redirects counted.  10", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/", 
+            "text": "Drutiny\\Audit\\Filesystem\\CodeScan\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\ndirectory\n\n\nstring\n\n\nAbsolute filepath to directory to scan\n\n\n'%root'\n\n\n\n\n\n\nexclude\n\n\narray\n\n\nAbsolute filepaths to directories omit from scanning\n\n\n{  }\n\n\n\n\n\n\nfiletypes\n\n\narray\n\n\nfile extensions to include in the scan\n\n\n{  }\n\n\n\n\n\n\npatterns\n\n\narray\n\n\npatterns to run over each matching file.\n\n\n{  }\n\n\n\n\n\n\nwhitelist\n\n\narray\n\n\nWhitelist patterns which the 'patterns' parameter may yield false positives from\n\n\n{  }\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\ndirectory\n\n\nstring\n\n\nAbsolute filepath to directory to scan\n\n\n'%root'\n\n\n\n\n\n\nexclude\n\n\narray\n\n\nAbsolute filepaths to directories omit from scanning\n\n\n{  }\n\n\n\n\n\n\nfiletypes\n\n\narray\n\n\nfile extensions to include in the scan\n\n\n{  }\n\n\n\n\n\n\npatterns\n\n\narray\n\n\npatterns to run over each matching file.\n\n\n{  }\n\n\n\n\n\n\nwhitelist\n\n\narray\n\n\nWhitelist patterns which the 'patterns' parameter may yield false positives from\n\n\n{  }\n\n\n\n\n\n\nresults\n\n\narray\n\n\nAn array of results matching the scan criteria. Each match is an assoc array with the following keys: filepath, line, code, basename.\n\n\n{  }\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\Filesystem\\FsSize\n\n\nDrutiny\\Audit\\Filesystem\\LargeFiles\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nfs:largeFiles\n\n\nLarge public files\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmax_size\n\n\ninteger\n\n\nReport files larger than this value measured in megabytes.\n\n\n20\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmax_size\n\n\ninteger\n\n\nReport files larger than this value measured in megabytes.\n\n\n20\n\n\n\n\n\n\nissues\n\n\narray\n\n\nA list of files that reach the max file size.\n\n\nnull\n\n\n\n\n\n\nplural\n\n\nstring\n\n\nThis variable will contain an 's' if there is more than one issue found.\n\n\n''\n\n\n\n\n\n\n\n\nDrutiny\\Audit\\Filesystem\\SensitivePublicFiles\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nfs:SensitivePublicFiles\n\n\nSensitive public files\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nextensions\n\n\nstring\n\n\nThe sensitive file extensions to look for.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nextensions\n\n\nstring\n\n\nThe sensitive file extensions to look for.\n\n\nnull\n\n\n\n\n\n\nissues\n\n\narray\n\n\nA list of files that reach the max file size.\n\n\nnull\n\n\n\n\n\n\nplural\n\n\nstring\n\n\nThis variable will contain an 's' if there is more than one issue found.\n\n\n''", 
+            "title": "Drutiny\\Audit\\Filesystem"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#drutinyauditfilesystemcodescan", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Filesystem\\CodeScan"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#parameters", 
+            "text": "Name  Type  Description  Default      directory  string  Absolute filepath to directory to scan  '%root'    exclude  array  Absolute filepaths to directories omit from scanning  {  }    filetypes  array  file extensions to include in the scan  {  }    patterns  array  patterns to run over each matching file.  {  }    whitelist  array  Whitelist patterns which the 'patterns' parameter may yield false positives from  {  }", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#tokens", 
+            "text": "Name  Type  Description  Default      directory  string  Absolute filepath to directory to scan  '%root'    exclude  array  Absolute filepaths to directories omit from scanning  {  }    filetypes  array  file extensions to include in the scan  {  }    patterns  array  patterns to run over each matching file.  {  }    whitelist  array  Whitelist patterns which the 'patterns' parameter may yield false positives from  {  }    results  array  An array of results matching the scan criteria. Each match is an assoc array with the following keys: filepath, line, code, basename.  {  }", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#drutinyauditfilesystemfssize", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Filesystem\\FsSize"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#drutinyauditfilesystemlargefiles", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Filesystem\\LargeFiles"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      fs:largeFiles  Large public files", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#parameters_1", 
+            "text": "Name  Type  Description  Default      max_size  integer  Report files larger than this value measured in megabytes.  20", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#tokens_1", 
+            "text": "Name  Type  Description  Default      max_size  integer  Report files larger than this value measured in megabytes.  20    issues  array  A list of files that reach the max file size.  null    plural  string  This variable will contain an 's' if there is more than one issue found.  ''", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#drutinyauditfilesystemsensitivepublicfiles", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Filesystem\\SensitivePublicFiles"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#policies_1", 
+            "text": "These are the policies that use this class:     Name  Title      fs:SensitivePublicFiles  Sensitive public files", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#parameters_2", 
+            "text": "Name  Type  Description  Default      extensions  string  The sensitive file extensions to look for.  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditFilesystem/#tokens_2", 
+            "text": "Name  Type  Description  Default      extensions  string  The sensitive file extensions to look for.  null    issues  array  A list of files that reach the max file size.  null    plural  string  This variable will contain an 's' if there is more than one issue found.  ''", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDatabase/", 
+            "text": "Drutiny\\Audit\\Database\\DatabaseSize\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nDatabase:Size\n\n\nDatabase size\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmax_size\n\n\ninteger\n\n\nFail the audit if the database size is greater than this value\n\n\nnull\n\n\n\n\n\n\nwarning_size\n\n\ninteger\n\n\nIssue a warning if the database size is greater than this value\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nmax_size\n\n\ninteger\n\n\nFail the audit if the database size is greater than this value\n\n\nnull\n\n\n\n\n\n\nwarning_size\n\n\ninteger\n\n\nIssue a warning if the database size is greater than this value\n\n\nnull\n\n\n\n\n\n\ndb\n\n\nstring\n\n\nThe name of the database\n\n\nnull\n\n\n\n\n\n\nsize\n\n\ninteger\n\n\nThe size of the database\n\n\nnull", 
+            "title": "Drutiny\\Audit\\Database"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDatabase/#drutinyauditdatabasedatabasesize", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\Database\\DatabaseSize"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDatabase/#policies", 
+            "text": "These are the policies that use this class:     Name  Title      Database:Size  Database size", 
+            "title": "Policies"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDatabase/#parameters", 
+            "text": "Name  Type  Description  Default      max_size  integer  Fail the audit if the database size is greater than this value  null    warning_size  integer  Issue a warning if the database size is greater than this value  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDatabase/#tokens", 
+            "text": "Name  Type  Description  Default      max_size  integer  Fail the audit if the database size is greater than this value  null    warning_size  integer  Issue a warning if the database size is greater than this value  null    db  string  The name of the database  null    size  integer  The size of the database  null", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinySumoLogicAudit/", 
+            "text": "Drutiny\\SumoLogic\\Audit\\ApiEnabledAudit\n\n\nDrutiny\\SumoLogic\\Audit\\NoLogsFound\n\n\nDrutiny\\SumoLogic\\Audit\\Query", 
+            "title": "Drutiny\\SumoLogic\\Audit"
+        }, 
+        {
+            "location": "/audits/DrutinySumoLogicAudit/#drutinysumologicauditapienabledaudit", 
+            "text": "", 
+            "title": "Drutiny\\SumoLogic\\Audit\\ApiEnabledAudit"
+        }, 
+        {
+            "location": "/audits/DrutinySumoLogicAudit/#drutinysumologicauditnologsfound", 
+            "text": "", 
+            "title": "Drutiny\\SumoLogic\\Audit\\NoLogsFound"
+        }, 
+        {
+            "location": "/audits/DrutinySumoLogicAudit/#drutinysumologicauditquery", 
+            "text": "", 
+            "title": "Drutiny\\SumoLogic\\Audit\\Query"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDNS/", 
+            "text": "Drutiny\\Audit\\DNS\\SPF\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\ntype\n\n\nstring\n\n\nThe type of DNS record to lookup\n\n\nA\n\n\n\n\n\n\nzone\n\n\narray\n\n\nA list of fields returned from the query to be available globally (outside of a row).\n\n\nnull\n\n\n\n\n\n\nmatching_value\n\n\nstring\n\n\nA value that should be present the queried DNS record.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\ntype\n\n\nstring\n\n\nThe type of DNS record to lookup\n\n\nA\n\n\n\n\n\n\nzone\n\n\narray\n\n\nA list of fields returned from the query to be available globally (outside of a row).\n\n\nnull\n\n\n\n\n\n\nmatching_value\n\n\nstring\n\n\nA value that should be present the queried DNS record.\n\n\nnull", 
+            "title": "Drutiny\\Audit\\DNS"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDNS/#drutinyauditdnsspf", 
+            "text": "", 
+            "title": "Drutiny\\Audit\\DNS\\SPF"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDNS/#parameters", 
+            "text": "Name  Type  Description  Default      type  string  The type of DNS record to lookup  A    zone  array  A list of fields returned from the query to be available globally (outside of a row).  null    matching_value  string  A value that should be present the queried DNS record.  null", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditDNS/#tokens", 
+            "text": "Name  Type  Description  Default      type  string  The type of DNS record to lookup  A    zone  array  A list of fields returned from the query to be available globally (outside of a row).  null    matching_value  string  A value that should be present the queried DNS record.  null", 
+            "title": "Tokens"
         }
     ]
 }
