@@ -933,15 +933,37 @@
 <thead>
 <tr>
 <th>Plugin Name</th>
-<th>Documentation</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Acquia</td>
-<td>xxx</td>
-<td>xxx</td>
+<td><a href="https://packagist.org/packages/drutiny/plugin-drupal-7">drutiny/plugin-drupal-7</a></td>
+<td>Drupal 7 plugin for Drutiny</td>
+</tr>
+<tr>
+<td><a href="https://packagist.org/packages/drutiny/plugin-drupal-8">drutiny/plugin-drupal-8</a></td>
+<td>Drupal 8 plugin for Drutiny</td>
+</tr>
+<tr>
+<td><a href="https://packagist.org/packages/drutiny/plugin-distro-common">drutiny/plugin-distro-common</a></td>
+<td>Common Drutiny policies for Drupal distributions</td>
+</tr>
+<tr>
+<td><a href="https://packagist.org/packages/drutiny/cloudflare">drutiny/cloudflare</a></td>
+<td>Integration with Cloudflare</td>
+</tr>
+<tr>
+<td><a href="https://packagist.org/packages/drutiny/acquia">drutiny/acquia</a></td>
+<td>Acquia support for the Drutiny audit checker</td>
+</tr>
+<tr>
+<td><a href="https://packagist.org/packages/drutiny/http">drutiny/http</a></td>
+<td>Drutiny auditing and policies on HTTP requests</td>
+</tr>
+<tr>
+<td><a href="https://packagist.org/packages/drutiny/sumologic">drutiny/sumologic</a></td>
+<td>Integration with SumoLogic</td>
 </tr>
 </tbody>
 </table>
@@ -953,7 +975,7 @@
 <h3 id="install-plugins-from-a-vcs-repository">Install plugins from a VCS repository</h3>
 <p>If you want extend Drutiny with some private features, you may want host this without composer and include a VCS repository directly.
 <a href="https://getcomposer.org/doc/05-repositories.md#loading-a-package-from-a-vcs-repository">Read composer docs</a></p>
-<p>To do so, update the Drutiny composer.json and add your repository. </p>
+<p>To do so, update the Drutiny composer.json and add your repository.</p>
 <pre><code>{
     &quot;require-dev&quot;: {
         &quot;drutiny/plugin-name&quot;: &quot;dev-Drutiny-Plugin&quot;
@@ -1000,13 +1022,12 @@ should be placed in the root of an extension/plugin library</p>
   - Drutiny\Acquia\Command\SiteFactoryProfileRunCommand
 </code></pre>
 
-<p>Example for a new target:</p>
-<pre><code></code></pre>
-
 <p>Example for adding a template directory:</p>
 <pre><code>Template:
   - my-templates
 </code></pre>
+
+<p>See <a href="../profiles">documentation on profiles</a> for more information about templates.</p>
                 
                   
                 
