@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,19 +13,19 @@
         
     <url>
      <loc>/reports/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/plugins/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/CONTRIBUTING/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -35,25 +35,25 @@
         
     <url>
      <loc>/audits/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/sandbox/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/policy/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/profiles/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -63,49 +63,49 @@
         
     <url>
      <loc>/policy-library/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/policies/drutiny-plugin-drupal-7/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/policies/drutiny-plugin-drupal-8/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/policies/drutiny-plugin-distro-common/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/policies/drutiny-cloudflare/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/policies/drutiny-acquia/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/policies/drutiny-http/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/policies/drutiny-drutiny/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -115,79 +115,79 @@
         
     <url>
      <loc>/audits/DrutinyAcquiaAudit/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyAudit/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyAuditApache/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyAuditDNS/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyAuditDatabase/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyAuditDrupal/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyAuditFilesystem/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyCloudflareAudit/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyHttpAudit/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyPluginDrupal7Audit/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyPluginDrupal7AuditSecurity/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinyPluginDrupal8Audit/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/audits/DrutinySumoLogicAudit/</loc>
-     <lastmod>2018-04-07</lastmod>
+     <lastmod>2018-04-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
