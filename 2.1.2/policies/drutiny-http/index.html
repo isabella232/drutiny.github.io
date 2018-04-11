@@ -1,0 +1,1484 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This is a generic Drupal site auditing and optional remediation tool.">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
+    
+    
+      
+        <title>drutiny/http - Drutiny</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/tweaks.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#http-authorization-disabled" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Drutiny" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Drutiny
+              </span>
+              <span class="md-header-nav__topic">
+                drutiny/http
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Drutiny
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Usage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Usage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reports/" title="Reports" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../plugins/" title="Plugins" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      API Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/" title="Audit" class="md-nav__link">
+      Audit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sandbox/" title="Sandbox" class="md-nav__link">
+      Sandbox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../profiles/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../creds/" title="Credential Manager" class="md-nav__link">
+      Credential Manager
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Policy Library
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Policy Library
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy-library/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drutiny-plugin-drupal-7/" title="drutiny/plugin-drupal-7" class="md-nav__link">
+      drutiny/plugin-drupal-7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drutiny-plugin-drupal-8/" title="drutiny/plugin-drupal-8" class="md-nav__link">
+      drutiny/plugin-drupal-8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drutiny-plugin-distro-common/" title="drutiny/plugin-distro-common" class="md-nav__link">
+      drutiny/plugin-distro-common
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drutiny-cloudflare/" title="drutiny/cloudflare" class="md-nav__link">
+      drutiny/cloudflare
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drutiny-acquia/" title="drutiny/acquia" class="md-nav__link">
+      drutiny/acquia
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        drutiny/http
+      </label>
+    
+    <a href="./" title="drutiny/http" class="md-nav__link md-nav__link--active">
+      drutiny/http
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#http-authorization-disabled" title="HTTP Authorization Disabled" class="md-nav__link">
+    HTTP Authorization Disabled
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-cache-control" title="HTTP Cache-Control" class="md-nav__link">
+    HTTP Cache-Control
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-content-security-policy" title="HTTP Content-Security-Policy" class="md-nav__link">
+    HTTP Content-Security-Policy
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-https" title="Force HTTPS" class="md-nav__link">
+    Force HTTPS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-hsts" title="HTTP HSTS" class="md-nav__link">
+    HTTP HSTS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-referrer-policy" title="HTTP Referrer Policy" class="md-nav__link">
+    HTTP Referrer Policy
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https-valid-ssl-certificate" title="HTTPS Valid SSL Certificate" class="md-nav__link">
+    HTTPS Valid SSL Certificate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-x-content-type-options" title="HTTP X-Content-Type-Options" class="md-nav__link">
+    HTTP X-Content-Type-Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-x-frame-options" title="HTTP X-Frame-Options" class="md-nav__link">
+    HTTP X-Frame-Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-x-xss-protection" title="HTTP X-XSS-Protection" class="md-nav__link">
+    HTTP X-XSS-Protection
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drutiny-drutiny/" title="drutiny/drutiny" class="md-nav__link">
+      drutiny/drutiny
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Audit Library
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Audit Library
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyAcquiaAudit/" title="Acquia " class="md-nav__link">
+      Acquia 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyAudit/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyAuditApache/" title="Apache" class="md-nav__link">
+      Apache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyAuditDNS/" title="DNS" class="md-nav__link">
+      DNS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyAuditDatabase/" title="Database" class="md-nav__link">
+      Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyAuditDrupal/" title="Drupal" class="md-nav__link">
+      Drupal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyAuditFilesystem/" title="Filesystem" class="md-nav__link">
+      Filesystem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyCloudflareAudit/" title="Cloudflare " class="md-nav__link">
+      Cloudflare 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyHttpAudit/" title="Http " class="md-nav__link">
+      Http 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyPluginDrupal7Audit/" title="Plugin Drupal7 " class="md-nav__link">
+      Plugin Drupal7 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyPluginDrupal7AuditSecurity/" title="Plugin Drupal7 Security" class="md-nav__link">
+      Plugin Drupal7 Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinyPluginDrupal8Audit/" title="Plugin Drupal8 " class="md-nav__link">
+      Plugin Drupal8 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../audits/DrutinySumoLogicAudit/" title="SumoLogic " class="md-nav__link">
+      SumoLogic 
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#http-authorization-disabled" title="HTTP Authorization Disabled" class="md-nav__link">
+    HTTP Authorization Disabled
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-cache-control" title="HTTP Cache-Control" class="md-nav__link">
+    HTTP Cache-Control
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-content-security-policy" title="HTTP Content-Security-Policy" class="md-nav__link">
+    HTTP Content-Security-Policy
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-https" title="Force HTTPS" class="md-nav__link">
+    Force HTTPS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-hsts" title="HTTP HSTS" class="md-nav__link">
+    HTTP HSTS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-referrer-policy" title="HTTP Referrer Policy" class="md-nav__link">
+    HTTP Referrer Policy
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https-valid-ssl-certificate" title="HTTPS Valid SSL Certificate" class="md-nav__link">
+    HTTPS Valid SSL Certificate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-x-content-type-options" title="HTTP X-Content-Type-Options" class="md-nav__link">
+    HTTP X-Content-Type-Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-x-frame-options" title="HTTP X-Frame-Options" class="md-nav__link">
+    HTTP X-Frame-Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-x-xss-protection" title="HTTP X-XSS-Protection" class="md-nav__link">
+    HTTP X-XSS-Protection
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/drutiny/drutiny/edit/master/docs/policies/drutiny-http.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>drutiny/http</h1>
+                
+                <h2 id="http-authorization-disabled">HTTP Authorization Disabled</h2>
+<p><strong>Name</strong>: <code>HTTP:Authorization</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\HttpHeaderNotExists</code></p>
+<p>The HTTP Authorization request header contains the credentials to authenticate
+a user agent with a server, usually after the server has responded with a
+401 Unauthorized status and the WWW-Authenticate header.</p>
+<p>Authorization headers can bypass page caching strategies which can detrack
+from performance.</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>string</td>
+<td>The HTTP header to check the value of.</td>
+<td>Authorization</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-cache-control">HTTP Cache-Control</h2>
+<p><strong>Name</strong>: <code>HTTP:Cache-Control</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\HttpHeaderRegex</code></p>
+<p>Cache-Control header informs reverse proxies and browsers how to cache your
+web page for performance reasons. A cacheable page should also contain the
+max-age directive. E.g. <code>max-age=600; public</code>.</p>
+<h3 id="parameters_1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>string</td>
+<td>The HTTP header to check the value of.</td>
+<td>Cache-Control</td>
+</tr>
+<tr>
+<td>regex</td>
+<td>string</td>
+<td>A regular expressions to validate the header value against.</td>
+<td>max-age=</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-content-security-policy">HTTP Content-Security-Policy</h2>
+<p><strong>Name</strong>: <code>HTTP:Content-Security-Policy</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\HttpHeaderExists</code></p>
+<p><a href="https://scotthelme.co.uk/content-security-policy-an-introduction/">Content Security Policy</a>
+is an effective measure to protect your site from XSS attacks. By whitelisting
+sources of approved content, you can prevent the browser from loading malicious assets.</p>
+<h3 id="parameters_2">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>string</td>
+<td>The HTTP header to check the value of.</td>
+<td>Content-Security-Policy</td>
+</tr>
+</tbody>
+</table>
+<h2 id="force-https">Force HTTPS</h2>
+<p><strong>Name</strong>: <code>HTTP:ForceHTTPS</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\HttpsRedirect</code></p>
+<p>Ensure attempts to http redirect the user to an HTTPS URL. This ensures no
+content is ever served over an insecure connection which is considered a best
+practice.</p>
+<h2 id="http-hsts">HTTP HSTS</h2>
+<p><strong>Name</strong>: <code>HTTP:HSTS</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\HttpHeaderExists</code></p>
+<p><a href="https://scotthelme.co.uk/hsts-the-missing-link-in-tls/">HTTP Strict Transport Security</a>
+is an excellent feature to support on your site and strengthens your
+implementation of TLS by getting the User Agent to enforce the use of HTTPS.</p>
+<h3 id="parameters_3">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>string</td>
+<td>The HTTP header to check the value of.</td>
+<td>Strict-Transport-Security</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-referrer-policy">HTTP Referrer Policy</h2>
+<p><strong>Name</strong>: <code>HTTP:ReferrerPolicy</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\HttpHeaderExists</code></p>
+<p><a href="https://scotthelme.co.uk/a-new-security-header-referrer-policy/">Referrer Policy</a> is
+a header that allows a site to control how much information the browser
+includes with navigations away from a document and should be set by all sites.</p>
+<h3 id="parameters_4">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>string</td>
+<td>The HTTP header to check the value of.</td>
+<td>Referrer-Policy</td>
+</tr>
+</tbody>
+</table>
+<h2 id="https-valid-ssl-certificate">HTTPS Valid SSL Certificate</h2>
+<p><strong>Name</strong>: <code>HTTP:ValidSSL</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\HttpStatusCode</code></p>
+<p>Ensure https requests over a valid SSL connection. This validates the SSL
+certficiate and chain authority to ensure browsers will also be able to
+trust this connection.</p>
+<h3 id="parameters_5">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>force_ssl</td>
+<td></td>
+<td></td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-x-content-type-options">HTTP X-Content-Type-Options</h2>
+<p><strong>Name</strong>: <code>HTTP:X-Content-Type-Options</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\HttpHeaderMatch</code></p>
+<p><a href="https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options">X-Content-Type-Options</a>
+stops a browser from trying to MIME-sniff the content type and forces it to
+stick with the declared content-type. The only valid value for this header is
+<code>X-Content-Type-Options: nosniff</code>.</p>
+<h3 id="parameters_6">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>string</td>
+<td>The HTTP header to check the value of.</td>
+<td>X-Content-Type-Options</td>
+</tr>
+<tr>
+<td>header_value</td>
+<td>string</td>
+<td>The value to check against.</td>
+<td>nosniff</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-x-frame-options">HTTP X-Frame-Options</h2>
+<p><strong>Name</strong>: <code>HTTP:X-Frame-Options</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\HttpHeaderExists</code></p>
+<p><a href="https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options">X-Frame-Options</a>
+tells the browser whether you want to allow your site to be framed or not. By
+preventing a browser from framing your site you can defend against attacks
+like clickjacking.</p>
+<h3 id="parameters_7">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>string</td>
+<td>The HTTP header to check the value of.</td>
+<td>X-Frame-Options</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-x-xss-protection">HTTP X-XSS-Protection</h2>
+<p><strong>Name</strong>: <code>HTTP:X-XSS-Protection</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\HttpHeaderMatch</code></p>
+<p><a href="https://scotthelme.co.uk/hardening-your-http-response-headers/#x-xss-protection">X-XSS-Protection</a>
+sets the configuration for the cross-site scripting filters built into most
+browsers. The best configuration is <code>X-XSS-Protection: 1; mode=block</code>.</p>
+<h3 id="parameters_8">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>string</td>
+<td>The HTTP header to check the value of.</td>
+<td>X-XSS-Protection</td>
+</tr>
+<tr>
+<td>header_value</td>
+<td>string</td>
+<td>The value to check against.</td>
+<td>'1; mode=block'</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../drutiny-acquia/" title="drutiny/acquia" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                drutiny/acquia
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../drutiny-drutiny/" title="drutiny/drutiny" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                drutiny/drutiny
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-116046012-1","drutiny.github.io"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
