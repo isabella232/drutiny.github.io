@@ -361,6 +361,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#creating-a-report" title="Creating a Report" class="md-nav__link">
+    Creating a Report
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -886,6 +893,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#creating-a-report" title="Creating a Report" class="md-nav__link">
+    Creating a Report
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -976,8 +990,19 @@ to a file called <code>demo.profile.yml</code>.</p>
 <p>To run a profile you use <code>profile:run</code> and pass in the name of the profile which is
 the first part of the profile filename. E.g. <code>demo</code> will load in the profile from
 <code>demo.profile.yml</code>.</p>
-<p>```
-./bin/drutiny profile:run demo @site.env</p>
+<pre><code>./bin/drutiny profile:run demo @site.env
+</code></pre>
+
+<h3 id="creating-a-report">Creating a Report</h3>
+<p>Drutiny can export profile runs to HTML, Markdown, Json or by default, it just
+publishes the findings out to the console (see the above command). You can use
+the <code>--format</code> option (or <code>-f</code>) to specify the which format to export to and
+the <code>--report-filename</code> option (or <code>-o</code>) to specify the file to write too.</p>
+<pre><code>./bin/drutiny profile:run demo @site.env -f html -o demo-report.html
+</code></pre>
+
+<p>Open the HTML report in your browser to view the report. From there you could
+also print it to PDF.</p>
                 
                   
                 
