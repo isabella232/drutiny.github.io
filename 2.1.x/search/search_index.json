@@ -2206,6 +2206,51 @@
             "title": "Source"
         }, 
         {
+            "location": "/audits/DrutinyAuditTemplate/", 
+            "text": "SampleAudit\n\n\nA template audit class to implement a real audit from.\n\n\nClass: \nDrutiny\\Audit\\Template\\SampleAudit\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nfoo\n\n\nstring\n\n\narray\n\n\ninteger\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nfoo\n\n\nstring\n\n\narray\n\n\ninteger\n\n\n\n\n\n\ndata\n\n\narray\n\n\nAn array that maybe used by a policy in the outcome messaging.\n\n\n{  }\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    // Example usage of Parameters and Tokens.\n    // See annotations in class doc block.\n    $foo = $sandbox-\ngetParameter('foo');\n    $sandbox-\nsetParameter('data', [$foo]);\n    // TODO: Write audit.\n    throw new \\Exception(\nAudit needs to be created.\n);\n  }\n\n\n\n\n\nSampleRemediableAudit\n\n\nA template audit class to implement a real audit from.\n\n\nClass: \nDrutiny\\Audit\\Template\\SampleRemediableAudit\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nThis class can \nremediate\n failed audits.\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nfoo\n\n\nstring\n\n\narray\n\n\ninteger\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nfoo\n\n\nstring\n\n\narray\n\n\ninteger\n\n\n\n\n\n\ndata\n\n\narray\n\n\nAn array that maybe used by a policy in the outcome messaging.\n\n\n{  }\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    // Example usage of Parameters and Tokens.\n    // See annotations in class doc block.\n    $foo = $sandbox-\ngetParameter('foo');\n    $sandbox-\nsetParameter('data', [$foo]);\n    // TODO: Write audit.\n    throw new \\Exception(\nAudit needs to be created.\n);\n  }", 
+            "title": "Template"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditTemplate/#sampleaudit", 
+            "text": "A template audit class to implement a real audit from.  Class:  Drutiny\\Audit\\Template\\SampleAudit \nExtends:  Drutiny\\Audit \nPackage:  drutiny/drutiny", 
+            "title": "SampleAudit"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditTemplate/#parameters", 
+            "text": "Name  Type  Description  Default      foo  string  array  integer", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditTemplate/#tokens", 
+            "text": "Name  Type  Description  Default      foo  string  array  integer    data  array  An array that maybe used by a policy in the outcome messaging.  {  }", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditTemplate/#source", 
+            "text": "public function audit(Sandbox $sandbox)\n  {\n    // Example usage of Parameters and Tokens.\n    // See annotations in class doc block.\n    $foo = $sandbox- getParameter('foo');\n    $sandbox- setParameter('data', [$foo]);\n    // TODO: Write audit.\n    throw new \\Exception( Audit needs to be created. );\n  }", 
+            "title": "Source"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditTemplate/#sampleremediableaudit", 
+            "text": "A template audit class to implement a real audit from.  Class:  Drutiny\\Audit\\Template\\SampleRemediableAudit \nExtends:  Drutiny\\Audit \nPackage:  drutiny/drutiny  This class can  remediate  failed audits.", 
+            "title": "SampleRemediableAudit"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditTemplate/#parameters_1", 
+            "text": "Name  Type  Description  Default      foo  string  array  integer", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditTemplate/#tokens_1", 
+            "text": "Name  Type  Description  Default      foo  string  array  integer    data  array  An array that maybe used by a policy in the outcome messaging.  {  }", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAuditTemplate/#source_1", 
+            "text": "public function audit(Sandbox $sandbox)\n  {\n    // Example usage of Parameters and Tokens.\n    // See annotations in class doc block.\n    $foo = $sandbox- getParameter('foo');\n    $sandbox- setParameter('data', [$foo]);\n    // TODO: Write audit.\n    throw new \\Exception( Audit needs to be created. );\n  }", 
+            "title": "Source"
+        }, 
+        {
             "location": "/audits/DrutinyCloudflareAudit/", 
             "text": "ApiEnabledAudit\n\n\nClass: \nDrutiny\\Cloudflare\\Audit\\ApiEnabledAudit\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/cloudflare\n\n\nNOTE\n: This Audit is \nabstract\n and cannot be used directly by a policy.\n\n\nPageRuleMatch\n\n\nClass: \nDrutiny\\Cloudflare\\Audit\\PageRuleMatch\n\nExtends: \nDrutiny\\Cloudflare\\Audit\\ApiEnabledAudit\n\nPackage: \ndrutiny/cloudflare\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\ncloudflare:redirect_apex\n\n\nCloudflare redirect Apex to primary domain\n\n\n\n\n\n\ncloudflare:always_use_https\n\n\nCloudflare always use HTTPS\n\n\n\n\n\n\ncloudflare:drupal-urlGenerator-workaround\n\n\n#2819197 - Cloudflare workaround for Drupal 8 urlGenerator\n\n\n\n\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nzone\n\n\nstring\n\n\nThe apex domain registered with Cloudflare.\n\n\nnull\n\n\n\n\n\n\nrule\n\n\nstring\n\n\nThe page rule pattern to look up.\n\n\nnull\n\n\n\n\n\n\nsettings\n\n\narray\n\n\nA keyed list of actions the page rule should action.\n\n\nnull\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nzone\n\n\nstring\n\n\nThe apex domain registered with Cloudflare.\n\n\nnull\n\n\n\n\n\n\nrule\n\n\nstring\n\n\nThe page rule pattern to look up.\n\n\nnull\n\n\n\n\n\n\nsettings\n\n\narray\n\n\nA keyed list of actions the page rule should action.\n\n\nnull\n\n\n\n\n\n\nactions\n\n\narray\n\n\nA keyed list of actions the page rule contains.\n\n\nnull\n\n\n\n\n\n\nextra_actions\n\n\narray\n\n\nA keyed list of actions the page rule contains that are not listed in the settings parameter.\n\n\nnull\n\n\n\n\n\n\ninvalid_actions\n\n\narray\n\n\nA keyed list of actions the page rule that don't match the values set in the settings parameter.\n\n\nnull\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    $uri = $sandbox-\ndrush()-\ngetGlobalDefaultOption('uri');\n    $host = strpos($uri, 'http') === 0 ? parse_url($uri, PHP_URL_HOST) : $uri;\n    $sandbox-\nsetParameter('host', $host);\n\n    $zone  = $this-\nzoneInfo($sandbox-\ngetParameter('zone', $host));\n    $sandbox-\nsetParameter('zone', $zone['name']);\n\n    $response = $this-\napi()-\nrequest('GET', \nzones/{$zone['id']}/pagerules\n);\n\n    // Create a reusable translation function to allow settings to use variables.\n    $t = function ($v) use ($zone, $host) {\n      return strtr($v, [\n        ':zone' =\n $zone['name'],\n        ':host' =\n $host\n      ]);\n    };\n\n    $constraint = $t($sandbox-\ngetParameter('rule'));\n    $sandbox-\nsetParameter('rule', $constraint);\n\n\n    $rules = array_filter($response['result'], function ($rule) use ($constraint) {\n      return $rule['targets'][0]['constraint']['value'] == $constraint;\n    });\n\n    if (!count($rules)) {\n      return FALSE;\n    }\n\n    // Build action array.\n    $rule = array_shift($rules);\n    foreach ($rule['actions'] as $action) {\n      $actions[$action['id']] = isset($action['value']) ? $action['value'] : TRUE;\n    }\n    $this-\nrecurKsort($actions);\n    $sandbox-\nsetParameter('actions', $actions);\n\n    // Build settings array.\n    $settings = $sandbox-\ngetParameter('settings');\n    if (isset($settings['forwarding_url'])) {\n      $settings['forwarding_url']['url'] = $t($settings['forwarding_url']['url']);\n    }\n    $this-\nrecurKsort($settings);\n    $sandbox-\nsetParameter('settings', $settings);\n\n    // Format parameters so that array_diff_(key|assoc) can do the correct job.\n    $settings = array_map(['Symfony\\Component\\Yaml\\Yaml', 'dump'], $settings);\n    $actions = array_map(['Symfony\\Component\\Yaml\\Yaml', 'dump'], $actions);\n\n    // Calculate the differences.\n    $extra_actions = array_diff_key($actions, $settings);\n    $test_actions = array_diff_key($actions, $extra_actions);\n    $invalid_actions = array_diff_assoc($test_actions, $settings);\n\n    // Format parameters so that array_diff_(key|assoc) can do the correct job.\n    $extra_actions = array_map(['Symfony\\Component\\Yaml\\Yaml', 'parse'], $extra_actions);\n    $invalid_actions = array_map(['Symfony\\Component\\Yaml\\Yaml', 'parse'], $invalid_actions);\n\n    $sandbox-\nsetParameter('extra_actions', $extra_actions);\n    $sandbox-\nsetParameter('invalid_actions', $invalid_actions);\n    $sandbox-\nsetParameter('invalid_actions_array', array_map(function ($key, $value) {\n      return ['id' =\n $key, 'value' =\n Yaml::dump($value)];\n    }, array_keys($invalid_actions), array_values($invalid_actions)));\n\n    $sandbox-\nsetParameter('settings_array', array_map(function ($key, $value) {\n      return ['id' =\n $key, 'value' =\n $value];\n    }, array_keys($settings), array_values($settings)));\n\n    $sandbox-\nlogger()-\ninfo(__CLASS__ . PHP_EOL . Yaml::dump(['parameters' =\n $sandbox-\ngetParameterTokens()], 6));\n\n    return empty($invalid_actions);\n  }", 
             "title": "Cloudflare "
