@@ -1644,6 +1644,10 @@ Package: <code>drutiny/drutiny</code></p>
       ];
     }
     $totalRows = count($rows);
+
+    if ($totalRows &lt; 1) {
+      return TRUE;
+    }
     $sandbox-&gt;setParameter('total', $totalRows);
 
     // Reduce the number of rows to 10
