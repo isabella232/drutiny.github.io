@@ -650,6 +650,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#policies" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#parameters" title="Parameters" class="md-nav__link">
     Parameters
   </a>
@@ -690,9 +697,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#policies_1" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#source_1" title="Source" class="md-nav__link">
     Source
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -710,7 +730,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#policies" title="Policies" class="md-nav__link">
+  <a href="#policies_2" title="Policies" class="md-nav__link">
     Policies
   </a>
   
@@ -757,7 +777,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#policies_1" title="Policies" class="md-nav__link">
+  <a href="#policies_3" title="Policies" class="md-nav__link">
     Policies
   </a>
   
@@ -922,6 +942,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#policies" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#parameters" title="Parameters" class="md-nav__link">
     Parameters
   </a>
@@ -962,9 +989,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#policies_1" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#source_1" title="Source" class="md-nav__link">
     Source
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -982,7 +1022,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#policies" title="Policies" class="md-nav__link">
+  <a href="#policies_2" title="Policies" class="md-nav__link">
     Policies
   </a>
   
@@ -1029,7 +1069,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#policies_1" title="Policies" class="md-nav__link">
+  <a href="#policies_3" title="Policies" class="md-nav__link">
     Policies
   </a>
   
@@ -1093,6 +1133,22 @@
 <p>Class: <code>Drutiny\Audit\Filesystem\CodeScan</code><br />
 Extends: <code>Drutiny\Audit</code><br />
 Package: <code>drutiny/drutiny</code></p>
+<h3 id="policies">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal:ThemeSecurity</td>
+<td>Drupal Theme Security</td>
+</tr>
+</tbody>
+</table>
 <h3 id="parameters">Parameters</h3>
 <table>
 <thead>
@@ -1192,14 +1248,16 @@ Package: <code>drutiny/drutiny</code></p>
 
     $directory =  strtr($directory, $stat['%paths']);
 
-
-    $command = ['find', $stat['%paths']['%root']];
+    $command = ['find', $directory, '-type f'];
 
     $types = $sandbox-&gt;getParameter('filetypes', []);
 
     if (!empty($types)) {
-      $command[] = '-regex';
-      $command[] = &quot;'.*\.\(&quot; . implode('\|', $sandbox-&gt;getParameter('filetypes', ['php'])) . &quot;\)'&quot;;
+      $conditions = [];
+      foreach ($types as $type) {
+        $conditions[] = '-iname &quot;*.' . $type . '&quot;';
+      }
+      $command[] = implode(' -or ', $conditions);
     }
 
     foreach ($sandbox-&gt;getParameter('exclude', []) as $filepath) {
@@ -1207,17 +1265,17 @@ Package: <code>drutiny/drutiny</code></p>
       $command[] = &quot;! -path '$filepath'&quot;;
     }
 
-    $command[] = '| xargs grep -nE';
-    $command[] = '&quot;' . implode('|', $sandbox-&gt;getParameter('patterns', [])) . '&quot; || exit 0';
+    $command[] = '| (xargs grep -nE';
+    $command[] = '&quot;' . implode('|', $sandbox-&gt;getParameter('patterns', [])) . '&quot; || exit 0)';
 
     $whitelist = $sandbox-&gt;getParameter('whitelist', []);
     if (!empty($whitelist)) {
-      $command[] = &quot;| grep -vE '&quot; . implode('|', $whitelist) . &quot;'&quot;;
+      $command[] = &quot;| (grep -vE '&quot; . implode('|', $whitelist) . &quot;' || exit 0)&quot;;
     }
 
 
     $command = implode(' ', $command);
-    // echo $command;die;
+    $sandbox-&gt;logger()-&gt;info('[' . __CLASS__ . '] ' . $command);
     $output = $sandbox-&gt;exec($command);
 
     if (empty($output)) {
@@ -1255,6 +1313,22 @@ Package: <code>drutiny/drutiny</code></p>
 <p>Class: <code>Drutiny\Audit\Filesystem\FsSize</code><br />
 Extends: <code>Drutiny\Audit</code><br />
 Package: <code>drutiny/drutiny</code></p>
+<h3 id="policies_1">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fs:DrupalThemeDirectory</td>
+<td>Drupal Theme Directory Size</td>
+</tr>
+</tbody>
+</table>
 <h4 id="source_1">Source</h4>
 <pre><code class="php">  public function audit(Sandbox $sandbox) {
     $path = $sandbox-&gt;getParameter('path', '%files');
@@ -1262,38 +1336,19 @@ Package: <code>drutiny/drutiny</code></p>
 
     $path = strtr($path, $stat['%paths']);
 
-    $root = $stat['root'];
-    $files = $stat['files'];
+    $size = $sandbox-&gt;exec(&quot;du -d 0 $path | awk '{print $1}'&quot;);
 
     $max_size = (int) $sandbox-&gt;getParameter('max_size', 20);
 
-    $command = &quot;find @location -type f -size +@sizeM -printf '@print-format'&quot;;
-    $command .= &quot; | sort -nr&quot;;
-    $command = strtr($command, [
-      '@location' =&gt; &quot;{$root}/{$files}/&quot;,
-      '@size' =&gt; $max_size,
-      '@print-format' =&gt; '%k\t%p\n',
-    ]);
+    // Set the size in MB for rendering
+    $sandbox-&gt;setParameter('size', ceil($size * 1024 * 1024));
+    // Set the actual path.
+    $sandbox-&gt;setParameter('path', $path);
 
-    $output = $sandbox-&gt;exec($command);
+    // Convert max_size into bytes.
+    $max_size = $max_size * 1024 * 1024;
 
-    if (empty($output)) {
-      return TRUE;
-    }
-
-    // Output from find is a giant string with newlines to seperate the files.
-    $rows = array_map(function ($line) {
-      $parts = array_map('trim', explode(&quot;\t&quot;, $line));
-      $size = number_format((float) $parts[0] / 1024, 2);
-      $filename = trim($parts[1]);
-      return &quot;{$filename} [{$size} MB]&quot;;
-    },
-    array_filter(explode(&quot;\n&quot;, $output)));
-
-    $sandbox-&gt;setParameter('issues', $rows);
-    $sandbox-&gt;setParameter('plural', count($rows) &gt; 1 ? 's' : '');
-
-    return Audit::WARNING;
+    return $size &lt; $max_size;
   }
 
 </code></pre>
@@ -1303,7 +1358,7 @@ Package: <code>drutiny/drutiny</code></p>
 <p>Class: <code>Drutiny\Audit\Filesystem\LargeFiles</code><br />
 Extends: <code>Drutiny\Audit</code><br />
 Package: <code>drutiny/drutiny</code></p>
-<h3 id="policies">Policies</h3>
+<h3 id="policies_2">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
 <thead>
@@ -1414,7 +1469,7 @@ Package: <code>drutiny/drutiny</code></p>
 <p>Class: <code>Drutiny\Audit\Filesystem\SensitivePublicFiles</code><br />
 Extends: <code>Drutiny\Audit</code><br />
 Package: <code>drutiny/drutiny</code></p>
-<h3 id="policies_1">Policies</h3>
+<h3 id="policies_3">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
 <thead>
