@@ -1217,8 +1217,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xmlsitemapbaseurl" title="XMLSiteMapBaseUrl" class="md-nav__link">
-    XMLSiteMapBaseUrl
+  <a href="#zenrebuildregistry" title="ZenRebuildRegistry" class="md-nav__link">
+    ZenRebuildRegistry
   </a>
   
     <nav class="md-nav">
@@ -1229,58 +1229,11 @@
     Policies
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters_7" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tokens_7" title="Tokens" class="md-nav__link">
-    Tokens
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#source_13" title="Source" class="md-nav__link">
-    Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zenrebuildregistry" title="ZenRebuildRegistry" class="md-nav__link">
-    ZenRebuildRegistry
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#policies_14" title="Policies" class="md-nav__link">
-    Policies
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#source_14" title="Source" class="md-nav__link">
     Source
   </a>
   
@@ -1894,8 +1847,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xmlsitemapbaseurl" title="XMLSiteMapBaseUrl" class="md-nav__link">
-    XMLSiteMapBaseUrl
+  <a href="#zenrebuildregistry" title="ZenRebuildRegistry" class="md-nav__link">
+    ZenRebuildRegistry
   </a>
   
     <nav class="md-nav">
@@ -1906,58 +1859,11 @@
     Policies
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters_7" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tokens_7" title="Tokens" class="md-nav__link">
-    Tokens
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#source_13" title="Source" class="md-nav__link">
-    Source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zenrebuildregistry" title="ZenRebuildRegistry" class="md-nav__link">
-    ZenRebuildRegistry
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#policies_14" title="Policies" class="md-nav__link">
-    Policies
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#source_14" title="Source" class="md-nav__link">
     Source
   </a>
   
@@ -2850,6 +2756,10 @@ Package: <code>drutiny/plugin-drupal-7</code></p>
 <td>Js Aggregation</td>
 </tr>
 <tr>
+<td>Drupal-7:XMLSitemapBaseURL</td>
+<td>XML sitemap base URL</td>
+</tr>
+<tr>
 <td>Drupal-7:ViewsSqlSignature</td>
 <td>Views SQL Signature</td>
 </tr>
@@ -2936,6 +2846,18 @@ Package: <code>drutiny/plugin-drupal-7</code></p>
 <td>The comparison operator to use</td>
 <td>'=='</td>
 </tr>
+<tr>
+<td>required_modules</td>
+<td>array</td>
+<td>An optional array of modules required in order to check variables</td>
+<td>{  }</td>
+</tr>
+<tr>
+<td>default</td>
+<td>mixed</td>
+<td>An optional default value if a value is not found</td>
+<td>no-value-provided</td>
+</tr>
 </tbody>
 </table>
 <h3 id="tokens_5">Tokens</h3>
@@ -2968,6 +2890,18 @@ Package: <code>drutiny/plugin-drupal-7</code></p>
 <td>'=='</td>
 </tr>
 <tr>
+<td>required_modules</td>
+<td>array</td>
+<td>An optional array of modules required in order to check variables</td>
+<td>{  }</td>
+</tr>
+<tr>
+<td>default</td>
+<td>mixed</td>
+<td>An optional default value if a value is not found</td>
+<td>no-value-provided</td>
+</tr>
+<tr>
 <td>reading</td>
 <td>mixed</td>
 <td>The value read from the Drupal variables system</td>
@@ -2983,7 +2917,7 @@ Package: <code>drutiny/plugin-drupal-7</code></p>
     if ($required_modules = $sandbox-&gt;getParameter('required_modules')) {
       $required_modules = is_array($required_modules) ? $required_modules : [$required_modules];
       $info = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;pmList();
-      $missing_modules = array_diff($required_modules, array_keys($required_modules));
+      $missing_modules = array_diff($required_modules, array_keys($info));
 
       if (!empty($missing_modules)) {
         return Audit::NOT_APPLICABLE;
@@ -3050,6 +2984,8 @@ Package: <code>drutiny/plugin-drupal-7</code></p>
         return $value === $reading;
       case 'in_array':
         return in_array($reading, $value);
+      case 'regex':
+        return preg_match(&quot;#${pattern}#&quot;, $base_url);
       case 'equal':
       case '==':
       default:
@@ -3254,99 +3190,11 @@ Package: <code>drutiny/plugin-drupal-7</code></p>
 
 </code></pre>
 
-<h2 id="xmlsitemapbaseurl">XMLSiteMapBaseUrl</h2>
-<p>XML sitemap base URL</p>
-<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\XMLSiteMapBaseUrl</code><br />
-Extends: <code>Drutiny\Audit\Drupal\ModuleEnabled</code><br />
-Package: <code>drutiny/plugin-drupal-7</code></p>
-<p>This class can <strong>remediate</strong> failed audits.</p>
-<h3 id="policies_13">Policies</h3>
-<p>These are the policies that use this class:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Title</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Drupal-7:XMLSitemapBaseURL</td>
-<td>XML sitemap base URL</td>
-</tr>
-</tbody>
-</table>
-<h3 id="parameters_7">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pattern</td>
-<td>string</td>
-<td>A parseable pattern to use to validate the Base URL.</td>
-<td>'^https?://.+$'</td>
-</tr>
-</tbody>
-</table>
-<h3 id="tokens_7">Tokens</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pattern</td>
-<td>string</td>
-<td>A parseable pattern to use to validate the Base URL.</td>
-<td>'^https?://.+$'</td>
-</tr>
-</tbody>
-</table>
-<h4 id="source_13">Source</h4>
-<pre><code class="php">  public function audit(Sandbox $sandbox) {
-    // Use the audit from ModuleEnable to validate check.
-    $sandbox-&gt;setParameter('module', 'xmlsitemap');
-    if (!parent::audit($sandbox)) {
-      return NULL;
-    }
-
-    // This defaults to $GLOBALS['base_url'] which is bad.
-    $variables = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;variableGet('xmlsitemap_base_url');
-    if (empty($variables['xmlsitemap_base_url'])) {
-      $sandbox-&gt;setParameter('base_url', '[empty]');
-      return FALSE;
-    }
-
-    $base_url = $variables['xmlsitemap_base_url'];
-
-    $sandbox-&gt;setParameter('base_url', $base_url);
-    $pattern = $sandbox-&gt;getParameter('pattern', '^https?://.+$');
-    if (!preg_match(&quot;#${pattern}#&quot;, $base_url)) {
-      return FALSE;
-    }
-
-    return TRUE;
-  }
-
-</code></pre>
-
 <h2 id="zenrebuildregistry">ZenRebuildRegistry</h2>
 <p>Class: <code>Drutiny\Plugin\Drupal7\Audit\ZenRebuildRegistry</code><br />
 Extends: <code>Drutiny\Audit</code><br />
 Package: <code>drutiny/plugin-drupal-7</code></p>
-<h3 id="policies_14">Policies</h3>
+<h3 id="policies_13">Policies</h3>
 <p>These are the policies that use this class:</p>
 <table>
 <thead>
@@ -3362,7 +3210,7 @@ Package: <code>drutiny/plugin-drupal-7</code></p>
 </tr>
 </tbody>
 </table>
-<h4 id="source_14">Source</h4>
+<h4 id="source_13">Source</h4>
 <pre><code class="php">  public function audit(Sandbox $sandbox) {
 
     $output = $sandbox-&gt;drush()-&gt;sqlQuery(&quot;SELECT * FROM {variable} WHERE name LIKE 'theme_%';&quot;);

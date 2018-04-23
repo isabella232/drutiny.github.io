@@ -3086,7 +3086,7 @@ the SQL query came from. Useful for database performance debugging.</p>
 <h2 id="xml-sitemap-base-url">XML sitemap base URL</h2>
 <p><strong>Name</strong>: <code>Drupal-7:XMLSitemapBaseURL</code><br />
 <strong>Package</strong>: <code>drutiny/plugin-drupal-7</code><br />
-<strong>Class</strong>: <code>\Drutiny\Plugin\Drupal7\Audit\XMLSiteMapBaseUrl</code></p>
+<strong>Class</strong>: <code>\Drutiny\Plugin\Drupal7\Audit\VariableCompare</code></p>
 <p>The XML sitemap module adds a sitemap on the URL <code>/sitemap.xml</code>.
 If not properly configured, the sitemap will point to an incorrect or
 possibly broken site.</p>
@@ -3102,16 +3102,28 @@ possibly broken site.</p>
 </thead>
 <tbody>
 <tr>
-<td>pattern</td>
+<td>key</td>
 <td>string</td>
-<td>A parseable pattern to use to validate the Base URL.</td>
-<td></td>
+<td>The name of the variable to compare.</td>
+<td>xmlsitemap_base_url</td>
 </tr>
 <tr>
-<td></td>
+<td>value</td>
+<td>mixed</td>
+<td>The value to compare against</td>
 <td>'^https?://.+$'</td>
-<td></td>
-<td></td>
+</tr>
+<tr>
+<td>comp_type</td>
+<td>string</td>
+<td>The comparison operator to use</td>
+<td>regex</td>
+</tr>
+<tr>
+<td>required_modules</td>
+<td>array</td>
+<td>An optional array of modules required in order to check variables</td>
+<td>xmlsitemap</td>
 </tr>
 </tbody>
 </table>
