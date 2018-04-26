@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
       
@@ -1499,8 +1499,9 @@ code review.</p>
 <strong>Package</strong>: <code>drutiny/drutiny</code><br />
 <strong>Class</strong>: <code>\Drutiny\Audit\Drupal\LargeDrupalFiles</code></p>
 <p>Large static assets should be optimized for online display or ideally be housed in other services, e.g.
-  Amazon S3 (for files) or Youtube (for videos). Storing large files can consume storage volumes,
-  increase page load time and contribute to a higher than desired cache eviction rate.</p>
+Amazon S3 (for files) or Youtube (for videos). Storing large files can consume storage volumes,
+increase page load time and contribute to a higher than desired cache eviction rate. Varnish, on Acquia Cloud,
+does not cache files larger than 10 MB.</p>
 <p>This policy identifies files managed by Drupal that are larger than .</p>
 <h3 id="parameters_6">Parameters</h3>
 <table>
@@ -1517,7 +1518,7 @@ code review.</p>
 <td>max_size</td>
 <td>integer</td>
 <td>Report files larger than this value measured in bytes.</td>
-<td>20000000</td>
+<td>10000000</td>
 </tr>
 </tbody>
 </table>
