@@ -614,6 +614,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#user-enumeration" title="User Enumeration" class="md-nav__link">
+    User Enumeration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#syslog" title="Syslog" class="md-nav__link">
     Syslog
   </a>
@@ -622,7 +642,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -642,7 +662,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+  <a href="#parameters_6" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -662,7 +682,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_6" title="Parameters" class="md-nav__link">
+  <a href="#parameters_7" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -745,7 +765,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_7" title="Parameters" class="md-nav__link">
+  <a href="#parameters_8" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -765,7 +785,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_8" title="Parameters" class="md-nav__link">
+  <a href="#parameters_9" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -785,7 +805,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_9" title="Parameters" class="md-nav__link">
+  <a href="#parameters_10" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1103,6 +1123,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#user-enumeration" title="User Enumeration" class="md-nav__link">
+    User Enumeration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#syslog" title="Syslog" class="md-nav__link">
     Syslog
   </a>
@@ -1111,7 +1151,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1131,7 +1171,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+  <a href="#parameters_6" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1151,7 +1191,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_6" title="Parameters" class="md-nav__link">
+  <a href="#parameters_7" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1234,7 +1274,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_7" title="Parameters" class="md-nav__link">
+  <a href="#parameters_8" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1254,7 +1294,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_8" title="Parameters" class="md-nav__link">
+  <a href="#parameters_9" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1274,7 +1314,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parameters_9" title="Parameters" class="md-nav__link">
+  <a href="#parameters_10" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
@@ -1432,12 +1472,45 @@ traditional page caching in Varnish and CDNs.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="user-enumeration">User Enumeration</h2>
+<p><strong>Name</strong>: <code>Drupal:Security:UserEmueration</code><br />
+<strong>Package</strong>: <code>drutiny/drutiny</code><br />
+<strong>Class</strong>: <code>Drutiny\Audit\Drupal\ModuleEnabled</code></p>
+<p>User enumeration is when a malicious actor can use brute-force to either guess
+or confirm valid users in a system. User enumeration is often a web
+application vulnerability, though it can also be found in any system that
+requires user authentication. Two of the most common areas where user
+enumeration occurs are in a site's login page and its ‘Forgot Password'
+functionality.</p>
+<p>User enumeration is a default vulnerability in Drupal but can be mitigated
+through the use of the
+<a href="https://www.drupal.org/project/username_enumeration_prevention">Username Enumeration Prevention</a>
+module.</p>
+<h3 id="parameters_4">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>string</td>
+<td>The module to check is enabled.</td>
+<td>username_enumeration_prevention</td>
+</tr>
+</tbody>
+</table>
 <h2 id="syslog">Syslog</h2>
 <p><strong>Name</strong>: <code>Drupal:SyslogEnabled</code><br />
 <strong>Package</strong>: <code>drutiny/drutiny</code><br />
 <strong>Class</strong>: <code>\Drutiny\Audit\Drupal\ModuleEnabled</code></p>
 <p>Syslog module writes Drupal watchdog logs to the syslog.</p>
-<h3 id="parameters_4">Parameters</h3>
+<h3 id="parameters_5">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -1463,7 +1536,7 @@ traditional page caching in Varnish and CDNs.</p>
 <p>Some basic checks to ensure that the theme is not doing any seriously bad
 things. Note this is not supposed to be perfect, but used as an aid in
 code review.</p>
-<h3 id="parameters_5">Parameters</h3>
+<h3 id="parameters_6">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -1503,7 +1576,7 @@ Amazon S3 (for files) or Youtube (for videos). Storing large files can consume s
 increase page load time and contribute to a higher than desired cache eviction rate. Varnish, on Acquia Cloud,
 does not cache files larger than 10 MB.</p>
 <p>This policy identifies files managed by Drupal that are larger than .</p>
-<h3 id="parameters_6">Parameters</h3>
+<h3 id="parameters_7">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -1644,7 +1717,7 @@ belly. Thundercats microdosing taxidermy try-hard +1 ennui photo booth 8-bit.</p
 <p>Large theme directories can be indicative of best practice violations:
   * Source files in site artifact. e.g. node_modules
   * Media assets unsuitable for web delivery</p>
-<h3 id="parameters_7">Parameters</h3>
+<h3 id="parameters_8">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -1674,7 +1747,7 @@ belly. Thundercats microdosing taxidermy try-hard +1 ennui photo booth 8-bit.</p
 <strong>Package</strong>: <code>drutiny/drutiny</code><br />
 <strong>Class</strong>: <code>Drutiny\Audit\Filesystem\SensitivePublicFiles</code></p>
 <p>Certain file extensions should never be in public files for security reasons.</p>
-<h3 id="parameters_8">Parameters</h3>
+<h3 id="parameters_9">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -1699,7 +1772,7 @@ belly. Thundercats microdosing taxidermy try-hard +1 ennui photo booth 8-bit.</p
 <strong>Class</strong>: <code>Drutiny\Audit\Filesystem\LargeFiles</code></p>
 <p>Large static assets should ideally be housed in other services, e.g.
 Amazon S3 (for files) or Youtube (for videos).</p>
-<h3 id="parameters_9">Parameters</h3>
+<h3 id="parameters_10">Parameters</h3>
 <table>
 <thead>
 <tr>
