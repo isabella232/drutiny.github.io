@@ -1013,7 +1013,7 @@
 <pre><code>./vendor/bin/drutiny policy:audit -p max_age=600 Drupal-8:PageCacheExpiry @drupalvm.dev
 </code></pre>
 
-<p>Audits are simple self contained classes that are simple to read and understand. Policies are simple YAML files that determine how to use Audit classes. Drutiny can be extended very easily to audit for your own unique requirements. Pull requests are welcome as well, please see the <a href="CONTRIBUTING/">contributing guide</a>.</p>
+<p>Audits are simple self contained classes that are simple to read and understand. Policies are simple YAML files that determine how to use Audit classes. Drutiny can be extended very easily to audit for your own unique requirements. Pull requests are welcome as well, please see the <a href="https://drutiny.github.io/2.1.x/CONTRIBUTING/">contributing guide</a>.</p>
 <h3 id="remediation">Remediation</h3>
 <p>Some checks have redemptive capability. Passing the <code>--remediate</code> flag into the call with "auto-heal" the site if the check fails on first pass.</p>
 <pre><code>./vendor/bin/drutiny policy:audit -p max_age=600 --remediate Drupal-8:PageCacheExpiry @drupalvm.dev
