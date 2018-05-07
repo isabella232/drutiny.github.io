@@ -1817,8 +1817,28 @@
         }, 
         {
             "location": "/audits/DrutinyAudit/", 
-            "text": "AbstractComparison\n\n\nComparatively evaluate two values.\n\n\nClass: \nDrutiny\\Audit\\AbstractComparison\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nNOTE\n: This Audit is \nabstract\n and cannot be used directly by a policy.\n\n\nAlwaysError\n\n\nAn audit that always fails.\n\n\nClass: \nDrutiny\\Audit\\AlwaysError\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Error\n\n\nAlways error test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    throw new \\Exception(\nThis audit will always throw an exception as an error.\n);\n  }\n\n\n\n\n\nAlwaysFail\n\n\nAn audit that always succeeds.\n\n\nClass: \nDrutiny\\Audit\\AlwaysFail\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Fail\n\n\nAlways fail test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    return FALSE;\n  }\n\n\n\n\n\nAlwaysNA\n\n\nAn audit that always not applicable.\n\n\nClass: \nDrutiny\\Audit\\AlwaysNA\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:NA\n\n\nNot applicable test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    // This should never trigger.\n    return Audit::FAIL;\n  }\n\n\n\n\n\nAlwaysNotice\n\n\nAn audit that always succeeds.\n\n\nClass: \nDrutiny\\Audit\\AlwaysNotice\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Notice\n\n\nAlways notice test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    return Audit::NOTICE;\n  }\n\n\n\n\n\nAlwaysPass\n\n\nAn audit that always succeeds.\n\n\nClass: \nDrutiny\\Audit\\AlwaysPass\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:PassDependant\n\n\nAlways pass dependant test policy\n\n\n\n\n\n\nTest:Pass\n\n\nAlways pass test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    return TRUE;\n  }\n\n\n\n\n\nAlwaysWarn\n\n\nAn audit that always succeeds.\n\n\nClass: \nDrutiny\\Audit\\AlwaysWarn\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Warning\n\n\nAlways warn test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    return Audit::WARNING;\n  }", 
+            "text": "AbstractAnalysis\n\n\nAudit gathered data.\n\n\nClass: \nDrutiny\\Audit\\AbstractAnalysis\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nNOTE\n: This Audit is \nabstract\n and cannot be used directly by a policy.\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nexpression\n\n\nstring\n\n\nThe expression language to evaludate. See https://symfony.com/doc/current/components/expression_language/syntax.html\n\n\n'true'\n\n\n\n\n\n\n\n\nTokens\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nexpression\n\n\nstring\n\n\nThe expression language to evaludate. See https://symfony.com/doc/current/components/expression_language/syntax.html\n\n\n'true'\n\n\n\n\n\n\n\n\nSource\n\n\n  final public function audit(Sandbox $sandbox)\n  {\n    $this-\ngather($sandbox);\n    $expression = $sandbox-\ngetParameter('expression', 'true');\n    $variables  = $sandbox-\ngetParameterTokens();\n\n    $expressionLanguage = new ExpressionLanguage();\n\n    $sandbox-\nlogger()-\ninfo(__CLASS__ . ': ' . $expression);\n    $sandbox-\nlogger()-\ninfo(__CLASS__ . ': ' . Yaml::dump($variables));\n\n    return $expressionLanguage-\nevaluate($expression, $variables);\n  }\n\n\n\n\n\nAbstractComparison\n\n\nComparatively evaluate two values.\n\n\nClass: \nDrutiny\\Audit\\AbstractComparison\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nNOTE\n: This Audit is \nabstract\n and cannot be used directly by a policy.\n\n\nAlwaysError\n\n\nAn audit that always fails.\n\n\nClass: \nDrutiny\\Audit\\AlwaysError\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Error\n\n\nAlways error test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    throw new \\Exception(\nThis audit will always throw an exception as an error.\n);\n  }\n\n\n\n\n\nAlwaysFail\n\n\nAn audit that always succeeds.\n\n\nClass: \nDrutiny\\Audit\\AlwaysFail\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Fail\n\n\nAlways fail test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    return FALSE;\n  }\n\n\n\n\n\nAlwaysNA\n\n\nAn audit that always not applicable.\n\n\nClass: \nDrutiny\\Audit\\AlwaysNA\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:NA\n\n\nNot applicable test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    // This should never trigger.\n    return Audit::FAIL;\n  }\n\n\n\n\n\nAlwaysNotice\n\n\nAn audit that always succeeds.\n\n\nClass: \nDrutiny\\Audit\\AlwaysNotice\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Notice\n\n\nAlways notice test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    return Audit::NOTICE;\n  }\n\n\n\n\n\nAlwaysPass\n\n\nAn audit that always succeeds.\n\n\nClass: \nDrutiny\\Audit\\AlwaysPass\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:PassDependant\n\n\nAlways pass dependant test policy\n\n\n\n\n\n\nTest:Pass\n\n\nAlways pass test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    return TRUE;\n  }\n\n\n\n\n\nAlwaysWarn\n\n\nAn audit that always succeeds.\n\n\nClass: \nDrutiny\\Audit\\AlwaysWarn\n\nExtends: \nDrutiny\\Audit\n\nPackage: \ndrutiny/drutiny\n\n\nPolicies\n\n\nThese are the policies that use this class:\n\n\n\n\n\n\n\n\nName\n\n\nTitle\n\n\n\n\n\n\n\n\n\n\nTest:Warning\n\n\nAlways warn test policy\n\n\n\n\n\n\n\n\nSource\n\n\n  public function audit(Sandbox $sandbox)\n  {\n    return Audit::WARNING;\n  }", 
             "title": "General"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#abstractanalysis", 
+            "text": "Audit gathered data.  Class:  Drutiny\\Audit\\AbstractAnalysis \nExtends:  Drutiny\\Audit \nPackage:  drutiny/drutiny  NOTE : This Audit is  abstract  and cannot be used directly by a policy.", 
+            "title": "AbstractAnalysis"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#parameters", 
+            "text": "Name  Type  Description  Default      expression  string  The expression language to evaludate. See https://symfony.com/doc/current/components/expression_language/syntax.html  'true'", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#tokens", 
+            "text": "Name  Type  Description  Default      expression  string  The expression language to evaludate. See https://symfony.com/doc/current/components/expression_language/syntax.html  'true'", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/audits/DrutinyAudit/#source", 
+            "text": "final public function audit(Sandbox $sandbox)\n  {\n    $this- gather($sandbox);\n    $expression = $sandbox- getParameter('expression', 'true');\n    $variables  = $sandbox- getParameterTokens();\n\n    $expressionLanguage = new ExpressionLanguage();\n\n    $sandbox- logger()- info(__CLASS__ . ': ' . $expression);\n    $sandbox- logger()- info(__CLASS__ . ': ' . Yaml::dump($variables));\n\n    return $expressionLanguage- evaluate($expression, $variables);\n  }", 
+            "title": "Source"
         }, 
         {
             "location": "/audits/DrutinyAudit/#abstractcomparison", 
@@ -1836,7 +1856,7 @@
             "title": "Policies"
         }, 
         {
-            "location": "/audits/DrutinyAudit/#source", 
+            "location": "/audits/DrutinyAudit/#source_1", 
             "text": "public function audit(Sandbox $sandbox)\n  {\n    throw new \\Exception( This audit will always throw an exception as an error. );\n  }", 
             "title": "Source"
         }, 
@@ -1851,7 +1871,7 @@
             "title": "Policies"
         }, 
         {
-            "location": "/audits/DrutinyAudit/#source_1", 
+            "location": "/audits/DrutinyAudit/#source_2", 
             "text": "public function audit(Sandbox $sandbox)\n  {\n    return FALSE;\n  }", 
             "title": "Source"
         }, 
@@ -1866,7 +1886,7 @@
             "title": "Policies"
         }, 
         {
-            "location": "/audits/DrutinyAudit/#source_2", 
+            "location": "/audits/DrutinyAudit/#source_3", 
             "text": "public function audit(Sandbox $sandbox)\n  {\n    // This should never trigger.\n    return Audit::FAIL;\n  }", 
             "title": "Source"
         }, 
@@ -1881,7 +1901,7 @@
             "title": "Policies"
         }, 
         {
-            "location": "/audits/DrutinyAudit/#source_3", 
+            "location": "/audits/DrutinyAudit/#source_4", 
             "text": "public function audit(Sandbox $sandbox)\n  {\n    return Audit::NOTICE;\n  }", 
             "title": "Source"
         }, 
@@ -1896,7 +1916,7 @@
             "title": "Policies"
         }, 
         {
-            "location": "/audits/DrutinyAudit/#source_4", 
+            "location": "/audits/DrutinyAudit/#source_5", 
             "text": "public function audit(Sandbox $sandbox)\n  {\n    return TRUE;\n  }", 
             "title": "Source"
         }, 
@@ -1911,7 +1931,7 @@
             "title": "Policies"
         }, 
         {
-            "location": "/audits/DrutinyAudit/#source_5", 
+            "location": "/audits/DrutinyAudit/#source_6", 
             "text": "public function audit(Sandbox $sandbox)\n  {\n    return Audit::WARNING;\n  }", 
             "title": "Source"
         }, 
