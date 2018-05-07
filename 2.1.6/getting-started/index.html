@@ -1,0 +1,1106 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This is a generic Drupal site auditing and optional remediation tool.">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>Getting Started - Drutiny</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.8d40d89b.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../css/tweaks.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#getting-started" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Drutiny" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Drutiny
+              </span>
+              <span class="md-header-nav__topic">
+                Getting Started
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Drutiny
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Usage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Usage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Getting Started
+      </label>
+    
+    <a href="./" title="Getting Started" class="md-nav__link md-nav__link--active">
+      Getting Started
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#standalone-installation" title="Standalone Installation" class="md-nav__link">
+    Standalone Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-executable" title="The Executable" class="md-nav__link">
+    The Executable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drupal-site-access-via-drush-alias" title="Drupal site access via Drush alias" class="md-nav__link">
+    Drupal site access via Drush alias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-in-your-policy-library" title="Whats in your policy library" class="md-nav__link">
+    Whats in your policy library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-a-policy-do" title="What does a policy do?" class="md-nav__link">
+    What does a policy do?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auditing-a-policy" title="Auditing a Policy" class="md-nav__link">
+    Auditing a Policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-multiple-policies-at-once" title="Running multiple policies at once" class="md-nav__link">
+    Running multiple policies at once
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-a-profile" title="Building a profile" class="md-nav__link">
+    Building a profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-a-profile-audit" title="Running a profile audit" class="md-nav__link">
+    Running a profile audit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-report" title="Creating a Report" class="md-nav__link">
+    Creating a Report
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reports/" title="Reports" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/" title="Plugins" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      API Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/" title="Audit" class="md-nav__link">
+      Audit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sandbox/" title="Sandbox" class="md-nav__link">
+      Sandbox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../profiles/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../creds/" title="Credential Manager" class="md-nav__link">
+      Credential Manager
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Policy Library
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Policy Library
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policy-library/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policies/drutiny-plugin-drupal-7/" title="drutiny/plugin-drupal-7" class="md-nav__link">
+      drutiny/plugin-drupal-7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policies/drutiny-plugin-drupal-8/" title="drutiny/plugin-drupal-8" class="md-nav__link">
+      drutiny/plugin-drupal-8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policies/drutiny-plugin-distro-common/" title="drutiny/plugin-distro-common" class="md-nav__link">
+      drutiny/plugin-distro-common
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policies/drutiny-cloudflare/" title="drutiny/cloudflare" class="md-nav__link">
+      drutiny/cloudflare
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policies/drutiny-acquia/" title="drutiny/acquia" class="md-nav__link">
+      drutiny/acquia
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policies/drutiny-http/" title="drutiny/http" class="md-nav__link">
+      drutiny/http
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policies/drutiny-drutiny/" title="drutiny/drutiny" class="md-nav__link">
+      drutiny/drutiny
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Audit Library
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Audit Library
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAcquiaAudit/" title="Acquia " class="md-nav__link">
+      Acquia 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAudit/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditApache/" title="Apache" class="md-nav__link">
+      Apache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditDNS/" title="DNS" class="md-nav__link">
+      DNS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditDatabase/" title="Database" class="md-nav__link">
+      Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditDrupal/" title="Drupal" class="md-nav__link">
+      Drupal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditFilesystem/" title="Filesystem" class="md-nav__link">
+      Filesystem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditTemplate/" title="Template" class="md-nav__link">
+      Template
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyCloudflareAudit/" title="Cloudflare " class="md-nav__link">
+      Cloudflare 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyHttpAudit/" title="Http " class="md-nav__link">
+      Http 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyPluginDrupal7Audit/" title="Plugin Drupal7 " class="md-nav__link">
+      Plugin Drupal7 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyPluginDrupal7AuditSecurity/" title="Plugin Drupal7 Security" class="md-nav__link">
+      Plugin Drupal7 Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyPluginDrupal8Audit/" title="Plugin Drupal8 " class="md-nav__link">
+      Plugin Drupal8 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinySumoLogicAudit/" title="SumoLogic " class="md-nav__link">
+      SumoLogic 
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#standalone-installation" title="Standalone Installation" class="md-nav__link">
+    Standalone Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-executable" title="The Executable" class="md-nav__link">
+    The Executable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drupal-site-access-via-drush-alias" title="Drupal site access via Drush alias" class="md-nav__link">
+    Drupal site access via Drush alias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-in-your-policy-library" title="Whats in your policy library" class="md-nav__link">
+    Whats in your policy library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-a-policy-do" title="What does a policy do?" class="md-nav__link">
+    What does a policy do?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auditing-a-policy" title="Auditing a Policy" class="md-nav__link">
+    Auditing a Policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-multiple-policies-at-once" title="Running multiple policies at once" class="md-nav__link">
+    Running multiple policies at once
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-a-profile" title="Building a profile" class="md-nav__link">
+    Building a profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-a-profile-audit" title="Running a profile audit" class="md-nav__link">
+    Running a profile audit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-report" title="Creating a Report" class="md-nav__link">
+    Creating a Report
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/drutiny/drutiny/edit/master/docs/getting-started.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="getting-started">Getting Started</h1>
+<p>This getting started guide is a tutorial to get you setup with Drutiny and to
+show you around the tool.</p>
+<h2 id="standalone-installation">Standalone Installation</h2>
+<p>While Drutiny can be included as a tool inside of any composer project, running
+it as a standalone tool is the easiest way to get started. The Drutiny <code>project-dev</code>
+composer project is a great way to get a comprehensive setup going locally and fast.</p>
+<pre><code>composer create-project --no-interaction -s dev drutiny/project-dev drutiny
+</code></pre>
+
+<p><strong>Note</strong>: <a href="https://www.drush.org/">Drush</a> is also required but not an explicit
+dependency so make sure its available before continuing.</p>
+<h2 id="the-executable">The Executable</h2>
+<p>Drutiny is controlled from the command-line through a Symfony Console executable
+called <code>drutiny</code> located in composer's <code>bin-dir</code> directory. For <code>drutiny/project-dev</code>,
+that is located in the <code>bin</code> directory in the root of the directory.</p>
+<pre><code>./bin/drutiny
+</code></pre>
+
+<p>When you run it, it should show you all the commands available from it. <strong>Note</strong>:
+composer's default <code>bin-dir</code> is <code>./vendor/bin</code>.</p>
+<h2 id="drupal-site-access-via-drush-alias">Drupal site access via Drush alias</h2>
+<p>By default, Drutiny depends on Drush alias files to inform Drutiny where the site
+is to audit. We call the site a <strong>target</strong>. Make sure your target is accessible via
+a drush command. You should be able to execute this command if remote:</p>
+<pre><code>drush @site.env ssh
+</code></pre>
+
+<h2 id="whats-in-your-policy-library">Whats in your policy library</h2>
+<p>The plugins that come with Drutiny contribute domain specific policies that make
+up a local library of policies at your disposal to run against your site. To
+find out which policies are available, you can use the <code>policy:list</code> command.</p>
+<pre><code>./bin/drutiny policy:list
+</code></pre>
+
+<h2 id="what-does-a-policy-do">What does a policy do?</h2>
+<p>To find out more about a policy, you can use the <code>policy:info</code> command and pass
+in the <strong>name</strong> of the policy:</p>
+<pre><code>./bin/drutiny policy:info Drupal:AnonSession
+</code></pre>
+
+<h2 id="auditing-a-policy">Auditing a Policy</h2>
+<p>Now that we're setup, lets try run a Drutiny policy against a site with the
+<code>policy:audit</code> command. We'll do this by passing two arguments: <code>Drupal:AnonSession</code>
+which is the name of the policy and <code>@site.env</code> which should represent
+the real Drush alias you'll use.</p>
+<pre><code>./bin/drutiny policy:audit Drupal:AnonSession @site.env
+</code></pre>
+
+<p>To see the command line actions Drutiny is taking underneath the hood, run the
+command again with the <code>-vvv</code> option to see the verbose info logged.</p>
+<h2 id="running-multiple-policies-at-once">Running multiple policies at once</h2>
+<p>With a <strong>profile</strong> we can group multiple policies together to audit against a
+single target.</p>
+<h3 id="building-a-profile">Building a profile</h3>
+<p>Drutiny comes with a profile generator to help you kick start building a profile.
+Lets start with building a demo profile:</p>
+<pre><code>./bin/drutiny profile:generate -t 'Demo Profile' -f demo.profile.yml -p Drupal:AnonSession -p Drupal:SyslogEnabled
+</code></pre>
+
+<p>The command above will create a new demo profile with two policies and write it
+to a file called <code>demo.profile.yml</code>.</p>
+<h3 id="running-a-profile-audit">Running a profile audit</h3>
+<p>To run a profile you use <code>profile:run</code> and pass in the name of the profile which is
+the first part of the profile filename. E.g. <code>demo</code> will load in the profile from
+<code>demo.profile.yml</code>.</p>
+<pre><code>./bin/drutiny profile:run demo @site.env
+</code></pre>
+
+<h3 id="creating-a-report">Creating a Report</h3>
+<p>Drutiny can export profile runs to HTML, Markdown, Json or by default, it just
+publishes the findings out to the console (see the above command). You can use
+the <code>--format</code> option (or <code>-f</code>) to specify the which format to export to and
+the <code>--report-filename</code> option (or <code>-o</code>) to specify the file to write too.</p>
+<pre><code>./bin/drutiny profile:run demo @site.env -f html -o demo-report.html
+</code></pre>
+
+<p>Open the HTML report in your browser to view the report. From there you could
+also print it to PDF.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../reports/" title="Reports" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Reports
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../js/highlight.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-116046012-1","drutiny.github.io"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
