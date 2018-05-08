@@ -486,6 +486,46 @@
             "title": "Content Variables"
         }, 
         {
+            "location": "/config/", 
+            "text": "Config\n\n\ndrutiny.config.yml\n is a static registry yaml file that can be provided by\ndrutiny plugin libraries to extend Drutiny's capability.\n\n\nTarget\n\n\nThe \nTarget\n directive allows you to register additional target types. Targets\nare references to audit-able subjects. The Target PHP class is responsible for\nparsing in the target reference passed in the command line and allowing the audits\nto correctly access the target to be able to audit it.\n\n\nTarget:\n  - Drutiny\\Target\\DrushTarget\n  - Drutiny\\Target\\TargetNone\n\n\n\n\nCommand\n\n\nThe \nCommand\n directive allows extensions to add additional commands into Drutiny's\nconsole Application. This can be done to utilise the Drutiny framework underneath\nthe \ndrutiny\n executable.\n\n\nCommand:\n  - Drutiny\\Command\\AuditGenerateCommand\n  - Drutiny\\Command\\AuditInfoCommand\n\n\n\n\nTemplate\n\n\nThe \nTemplate\n directive allows extensions to register directories where Drutiny\nwill look for twig template files when rendering HTML and Markdown files.\n\n\nTemplate:\n  - src/Report/templates/html\n  - src/Report/templates/markdown\n\n\n\n\nDomainList\n\n\nThe \nDomainList\n directive registers domain providers that can provide a list of\ndomains to run a profile against in multisite mode.\n\n\nDomainList:\n  YamlFile: Drutiny\\DomainList\\DomainListYamlFile\n\n\n\n\nLearn more about \nDomain Providers\n\n\nFormat\n\n\nThe \nFormat\n directive allows extensions to add additional export formats on top\nof the ones already provided by Drutiny.\n\n\nFormat:\n  html: Drutiny\\Report\\Format\\HTML\n  json: Drutiny\\Report\\Format\\JSON\n  markdown: Drutiny\\Report\\Format\\Markdown\n  terminal: Drutiny\\Report\\Format\\Terminal\n  console: Drutiny\\Report\\Format\\Console\n\n\n\n\nCredentialSchema\n\n\nThe \nCredentialSchema\n directive allows extensions to provide a schema for\ncredentials needed for something such as an Audit. This allows the Drutiny\nCredential Manager to acquire the credentials from the user on the behalf of\nthe extension using them.\n\n\nCredentialSchema:\n  sumologic:\n    access_id:\n      type: string\n      description: Your access ID to connect to the Sumologic API with:\n    access_key:\n      type: string\n      description: Your access key to connect to the Sumologic API with:\n\n\n\n\nLearn more about the \nCredential Manager", 
+            "title": "Config"
+        }, 
+        {
+            "location": "/config/#config", 
+            "text": "drutiny.config.yml  is a static registry yaml file that can be provided by\ndrutiny plugin libraries to extend Drutiny's capability.", 
+            "title": "Config"
+        }, 
+        {
+            "location": "/config/#target", 
+            "text": "The  Target  directive allows you to register additional target types. Targets\nare references to audit-able subjects. The Target PHP class is responsible for\nparsing in the target reference passed in the command line and allowing the audits\nto correctly access the target to be able to audit it.  Target:\n  - Drutiny\\Target\\DrushTarget\n  - Drutiny\\Target\\TargetNone", 
+            "title": "Target"
+        }, 
+        {
+            "location": "/config/#command", 
+            "text": "The  Command  directive allows extensions to add additional commands into Drutiny's\nconsole Application. This can be done to utilise the Drutiny framework underneath\nthe  drutiny  executable.  Command:\n  - Drutiny\\Command\\AuditGenerateCommand\n  - Drutiny\\Command\\AuditInfoCommand", 
+            "title": "Command"
+        }, 
+        {
+            "location": "/config/#template", 
+            "text": "The  Template  directive allows extensions to register directories where Drutiny\nwill look for twig template files when rendering HTML and Markdown files.  Template:\n  - src/Report/templates/html\n  - src/Report/templates/markdown", 
+            "title": "Template"
+        }, 
+        {
+            "location": "/config/#domainlist", 
+            "text": "The  DomainList  directive registers domain providers that can provide a list of\ndomains to run a profile against in multisite mode.  DomainList:\n  YamlFile: Drutiny\\DomainList\\DomainListYamlFile  Learn more about  Domain Providers", 
+            "title": "DomainList"
+        }, 
+        {
+            "location": "/config/#format", 
+            "text": "The  Format  directive allows extensions to add additional export formats on top\nof the ones already provided by Drutiny.  Format:\n  html: Drutiny\\Report\\Format\\HTML\n  json: Drutiny\\Report\\Format\\JSON\n  markdown: Drutiny\\Report\\Format\\Markdown\n  terminal: Drutiny\\Report\\Format\\Terminal\n  console: Drutiny\\Report\\Format\\Console", 
+            "title": "Format"
+        }, 
+        {
+            "location": "/config/#credentialschema", 
+            "text": "The  CredentialSchema  directive allows extensions to provide a schema for\ncredentials needed for something such as an Audit. This allows the Drutiny\nCredential Manager to acquire the credentials from the user on the behalf of\nthe extension using them.  CredentialSchema:\n  sumologic:\n    access_id:\n      type: string\n      description: Your access ID to connect to the Sumologic API with:\n    access_key:\n      type: string\n      description: Your access key to connect to the Sumologic API with:  Learn more about the  Credential Manager", 
+            "title": "CredentialSchema"
+        }, 
+        {
             "location": "/creds/", 
             "text": "Credential Management\n\n\nSome Drutiny plugins require credentials not provided by a target. Examples of\nthese types of plugins are Sumologic and Cloudflare who have API endpoints\nto talk which require API credentials. For these types of plugins, Drutiny\nhas a central credential management tool for storing and using credentials.\n\n\nUsage\n\n\nDrutiny has a command called \nplugin:setup\n which can be used to setup credentials\nfor a service.\n\n\n./vendor/bin/drutiny plugin:setup sumologic\n\naccess_id (string)\nYour access ID to connect to the Sumologic API with: : **********\naccess_key (string)\nYour access key to connect to the Sumologic API with: : *******************\n\n [OK] Credentials for sumologic have been saved.\n\n\n\n\n\nUsing the Credential Manager API\n\n\nUsing the credential manager requires specifying the schema for your\ncredentials then using the manager to load your credentials when you need them.\nPresumably inside an audit.\n\n\nAdding credentials to drutiny.config.yml\n\n\ndrutiny.config.yml\n is a file a plugin library can specify to declare config.\nThe \nCredentialSchema\n key is used to declare namespaces and arbitrary credentials\nfor the namespace/\n\n\nCredentialSchema:\n  sumologic:\n    access_id:\n      type: string\n      description: Your access ID to connect to the Sumologic API with:\n    access_key:\n      type: string\n      description: Your access key to connect to the Sumologic API with:\n\n\n\n\nThe above example provides a namespace for \nsumologic\n and details \naccess_id\n\nand \naccess_key\n as credentials to provide. These are the credentials that\n\nplugin:setup\n will ask for.\n\n\nAuditing Prerequisites\n\n\nUsually, credentials are required in order for an audit to function correctly.\nRather than failing an audit because the credentials aren't present to complete\nthe assessment, instead, you can specify an \nAudit Prerequisite\n\ninside your Audit class:\n\n\n\nuse Drutiny\\Credential\\Manager;\n\n// ...\n\n  protected function requireApiCredentials()\n  {\n    return Manager::load('sumologic') ? TRUE : FALSE;\n  }\n\n\n\n\nUsing the Credentials\n\n\nIf you've created the \nCredentialSchema\n in \ndrutiny.config.yml\n and setup an Audit\nPrerequisite, then you are now ready to use the credentials inside an audit:\n\n\n\nuse Drutiny\\Credential\\Manager;\n\n$creds = Manager::load('sumologic');\n$client = new Client($creds['access_id'], $creds['access_key']);", 
             "title": "Credential Manager"
@@ -519,6 +559,31 @@
             "location": "/creds/#using-the-credentials", 
             "text": "If you've created the  CredentialSchema  in  drutiny.config.yml  and setup an Audit\nPrerequisite, then you are now ready to use the credentials inside an audit:  \nuse Drutiny\\Credential\\Manager;\n\n$creds = Manager::load('sumologic');\n$client = new Client($creds['access_id'], $creds['access_key']);", 
             "title": "Using the Credentials"
+        }, 
+        {
+            "location": "/domains/", 
+            "text": "Domain Providers\n\n\nDomain Providers allow Drutiny plugins to provide their own methods for pulling\ndomains to use over a multisite target. Domain Providers essentially supply the\ndomains to use in the \n--uri\n parameter in \nprofile:run\n.\n\n\nTo write your own domain provider you need to do two things:\n\n\n\n\nWrite a class that implements the \nDrutiny\\DomainList\\DomainListInterface\n interface.\n\n\nRegister the class in drutiny.config.yml\n\n\n\n\nImplementing the DomainListInterface\n\n\nThe DomainListInterface requires two methods: \n__construct\n and \ngetDomains\n.\n\n\n__construct\n is passed in the metadata required for the class to acquire the\ndomains it provides and \ngetDomains\n returns an array of domains to use.\n\n\nAs an example, here is the default Yaml filepath domain loader which reads in\na list of domains from a Yaml file.\n\n\nnamespace Drutiny\\DomainList;\n\nuse Symfony\\Component\\Yaml\\Yaml;\nuse Drutiny\\Target\\Target;\n\nclass DomainListYamlFile implements DomainListInterface {\n\n  protected $filepath;\n\n  public function __construct(array $metadata)\n  {\n    $this-\nfilepath = $metadata['filepath'];\n  }\n\n  /**\n   * @return array list of domains.\n   */\n  public function getDomains(Target $target)\n  {\n    return Yaml::parseFile($this-\nfilepath);\n  }\n}\n\n\n\n\nSpecifying required metadata\n\n\nYou domain provider may require metadata such as credentials to authenticate\nagainst a provider source. This metadata can be described as parameters using\nDrutiny's annotation system. These annotations are then used in the \nprofile:run\n\nhelp screen to instruct users how to provide the required metadata to the Domain\nProvider.\n\n\nuse Drutiny\\Annotation\\Param;\n\n/**\n * @Param(\n *   name = \nemail\n,\n *   description = \nEmail of Acquia account accessing the Cloud API\n,\n * )\n * @Param(\n *   name = \nkey\n,\n *   description = \nAPI Key which can be obtained from Acquia Cloud account\n,\n * )\n */\nclass AcquiaCloudDomainList implements DomainListInterface {\n\n  //...\n\n  public function __construct(array $metadata)\n  {\n    if (isset($metadata['email'])) {\n      $this-\nemail = $metadata['email'];\n    }\n    if (isset($metadata['key'])) {\n      $this-\nkey = $metadata['key'];\n    }\n\n\n\n\nRegistering the Domain Provider\n\n\nRegistering the class in \ndrutiny.config.yml\n allows the \nprofile:run\n\ncommand to register options to pass in and is required for the domain provider to be usable.\n\n\nDomainList:\n  ac: Drutiny\\Acquia\\AcquiaCloudDomainList", 
+            "title": "Domain Provider"
+        }, 
+        {
+            "location": "/domains/#domain-providers", 
+            "text": "Domain Providers allow Drutiny plugins to provide their own methods for pulling\ndomains to use over a multisite target. Domain Providers essentially supply the\ndomains to use in the  --uri  parameter in  profile:run .  To write your own domain provider you need to do two things:   Write a class that implements the  Drutiny\\DomainList\\DomainListInterface  interface.  Register the class in drutiny.config.yml", 
+            "title": "Domain Providers"
+        }, 
+        {
+            "location": "/domains/#implementing-the-domainlistinterface", 
+            "text": "The DomainListInterface requires two methods:  __construct  and  getDomains .  __construct  is passed in the metadata required for the class to acquire the\ndomains it provides and  getDomains  returns an array of domains to use.  As an example, here is the default Yaml filepath domain loader which reads in\na list of domains from a Yaml file.  namespace Drutiny\\DomainList;\n\nuse Symfony\\Component\\Yaml\\Yaml;\nuse Drutiny\\Target\\Target;\n\nclass DomainListYamlFile implements DomainListInterface {\n\n  protected $filepath;\n\n  public function __construct(array $metadata)\n  {\n    $this- filepath = $metadata['filepath'];\n  }\n\n  /**\n   * @return array list of domains.\n   */\n  public function getDomains(Target $target)\n  {\n    return Yaml::parseFile($this- filepath);\n  }\n}", 
+            "title": "Implementing the DomainListInterface"
+        }, 
+        {
+            "location": "/domains/#specifying-required-metadata", 
+            "text": "You domain provider may require metadata such as credentials to authenticate\nagainst a provider source. This metadata can be described as parameters using\nDrutiny's annotation system. These annotations are then used in the  profile:run \nhelp screen to instruct users how to provide the required metadata to the Domain\nProvider.  use Drutiny\\Annotation\\Param;\n\n/**\n * @Param(\n *   name =  email ,\n *   description =  Email of Acquia account accessing the Cloud API ,\n * )\n * @Param(\n *   name =  key ,\n *   description =  API Key which can be obtained from Acquia Cloud account ,\n * )\n */\nclass AcquiaCloudDomainList implements DomainListInterface {\n\n  //...\n\n  public function __construct(array $metadata)\n  {\n    if (isset($metadata['email'])) {\n      $this- email = $metadata['email'];\n    }\n    if (isset($metadata['key'])) {\n      $this- key = $metadata['key'];\n    }", 
+            "title": "Specifying required metadata"
+        }, 
+        {
+            "location": "/domains/#registering-the-domain-provider", 
+            "text": "Registering the class in  drutiny.config.yml  allows the  profile:run \ncommand to register options to pass in and is required for the domain provider to be usable.  DomainList:\n  ac: Drutiny\\Acquia\\AcquiaCloudDomainList", 
+            "title": "Registering the Domain Provider"
         }, 
         {
             "location": "/policy-library/", 
