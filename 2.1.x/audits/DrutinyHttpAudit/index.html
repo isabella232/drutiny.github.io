@@ -976,6 +976,53 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sslassertion" title="SslAssertion" class="md-nav__link">
+    SslAssertion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_6" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_5" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_6" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1318,6 +1365,53 @@
         
           <li class="md-nav__item">
   <a href="#source_5" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sslassertion" title="SslAssertion" class="md-nav__link">
+    SslAssertion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_6" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_5" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_6" title="Source" class="md-nav__link">
     Source
   </a>
   
@@ -1819,6 +1913,111 @@ Package: <code>drutiny/http</code></p>
     $sandbox-&gt;setParameter('location', $headers[0]);
 
     return strpos($headers[0], 'https://') !== FALSE;
+  }
+
+</code></pre>
+
+<h2 id="sslassertion">SslAssertion</h2>
+<p>Class: <code>Drutiny\Http\Audit\SslAssertion</code><br />
+Extends: <code>Drutiny\Audit\AbstractAnalysis</code><br />
+Package: <code>drutiny/http</code></p>
+<h3 id="policies_6">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSL:DistrustedSymantecPKI</td>
+<td>Chrome distrusted Symantec PKI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters_5">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>host</td>
+<td>string</td>
+<td>The domain name to connect to.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>port</td>
+<td>integer</td>
+<td>The SSL port to connect to</td>
+<td>443</td>
+</tr>
+<tr>
+<td>expression</td>
+<td>string</td>
+<td>The expression language to evaludate. See https://symfony.com/doc/current/components/expression_language/syntax.html</td>
+<td>'true'</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens_5">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>host</td>
+<td>string</td>
+<td>The domain name to connect to.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>port</td>
+<td>integer</td>
+<td>The SSL port to connect to</td>
+<td>443</td>
+</tr>
+<tr>
+<td>expression</td>
+<td>string</td>
+<td>The expression language to evaludate. See https://symfony.com/doc/current/components/expression_language/syntax.html</td>
+<td>'true'</td>
+</tr>
+<tr>
+<td>cert</td>
+<td>array</td>
+<td>An multidimension array of representing the certificate info</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_6">Source</h4>
+<pre><code class="php">  final public function audit(Sandbox $sandbox)
+  {
+    $this-&gt;gather($sandbox);
+    $expression = $sandbox-&gt;getParameter('expression', 'true');
+    $variables  = $sandbox-&gt;getParameterTokens();
+
+    $expressionLanguage = new ExpressionLanguage();
+
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
+
+    return $expressionLanguage-&gt;evaluate($expression, $variables);
   }
 
 </code></pre>

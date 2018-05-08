@@ -732,6 +732,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#chrome-distrusted-symantec-pki" title="Chrome distrusted Symantec PKI" class="md-nav__link">
+    Chrome distrusted Symantec PKI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1157,6 +1177,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#chrome-distrusted-symantec-pki" title="Chrome distrusted Symantec PKI" class="md-nav__link">
+    Chrome distrusted Symantec PKI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1438,6 +1478,33 @@ browsers. The best configuration is <code>X-XSS-Protection: 1; mode=block</code>
 <td>string</td>
 <td>The value to check against.</td>
 <td>'1; mode=block'</td>
+</tr>
+</tbody>
+</table>
+<h2 id="chrome-distrusted-symantec-pki">Chrome distrusted Symantec PKI</h2>
+<p><strong>Name</strong>: <code>SSL:DistrustedSymantecPKI</code><br />
+<strong>Package</strong>: <code>drutiny/http</code><br />
+<strong>Class</strong>: <code>\Drutiny\Http\Audit\SslAssertion</code></p>
+<p>At the end of July 2018, the Chrome team and PKI community plan to reduce, and
+remove, trust in Symantec’s infrastructure in order to uphold users’ security
+and privacy when browsing the web. SSL/TLS certificates from the Legacy
+Symantec PKI issued after December 1, 2017 will no longer be trusted.</p>
+<h3 id="parameters_9">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expression</td>
+<td>string</td>
+<td>The expression language to evaludate. See https://symfony.com/doc/current/components/expression_language/syntax.html</td>
+<td>"not (cert[\"issuer\"][\"O\"] in [\"DigiCert Inc\", \"thawte, Inc.\", \"GeoTrust Inc.\"]\nand cert[\"validFrom_time_t\"] &lt; 1512039600)\n"</td>
 </tr>
 </tbody>
 </table>
