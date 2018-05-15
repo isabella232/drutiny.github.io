@@ -485,6 +485,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#chart" title="chart" class="md-nav__link">
+    chart
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -565,6 +572,18 @@
   <li class="md-nav__item">
     <a href="../domains/" title="Domain Provider" class="md-nav__link">
       Domain Provider
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../charts/" title="Charts" class="md-nav__link">
+      Charts
     </a>
   </li>
 
@@ -998,6 +1017,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#chart" title="chart" class="md-nav__link">
+    chart
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1159,6 +1185,20 @@ critical a failure or warning is. Possible values in order of importance:</p>
 <pre><code class="yaml">severity: 'high'
 </code></pre>
 
+<h3 id="chart">chart</h3>
+<p>Chart declarations allow you to provide metadata about how to build a chart for
+display in the html format. This then produces a chart token that can be used in the success, failure, warning or remediation fields to render a chart in place.</p>
+<pre><code class="yaml">chart:
+  requests:
+    type: doughnut
+    labels: tr td:first-child
+    hide-table: false
+    title: Request Distribution by Domain
+    series:
+      - tr td:nth-child(4)
+</code></pre>
+
+<p>See <a href="" title="charts.md">charts documentation</a> for more information.</p>
 <h2 id="using-tokens-in-message-renders">Using Tokens in message renders.</h2>
 <p>Tokens are variables you can use in the render of policy messaging.
 This includes success, failure, warning and description fields defined in a policy.</p>
