@@ -875,6 +875,9 @@ provided by the policy.</p>
     labels: tr td:first-child
     hide-table: false
     title: Request Distribution by Domain
+    height: 300
+    width: 400
+    legend: left
     series:
       - tr td:nth-child(4)
 success: |
@@ -923,6 +926,26 @@ display in the chart.</p>
 <tr>
 <td><code>series</code></td>
 <td>An array of css selectors that return the HTML elements whose text will become chart data.</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>The height of the graph area set as a CSS style on the <code>&lt;canvas&gt;</code> element.</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>The width of the graph area set as a CSS style on the <code>&lt;canvas&gt;</code> element.</td>
+</tr>
+<tr>
+<td><code>x-axis</code></td>
+<td>The label for the x-axis.</td>
+</tr>
+<tr>
+<td><code>y-axis</code></td>
+<td>The label for the y-axis.</td>
+</tr>
+<tr>
+<td><code>legend</code></td>
+<td>The position of the legend. Options are: top, bottom, left, right or none (to remove legend).</td>
 </tr>
 </tbody>
 </table>
