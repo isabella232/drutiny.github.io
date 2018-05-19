@@ -1,0 +1,2548 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This is a generic Drupal site auditing and optional remediation tool.">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>Drupal - Drutiny</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/tweaks.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#iniget" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Drutiny" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Drutiny
+              </span>
+              <span class="md-header-nav__topic">
+                Drupal
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Drutiny
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Usage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Usage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reports/" title="Reports" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../plugins/" title="Plugins" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      API Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Audit" class="md-nav__link">
+      Audit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sandbox/" title="Sandbox" class="md-nav__link">
+      Sandbox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../profiles/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../config/" title="Config" class="md-nav__link">
+      Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../creds/" title="Credential Manager" class="md-nav__link">
+      Credential Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../domains/" title="Domain Provider" class="md-nav__link">
+      Domain Provider
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../charts/" title="Charts" class="md-nav__link">
+      Charts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Policy Library
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Policy Library
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy-library/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policies/drutiny-plugin-drupal-7/" title="drutiny/plugin-drupal-7" class="md-nav__link">
+      drutiny/plugin-drupal-7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policies/drutiny-plugin-drupal-8/" title="drutiny/plugin-drupal-8" class="md-nav__link">
+      drutiny/plugin-drupal-8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policies/drutiny-plugin-distro-common/" title="drutiny/plugin-distro-common" class="md-nav__link">
+      drutiny/plugin-distro-common
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policies/drutiny-cloudflare/" title="drutiny/cloudflare" class="md-nav__link">
+      drutiny/cloudflare
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policies/drutiny-acquia/" title="drutiny/acquia" class="md-nav__link">
+      drutiny/acquia
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policies/drutiny-http/" title="drutiny/http" class="md-nav__link">
+      drutiny/http
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policies/drutiny-drutiny/" title="drutiny/drutiny" class="md-nav__link">
+      drutiny/drutiny
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Audit Library
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Audit Library
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAcquiaAudit/" title="Acquia " class="md-nav__link">
+      Acquia 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAudit/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditApache/" title="Apache" class="md-nav__link">
+      Apache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditDNS/" title="DNS" class="md-nav__link">
+      DNS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditDatabase/" title="Database" class="md-nav__link">
+      Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Drupal
+      </label>
+    
+    <a href="./" title="Drupal" class="md-nav__link md-nav__link--active">
+      Drupal
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iniget" title="IniGet" class="md-nav__link">
+    IniGet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#largedrupalfiles" title="LargeDrupalFiles" class="md-nav__link">
+    LargeDrupalFiles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_1" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduleenabled" title="ModuleEnabled" class="md-nav__link">
+    ModuleEnabled
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_1" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_2" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduleupdatestatus" title="ModuleUpdateStatus" class="md-nav__link">
+    ModuleUpdateStatus
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_2" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_3" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_3" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduleversion" title="ModuleVersion" class="md-nav__link">
+    ModuleVersion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_3" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_4" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_4" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phplint" title="PhpLint" class="md-nav__link">
+    PhpLint
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_4" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_5" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_5" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlresultaudit" title="SqlResultAudit" class="md-nav__link">
+    SqlResultAudit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_5" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_6" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_6" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statusinformation" title="StatusInformation" class="md-nav__link">
+    StatusInformation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tokens_7" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_7" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatedbstatus" title="UpdateDBStatus" class="md-nav__link">
+    UpdateDBStatus
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_6" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_8" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditFilesystem/" title="Filesystem" class="md-nav__link">
+      Filesystem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditTemplate/" title="Template" class="md-nav__link">
+      Template
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyCloudflareAudit/" title="Cloudflare " class="md-nav__link">
+      Cloudflare 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyHttpAudit/" title="Http " class="md-nav__link">
+      Http 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyPluginDrupal7Audit/" title="Plugin Drupal7 " class="md-nav__link">
+      Plugin Drupal7 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyPluginDrupal7AuditSecurity/" title="Plugin Drupal7 Security" class="md-nav__link">
+      Plugin Drupal7 Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyPluginDrupal8Audit/" title="Plugin Drupal8 " class="md-nav__link">
+      Plugin Drupal8 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinySumoLogicAudit/" title="SumoLogic " class="md-nav__link">
+      SumoLogic 
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iniget" title="IniGet" class="md-nav__link">
+    IniGet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#largedrupalfiles" title="LargeDrupalFiles" class="md-nav__link">
+    LargeDrupalFiles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_1" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduleenabled" title="ModuleEnabled" class="md-nav__link">
+    ModuleEnabled
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_1" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_2" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduleupdatestatus" title="ModuleUpdateStatus" class="md-nav__link">
+    ModuleUpdateStatus
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_2" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_3" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_3" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduleversion" title="ModuleVersion" class="md-nav__link">
+    ModuleVersion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_3" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_4" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_4" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phplint" title="PhpLint" class="md-nav__link">
+    PhpLint
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_4" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_5" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_5" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlresultaudit" title="SqlResultAudit" class="md-nav__link">
+    SqlResultAudit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_5" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_6" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_6" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statusinformation" title="StatusInformation" class="md-nav__link">
+    StatusInformation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tokens_7" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_7" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updatedbstatus" title="UpdateDBStatus" class="md-nav__link">
+    UpdateDBStatus
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_6" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_8" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/drutiny/drutiny/edit/master/docs/audits/DrutinyAuditDrupal.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Drupal</h1>
+                
+                <h2 id="iniget">IniGet</h2>
+<p>Evaluate a PHP ini setting.</p>
+<p>Class: <code>Drutiny\Audit\Drupal\IniGet</code><br />
+Extends: <code>Drutiny\Audit\AbstractComparison</code><br />
+Package: <code>drutiny/drutiny</code></p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setting</td>
+<td>string</td>
+<td>The name of the ini setting to check.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>value</td>
+<td>mixed</td>
+<td>The local value of the ini setting to compare for.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>comp_type</td>
+<td>string</td>
+<td>The comparison operator to use for the comparison.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setting</td>
+<td>string</td>
+<td>The name of the ini setting to check.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>value</td>
+<td>mixed</td>
+<td>The local value of the ini setting to compare for.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>comp_type</td>
+<td>string</td>
+<td>The comparison operator to use for the comparison.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox)
+  {
+    $ini = $this-&gt;sandbox-&gt;drush()-&gt;evaluate(function () {
+      return ini_get_all();
+    });
+    $setting = $sandbox-&gt;getParameter('setting');
+
+    if (!isset($ini[$setting])) {
+      return FALSE;
+    }
+
+    return $this-&gt;compare($sandbox-&gt;getParameter('value'), $ini[$setting]['local_value'], $sandbox);
+  }
+
+</code></pre>
+
+<h2 id="largedrupalfiles">LargeDrupalFiles</h2>
+<p>Identify files larger than a specfied size. Pass if no matching files found.</p>
+<p>Class: <code>Drutiny\Audit\Drupal\LargeDrupalFiles</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
+<h3 id="policies">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal:largeFiles</td>
+<td>Large Drupal Files</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters_1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max_size</td>
+<td>integer</td>
+<td>Report files larger than this value measured in bytes.</td>
+<td>10000000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens_1">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max_size</td>
+<td>integer</td>
+<td>Report files larger than this value measured in bytes.</td>
+<td>10000000</td>
+</tr>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>Total number of large files found</td>
+<td>null</td>
+</tr>
+<tr>
+<td>too_many_files</td>
+<td>integer</td>
+<td>Text to display if there are more than 10 files found.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>files</td>
+<td>integer</td>
+<td>A list of up to 10 files that are too large.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>plural</td>
+<td>string</td>
+<td>This variable will contain an 's' if there is more than one issue found.</td>
+<td>''</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_1">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $max_size = (int) $sandbox-&gt;getParameter('max_size', 10000000);
+    $sandbox-&gt;setParameter('readable_max_size', $max_size / 1000 / 1000 . ' MB');
+    $query = &quot;SELECT fm.uri, fm.filesize, (SELECT COUNT(*) FROM file_usage fu WHERE fu.fid = fm.fid) as 'usage' FROM file_managed fm WHERE fm.filesize &gt;= @size ORDER BY fm.filesize DESC&quot;;
+    $query = strtr($query, ['@size' =&gt; $max_size]);
+    $output = $sandbox-&gt;drush()-&gt;sqlQuery($query);
+
+    if (empty($output)) {
+      return TRUE;
+    }
+
+    $records = is_array($output) ? $output : explode(&quot;\n&quot;, $output);
+    $rows = array();
+    foreach ($records as $record) {
+      // Ignore record if it contains message about adding RSA key to known hosts.
+      if (strpos($record, '(RSA) to the list of known hosts') != FALSE) {
+        continue;
+      }
+
+      // Create the columns
+      $parts = explode(&quot;\t&quot;, $record);
+      $rows[] = [
+        'uri' =&gt; $parts[0],
+        'size' =&gt; number_format((float) $parts[1] / 1000 / 1000, 2) . ' MB',
+        'usage' =&gt; ($parts[2] == 0) ? 'No' : 'Yes'
+      ];
+    }
+    $totalRows = count($rows);
+
+    if ($totalRows &lt; 1) {
+      return TRUE;
+    }
+    $sandbox-&gt;setParameter('total', $totalRows);
+
+    // Reduce the number of rows to 10
+    $rows = array_slice($rows, 0, 10);
+    $too_many_files = ($totalRows &gt; 10) ? &quot;Only the first 10 files are displayed.&quot; : &quot;&quot;;
+
+    $sandbox-&gt;setParameter('too_many_files', $too_many_files);
+    $sandbox-&gt;setParameter('files', $rows);
+    $sandbox-&gt;setParameter('plural', $totalRows &gt; 1 ? 's' : '');
+
+    return Audit::FAIL;
+  }
+
+</code></pre>
+
+<h2 id="moduleenabled">ModuleEnabled</h2>
+<p>Generic module is enabled check.</p>
+<p>Class: <code>Drutiny\Audit\Drupal\ModuleEnabled</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
+<p>This class can <strong>remediate</strong> failed audits.</p>
+<h3 id="policies_1">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:SecurePagesEnabled</td>
+<td>Secure Pages Enabled</td>
+</tr>
+<tr>
+<td>Drupal-8:MemcacheEnabled</td>
+<td>Memcache module enabled</td>
+</tr>
+<tr>
+<td>Drupal-8:PurgeEnabled</td>
+<td>Purge module enabled</td>
+</tr>
+<tr>
+<td>Distro:PasswordPolicyEnabled</td>
+<td>Password Policy</td>
+</tr>
+<tr>
+<td>Distro:RobotstxtEnabled</td>
+<td>Robotstxt</td>
+</tr>
+<tr>
+<td>Distro:GoogleAnalyticsEnabled</td>
+<td>Google Analytics</td>
+</tr>
+<tr>
+<td>Acquia:SPIEnabled</td>
+<td>Acquia SPI</td>
+</tr>
+<tr>
+<td>Acquia:AgentEnabled</td>
+<td>Acquia Agent</td>
+</tr>
+<tr>
+<td>Acquia:SiteFactoryOpenID</td>
+<td>Acquia Cloud Site Factory OpenID</td>
+</tr>
+<tr>
+<td>Acquia:SiteFactory:Variables</td>
+<td>Acquia Cloud Site Factory Variables</td>
+</tr>
+<tr>
+<td>Acquia:SiteFactoryDuplication</td>
+<td>Acquia Cloud Site Factory Duplication</td>
+</tr>
+<tr>
+<td>Acquia:SiteFactory:ThemeEnabled</td>
+<td>Acquia Cloud Site Factory Theme</td>
+</tr>
+<tr>
+<td>Acquia:SiteFactory:Pingdom</td>
+<td>Acquia Cloud Site Factory Pingdom</td>
+</tr>
+<tr>
+<td>Acquia:ACSF</td>
+<td>Acquia Cloud Site Factory</td>
+</tr>
+<tr>
+<td>Acquia:MemcacheEnabled</td>
+<td>Memcache module enabled</td>
+</tr>
+<tr>
+<td>Acquia:PurgeEnabled</td>
+<td>Acquia Purge Enabled</td>
+</tr>
+<tr>
+<td>Acquia:Connected</td>
+<td>Acquia Connector</td>
+</tr>
+<tr>
+<td>Drupal:SyslogEnabled</td>
+<td>Syslog</td>
+</tr>
+<tr>
+<td>Drupal:Security:UserEmueration</td>
+<td>User Enumeration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters_2">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>string</td>
+<td>The module to check is enabled.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens_2">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>string</td>
+<td>The module to check is enabled.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_2">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox)
+  {
+
+    $module = $sandbox-&gt;getParameter('module');
+    $info = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;pmList();
+
+    if (!isset($info[$module])) {
+      return FALSE;
+    }
+
+    $status = strtolower($info[$module]['status']);
+
+    return ($status == 'enabled');
+  }
+
+</code></pre>
+
+<h2 id="moduleupdatestatus">ModuleUpdateStatus</h2>
+<p>Look for modules with available updates.</p>
+<p>Class: <code>Drutiny\Audit\Drupal\ModuleUpdateStatus</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
+<h3 id="policies_2">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal:moduleUpdates</td>
+<td>Module updates</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens_3">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>updates</td>
+<td>array</td>
+<td>Description of module updates available.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_3">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $output = $sandbox-&gt;drush()-&gt;pmUpdatestatus('--format=json');
+    $lines = explode(PHP_EOL, $output);
+    $lines = array_map('trim', $lines);
+
+    // Output can often contain non-json output which needs to be filtered out.
+    while ($line = array_shift($lines)) {
+      if ($line == &quot;{&quot;) {
+        array_unshift($lines, $line);
+        break;
+      }
+    }
+    $json = implode(PHP_EOL, $lines);
+    $modules = json_decode($json, TRUE);
+
+    $issues = [];
+
+    foreach ($modules as $name =&gt; $info) {
+
+      if (isset($info['recommended_major']) &amp;&amp; $info['existing_major'] != $info['recommended_major']) {
+        $issues[] = $info;
+      }
+      elseif ($info['existing_version'] != $info['recommended']) {
+        $issues[] = $info;
+      }
+    }
+
+    $sandbox-&gt;setParameter('updates', $issues);
+
+    if (!count($issues)) {
+      return TRUE;
+    }
+
+    $sec_updates = array_filter($issues, function ($info) {
+      return strpos($info['status_msg'], 'SECURITY') !== FALSE;
+    });
+
+    // Pure failure if all issues are security ones.
+    if (count($sec_updates) === count($issues)) {
+      return FALSE;
+    }
+    // Security updates and normal updates available.
+    elseif (count($sec_updates)) {
+      return Audit::WARNING_FAIL;
+    }
+
+    // Just normal updates available.
+    return Audit::WARNING;
+  }
+
+</code></pre>
+
+<h2 id="moduleversion">ModuleVersion</h2>
+<p>Check the version of Drupal project in a site.</p>
+<p>Class: <code>Drutiny\Audit\Drupal\ModuleVersion</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
+<h3 id="policies_3">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:SA-CORE-2013-003</td>
+<td>CSS Aggregation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters_3">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>string</td>
+<td>The module to version information for</td>
+<td>null</td>
+</tr>
+<tr>
+<td>version</td>
+<td>string</td>
+<td>The static version to check against.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>comparator</td>
+<td>string</td>
+<td>How to compare the version (greaterThan, greaterThanOrEqualTo, lessThan etc. See https://github.com/composer/semver)</td>
+<td>greaterThanOrEqualTo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens_4">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>string</td>
+<td>The module to version information for</td>
+<td>null</td>
+</tr>
+<tr>
+<td>version</td>
+<td>string</td>
+<td>The static version to check against.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>comparator</td>
+<td>string</td>
+<td>How to compare the version (greaterThan, greaterThanOrEqualTo, lessThan etc. See https://github.com/composer/semver)</td>
+<td>greaterThanOrEqualTo</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_4">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox)
+  {
+    $module = $sandbox-&gt;getParameter('module');
+    $version = $sandbox-&gt;getParameter('version');
+    $comparator_method = $sandbox-&gt;getParameter('comparator');
+
+    if (!method_exists(&quot;Composer\Semver\Comparator&quot;, $comparator_method)) {
+      throw new \Exception(&quot;Comparator method not available: $comparator_method&quot;);
+    }
+
+    $info = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;pmList();
+
+    if (!isset($info[$module])) {
+      return Audit::NOT_APPLICABLE;
+    }
+
+    $current_version = strtolower($info[$module]['version']);
+    $sandbox-&gt;setParameter('current_version', $current_version);
+
+    $sandbox-&gt;logger()-&gt;info(&quot;$comparator_method($current_version, $version)&quot;);
+
+    return call_user_func(&quot;Composer\Semver\Comparator::$comparator_method&quot;, $current_version, $version);
+  }
+
+</code></pre>
+
+<h2 id="phplint">PhpLint</h2>
+<p>Run PHP lint over PHP files in a directory.</p>
+<p>Class: <code>Drutiny\Audit\Drupal\PhpLint</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
+<h3 id="policies_4">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal:LintTheme</td>
+<td>Lint PHP files in Theme</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters_4">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>The path where to lint PHP files.</td>
+<td>'%root'</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens_5">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>The path where to lint PHP files.</td>
+<td>'%root'</td>
+</tr>
+<tr>
+<td>errors</td>
+<td>array</td>
+<td>An array of parse errors found.</td>
+<td>{  }</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_5">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    // find src/ -name \*.php -exec php -l {} \; 2&gt;&amp;1 | grep 'PHP Parse error:'
+    $path = $sandbox-&gt;getParameter('path', '%root');
+    $stat = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;status();
+
+    $path = strtr($path, $stat['%paths']);
+
+    $errors = $sandbox-&gt;exec(&quot;find $path -name \*.php -exec php -l {} \; 2&gt;&amp;1 | grep 'PHP Parse error:' || true&quot;);
+    $errors = array_filter(explode(PHP_EOL, $errors));
+    $sandbox-&gt;setParameter('errors', $errors);
+    return count($errors) == 0;
+  }
+
+</code></pre>
+
+<h2 id="sqlresultaudit">SqlResultAudit</h2>
+<p>Audit the first row returned from a SQL query.</p>
+<p>Class: <code>Drutiny\Audit\Drupal\SqlResultAudit</code><br />
+Extends: <code>Drutiny\Audit\AbstractComparison</code><br />
+Package: <code>drutiny/drutiny</code></p>
+<h3 id="policies_5">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal:AnonSession</td>
+<td>Anonymous sessions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters_5">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td>string</td>
+<td>The SQL query to run. Can use other parameters for variable replacement.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>field</td>
+<td>string</td>
+<td>The name of the field in the result row to pull the value from</td>
+<td>null</td>
+</tr>
+<tr>
+<td>value</td>
+<td>mixed</td>
+<td>The value to compare against</td>
+<td>null</td>
+</tr>
+<tr>
+<td>comp_type</td>
+<td>string</td>
+<td>The comparison operator to use for the comparison.</td>
+<td>'='</td>
+</tr>
+<tr>
+<td>default_value</td>
+<td>string</td>
+<td>If no SQL result set is returned, what should the default value of the field be?</td>
+<td>''</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens_6">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>query</td>
+<td>string</td>
+<td>The SQL query to run. Can use other parameters for variable replacement.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>field</td>
+<td>string</td>
+<td>The name of the field in the result row to pull the value from</td>
+<td>null</td>
+</tr>
+<tr>
+<td>value</td>
+<td>mixed</td>
+<td>The value to compare against</td>
+<td>null</td>
+</tr>
+<tr>
+<td>comp_type</td>
+<td>string</td>
+<td>The comparison operator to use for the comparison.</td>
+<td>'='</td>
+</tr>
+<tr>
+<td>default_value</td>
+<td>string</td>
+<td>If no SQL result set is returned, what should the default value of the field be?</td>
+<td>''</td>
+</tr>
+<tr>
+<td>result</td>
+<td>string</td>
+<td>The comparison operator to use for the comparison.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_6">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox)
+  {
+    $query = $sandbox-&gt;getParameter('query');
+
+    $tokens = [];
+    foreach ($sandbox-&gt;getParameterTokens() as $key =&gt; $value) {
+        $tokens[':' . $key] = $value;
+    }
+    $query = strtr($query . ' \G', $tokens);
+
+    if (!preg_match_all('/^SELECT (.*) FROM/', $query, $fields)) {
+      throw new \Exception(&quot;Could not parse fields from SQL query: $query.&quot;);
+    }
+
+    $output = $sandbox-&gt;drush()-&gt;sqlq($query);
+    $results = [];
+
+    while ($line = array_shift($output))
+    {
+      if (preg_match('/^[\*]+ ([0-9]+)\. row [\*]+$/', $line, $matches)) {
+        $idx = $matches[1];
+      }
+      else {
+        list($field, $value) = explode(':', trim($line), 2);
+        $results[$idx][$field] = $value;
+      }
+    }
+
+    $field = $sandbox-&gt;getParameter('field');
+
+    if (empty($results)) {
+      $results[] = [
+        $field =&gt; $sandbox-&gt;getParameter('default_value'),
+      ];
+    }
+
+    $row = array_shift($results);
+
+    $field = $sandbox-&gt;getParameter('field');
+    if (!isset($row[$field])) {
+      throw new \Exception(&quot;Did not find $field in SQL query: $query.&quot;);
+    }
+
+     $sandbox-&gt;setParameter('result', $row);
+
+    return $this-&gt;compare($sandbox-&gt;getParameter('value'), $row[$field], $sandbox);
+  }
+
+</code></pre>
+
+<h2 id="statusinformation">StatusInformation</h2>
+<p>Drush Status Information</p>
+<p>Class: <code>Drutiny\Audit\Drupal\StatusInformation</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
+<h3 id="tokens_7">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>array</td>
+<td>The status object returned by drush.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_7">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $stat = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;status();
+    $sandbox-&gt;setParameter('status', $stat);
+
+    return Audit::NOTICE;
+  }
+
+</code></pre>
+
+<h2 id="updatedbstatus">UpdateDBStatus</h2>
+<p>Ensure all module updates have been applied.</p>
+<p>Class: <code>Drutiny\Audit\Drupal\UpdateDBStatus</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/drutiny</code></p>
+<h3 id="policies_6">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal:updates</td>
+<td>Database updates</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_8">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $output = $sandbox-&gt;drush()-&gt;updb('-n');
+
+    if (strpos($output, 'No database updates required') &gt;= 0 || empty($output)) {
+      return TRUE;
+    }
+    return FALSE;
+  }
+
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../DrutinyAuditDatabase/" title="Database" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Database
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../DrutinyAuditFilesystem/" title="Filesystem" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Filesystem
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-116046012-1","drutiny.github.io"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
