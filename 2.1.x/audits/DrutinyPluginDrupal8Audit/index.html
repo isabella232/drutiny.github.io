@@ -809,6 +809,20 @@
     Policies
   </a>
   
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_1" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -911,14 +925,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tokens_1" title="Tokens" class="md-nav__link">
+  <a href="#tokens_2" title="Tokens" class="md-nav__link">
     Tokens
   </a>
   
@@ -991,14 +1005,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tokens_2" title="Tokens" class="md-nav__link">
+  <a href="#tokens_3" title="Tokens" class="md-nav__link">
     Tokens
   </a>
   
@@ -1152,6 +1166,20 @@
           <li class="md-nav__item">
   <a href="#policies_10" title="Policies" class="md-nav__link">
     Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_4" title="Tokens" class="md-nav__link">
+    Tokens
   </a>
   
     <nav class="md-nav">
@@ -1280,6 +1308,20 @@
     Policies
   </a>
   
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_1" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -1382,14 +1424,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tokens_1" title="Tokens" class="md-nav__link">
+  <a href="#tokens_2" title="Tokens" class="md-nav__link">
     Tokens
   </a>
   
@@ -1462,14 +1504,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
     Parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tokens_2" title="Tokens" class="md-nav__link">
+  <a href="#tokens_3" title="Tokens" class="md-nav__link">
     Tokens
   </a>
   
@@ -1623,6 +1665,20 @@
           <li class="md-nav__item">
   <a href="#policies_10" title="Policies" class="md-nav__link">
     Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_4" title="Tokens" class="md-nav__link">
+    Tokens
   </a>
   
     <nav class="md-nav">
@@ -1822,6 +1878,44 @@ Package: <code>drutiny/plugin-drupal-8</code></p>
 </tr>
 </tbody>
 </table>
+<h3 id="parameters_1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cron_max_interval</td>
+<td>integer</td>
+<td>The maximum interval between</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens_1">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cron_max_interval</td>
+<td>integer</td>
+<td>The maximum interval between</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
 <h4 id="source_1">Source</h4>
 <pre><code class="php">  public function audit(Sandbox $sandbox) {
 
@@ -2017,7 +2111,7 @@ Package: <code>drutiny/plugin-drupal-8</code></p>
 </tr>
 </tbody>
 </table>
-<h3 id="parameters_1">Parameters</h3>
+<h3 id="parameters_2">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -2036,7 +2130,7 @@ Package: <code>drutiny/plugin-drupal-8</code></p>
 </tr>
 </tbody>
 </table>
-<h3 id="tokens_1">Tokens</h3>
+<h3 id="tokens_2">Tokens</h3>
 <table>
 <thead>
 <tr>
@@ -2106,10 +2200,13 @@ Package: <code>drutiny/plugin-drupal-8</code></p>
 
     $info = $sandbox-&gt;drush([
       'format' =&gt; 'json',
-      'package' =&gt; 'Core (Experimental)',
       'status' =&gt; 'Enabled',
       'core',
     ])-&gt;pmList();
+
+    $info = array_filter($info, function ($package) {
+      return strpos('experimental', strtolower($package['package'])) !== FALSE;
+    });
 
     if (empty($info)) {
       return TRUE;
@@ -2142,7 +2239,7 @@ Package: <code>drutiny/plugin-drupal-8</code></p>
 </tr>
 </tbody>
 </table>
-<h3 id="parameters_2">Parameters</h3>
+<h3 id="parameters_3">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -2161,7 +2258,7 @@ Package: <code>drutiny/plugin-drupal-8</code></p>
 </tr>
 </tbody>
 </table>
-<h3 id="tokens_2">Tokens</h3>
+<h3 id="tokens_3">Tokens</h3>
 <table>
 <thead>
 <tr>
@@ -2184,16 +2281,21 @@ Package: <code>drutiny/plugin-drupal-8</code></p>
 <pre><code class="php">  public function audit(Sandbox $sandbox) {
     $plugin_name = $sandbox-&gt;getParameter('plugin');
 
-    $config = $sandbox-&gt;drush([
-      'format' =&gt; 'json',
-      'include-overridden' =&gt; NULL,
-      ])-&gt;configGet('purge.plugins');
-    $plugins = $config['purgers'];
+    try {
+      $config = $sandbox-&gt;drush([
+        'format' =&gt; 'json',
+        'include-overridden' =&gt; NULL,
+        ])-&gt;configGet('purge.plugins');
+      $plugins = $config['purgers'];
 
-    foreach ($plugins as $plugin) {
-      if ($plugin['plugin_id'] == $plugin_name) {
-        return TRUE;
+      foreach ($plugins as $plugin) {
+        if ($plugin['plugin_id'] == $plugin_name) {
+          return TRUE;
+        }
       }
+    }
+    catch (\Drutiny\Driver\DrushFormatException $e) {
+      $sandbox-&gt;setParameter('exception', $e-&gt;getMessage());
     }
 
     return FALSE;
@@ -2420,6 +2522,68 @@ Package: <code>drutiny/plugin-drupal-8</code></p>
 <tr>
 <td>Drupal-8:User1LockDown</td>
 <td>Administrator login is locked down (uid:1)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters_4">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td></td>
+<td>The email the user account should be.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>blacklist</td>
+<td></td>
+<td>List of usernames that are not acceptable.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>status</td>
+<td></td>
+<td>Whether the account should be enabled or disabled.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens_4">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td></td>
+<td>The email the user account should be.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>blacklist</td>
+<td></td>
+<td>List of usernames that are not acceptable.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>status</td>
+<td></td>
+<td>Whether the account should be enabled or disabled.</td>
+<td>null</td>
 </tr>
 </tbody>
 </table>
