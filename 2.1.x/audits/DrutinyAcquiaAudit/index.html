@@ -1403,13 +1403,18 @@ Package: <code>drutiny/acquia</code></p>
 <pre><code class="php">  final public function audit(Sandbox $sandbox)
   {
     $this-&gt;gather($sandbox);
-    $expression = $sandbox-&gt;getParameter('expression', 'true');
-    $variables  = $sandbox-&gt;getParameterTokens();
-
     $expressionLanguage = new ExpressionLanguage();
-
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    $variables  = $sandbox-&gt;getParameterTokens();
     $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
+
+    $expression = $sandbox-&gt;getParameter('not_applicable', 'true');
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    if ($expressionLanguage-&gt;evaluate($expression, $variables)) {
+      return self::NOT_APPLICABLE;
+    }
+
+    $expression = $sandbox-&gt;getParameter('expression', 'true');
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
 
     return $expressionLanguage-&gt;evaluate($expression, $variables);
   }

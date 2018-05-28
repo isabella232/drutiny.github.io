@@ -1329,6 +1329,12 @@ Package: <code>drutiny/drutiny</code></p>
 <td>The expression language to evaludate. See https://symfony.com/doc/current/components/expression_language/syntax.html</td>
 <td>'true'</td>
 </tr>
+<tr>
+<td>not_applicable</td>
+<td>string</td>
+<td>The expression language to evaludate if the analysis is not applicable. See https://symfony.com/doc/current/components/expression_language/syntax.html</td>
+<td>'false'</td>
+</tr>
 </tbody>
 </table>
 <h3 id="tokens">Tokens</h3>
@@ -1348,19 +1354,30 @@ Package: <code>drutiny/drutiny</code></p>
 <td>The expression language to evaludate. See https://symfony.com/doc/current/components/expression_language/syntax.html</td>
 <td>'true'</td>
 </tr>
+<tr>
+<td>not_applicable</td>
+<td>string</td>
+<td>The expression language to evaludate if the analysis is not applicable. See https://symfony.com/doc/current/components/expression_language/syntax.html</td>
+<td>'false'</td>
+</tr>
 </tbody>
 </table>
 <h4 id="source">Source</h4>
 <pre><code class="php">  final public function audit(Sandbox $sandbox)
   {
     $this-&gt;gather($sandbox);
-    $expression = $sandbox-&gt;getParameter('expression', 'true');
-    $variables  = $sandbox-&gt;getParameterTokens();
-
     $expressionLanguage = new ExpressionLanguage();
-
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    $variables  = $sandbox-&gt;getParameterTokens();
     $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
+
+    $expression = $sandbox-&gt;getParameter('not_applicable', 'true');
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    if ($expressionLanguage-&gt;evaluate($expression, $variables)) {
+      return self::NOT_APPLICABLE;
+    }
+
+    $expression = $sandbox-&gt;getParameter('expression', 'true');
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
 
     return $expressionLanguage-&gt;evaluate($expression, $variables);
   }
