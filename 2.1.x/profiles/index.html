@@ -442,6 +442,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#excluded_policies" title="excluded_policies" class="md-nav__link">
+    excluded_policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#format" title="format" class="md-nav__link">
     format
   </a>
@@ -913,6 +920,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#excluded_policies" title="excluded_policies" class="md-nav__link">
+    excluded_policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#format" title="format" class="md-nav__link">
     format
   </a>
@@ -1020,6 +1034,14 @@ profiles. Each include name should be the machine name of another available prof
 <pre><code class="yaml">include:
   - cloud
   - d8
+</code></pre>
+
+<h3 id="excluded_policies">excluded_policies</h3>
+<p>This directive allows a profile to exclude policies that were implicitly included
+in an included profile defined in the <code>include</code> directive.</p>
+<pre><code class="yaml">excluded_policies:
+  - Drupal-7:BlackListPermissions
+  - Drupal-7:CSSAggregation
 </code></pre>
 
 <h3 id="format">format</h3>

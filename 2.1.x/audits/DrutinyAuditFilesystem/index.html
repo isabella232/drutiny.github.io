@@ -1325,7 +1325,7 @@ Package: <code>drutiny/drutiny</code></p>
       foreach ($types as $type) {
         $conditions[] = '-iname &quot;*.' . $type . '&quot;';
       }
-      $command[] = implode(' -or ', $conditions);
+      $command[] = '\( ' . implode(' -or ', $conditions) . ' \)';
     }
 
     foreach ($sandbox-&gt;getParameter('exclude', []) as $filepath) {
