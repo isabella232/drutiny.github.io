@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.8.0">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.0">
     
     
       
@@ -42,7 +42,8 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e8ff00e1.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.4f4f49e8.css">
+      
       
     
     
@@ -2029,7 +2030,7 @@ Package: <code>drutiny/http</code></p>
     $variables  = $sandbox-&gt;getParameterTokens();
     $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
 
-    $expression = $sandbox-&gt;getParameter('not_applicable', 'true');
+    $expression = $sandbox-&gt;getParameter('not_applicable', 'false');
     $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
     if ($expressionLanguage-&gt;evaluate($expression, $variables)) {
       return self::NOT_APPLICABLE;
@@ -2037,7 +2038,6 @@ Package: <code>drutiny/http</code></p>
 
     $expression = $sandbox-&gt;getParameter('expression', 'true');
     $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
-
     return $expressionLanguage-&gt;evaluate($expression, $variables);
   }
 
