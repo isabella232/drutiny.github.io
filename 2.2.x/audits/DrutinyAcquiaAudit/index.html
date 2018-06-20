@@ -832,6 +832,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#securedomains" title="SecureDomains" class="md-nav__link">
+    SecureDomains
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_6" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_6" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1248,6 +1281,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#securedomains" title="SecureDomains" class="md-nav__link">
+    SecureDomains
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_6" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_6" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1365,7 +1431,7 @@ Package: <code>drutiny/acquia</code></p>
 
     $domains = array_filter($environment['domains'], function ($domain) {
       // Do not include ELB domains or Acquia default domains.
-      return !(strpos($domain, 'acquia-sites.com') || strpos($domain, 'elb.amazonaws.com'));
+      return !(strpos($domain, 'acquia-sites.com') || strpos($domain, 'elb.amazonaws.com') || strpos($domain, 'acsitefactory.com'));
     });
 
     if (empty($domains)) {
@@ -1619,6 +1685,112 @@ Package: <code>drutiny/acquia</code></p>
     $sandbox-&gt;setParameter('items', $output);
 
     return FALSE;
+  }
+
+</code></pre>
+
+<h2 id="securedomains">SecureDomains</h2>
+<p>Ensure an environment has custom domains set.</p>
+<p>Class: <code>Drutiny\Acquia\Audit\SecureDomains</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/acquia</code></p>
+<h3 id="policies_6">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acquia:SecureDomains</td>
+<td>Secured Domains</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_6">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $environment = CloudApiDrushAdaptor::getEnvironment($sandbox-&gt;getTarget());
+
+    // Check each IP associated with the &quot;front&quot; of the environment.
+    $ssl_domains = $environment['ips'];
+
+    // Default domain will point at either the Acquia balancers or the ELB.
+    $ssl_domains[] = $environment['default_domain'];
+
+    // Build a list of domains that &quot;should&quot; be secured by SSL certed hosted in
+    // $ssl_domains with the exception of domains hosted at the edge.
+    $domains = array_filter($environment['domains'], function ($domain) {
+      // Do not include ELB domains or Acquia default domains.
+      return !(strpos($domain, 'acquia-sites.com') || strpos($domain, 'elb.amazonaws.com') || strpos($domain, 'acsitefactory.com'));
+    });
+
+    $domain_details = [];
+    foreach ($domains as $domain) {
+      $domain_details[$domain] = [
+        'name' =&gt; $domain,
+        'secure' =&gt; FALSE,
+        'certificate' =&gt; FALSE,
+        'host' =&gt; FALSE,
+      ];
+    }
+    $checked_certs = [];
+
+    foreach ($ssl_domains as $host) {
+      foreach ($domains as $sni_domain) {
+        // No need to try any further certs for SNI domain if already confirmed
+        // as secure.
+        if ($domain_details[$sni_domain]['secure']) {
+          continue;
+        }
+
+        try {
+          $cert = $this-&gt;getCertificate($host, $sni_domain);
+        }
+        catch (\Exception $e) {
+          $sandbox-&gt;logger()-&gt;warning($e-&gt;getMessage());
+          continue;
+        }
+
+        // No need to check the same cert if we've picked it up from somewhere else.
+        if (in_array($cert['extensions']['subjectKeyIdentifier'], $checked_certs)) {
+          continue;
+        }
+        $checked_certs[] = $cert['extensions']['subjectKeyIdentifier'];
+
+        // SANs are the only places where we can check for the domain.
+        if (!isset($cert['extensions']['subjectAltName'])) {
+          continue;
+        }
+
+        $san = $cert['extensions']['subjectAltName'];
+
+        $secured_domains = array_filter($domains, function ($domain) use ($san) {
+          return preg_match(&quot;/DNS:$domain(,|$)/&quot;, $san);
+        });
+
+        foreach ($secured_domains as $domain) {
+          $domain_details[$domain]['secure'] = TRUE;
+          $domain_details[$domain]['certificate'] = strtr('CN - O', $cert['subject']);
+          $domain_details[$domain]['host'] = $host;
+        }
+      }
+    }
+
+    $insecured = array_filter($domain_details, function ($domain) {
+      return !$domain['secure'];
+    });
+
+    $sandbox-&gt;setParameter('domains', array_values($domain_details));
+
+    if (count($insecured) == count($domain_details)) {
+      return FALSE;
+    }
+
+    return count($insecured) ? Audit::WARNING : TRUE;
   }
 
 </code></pre>
