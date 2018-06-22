@@ -1,0 +1,1 @@
+{"title":"Acquia Agent","name":"Acquia:AgentEnabled","class":"\\Drutiny\\Audit\\Drupal\\ModuleEnabled","description":"Ensure the Acquia Agent module is enabled.\n","type":"audit","success":"Acquia Agent module is enabled.","failure":"Acquia Agent module is not enabled.","remediation":"Install and enable the Acquia Agent module into your codebase.\n","severity":2}
