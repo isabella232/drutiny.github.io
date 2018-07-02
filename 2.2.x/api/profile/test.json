@@ -1,0 +1,1 @@
+{"title":"Test Profile","name":"test","policies":{"Test:Pass":{"parameters":{"custom_1":"foo"},"severity":8},"Test:Fail":{"severity":4},"Test:Warning":{"severity":2},"Test:NA":{"severity":4},"Test:Error":{"severity":4},"Test:Notice":{"severity":2}},"description":"","signature":"c98a4f59e2432a7bcf0f4e262f16beb0830cf812"}
