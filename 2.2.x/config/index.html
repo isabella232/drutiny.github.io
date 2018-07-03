@@ -460,6 +460,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#driver" title="Driver" class="md-nav__link">
+    Driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policysource" title="PolicySource" class="md-nav__link">
+    PolicySource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" title="Cache" class="md-nav__link">
+    Cache
+  </a>
+  
+</li>
+      
       
       
       
@@ -886,6 +907,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#driver" title="Driver" class="md-nav__link">
+    Driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policysource" title="PolicySource" class="md-nav__link">
+    PolicySource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" title="Cache" class="md-nav__link">
+    Cache
+  </a>
+  
+</li>
+      
       
       
       
@@ -970,6 +1012,32 @@ the extension using them.</p>
 </code></pre>
 
 <p>Learn more about the <a href="../creds/">Credential Manager</a></p>
+<h2 id="driver">Driver</h2>
+<p>The <code>Driver</code> directive provides access to a driver directly from the <a href="../sandbox/">Sandbox</a>.</p>
+<pre><code class="yaml">Driver:
+  drush: Drutiny\Driver\DrushRouter::create
+</code></pre>
+
+<p>The key of the directive becomes a callable method and the value is a function
+that will be called and the returned value returned through the driver:</p>
+<pre><code class="php">&lt;?php
+  $sandbox-&gt;drush()-&gt;pmList();
+</code></pre>
+
+<h2 id="policysource">PolicySource</h2>
+<p>The <code>PolicySource</code> directive declares PHP classes that implement the
+ <code>Drutiny\PolicySource\PolicySourceInterface</code> interface. Policy sources provide
+ policies for Drutiny to execute.</p>
+<pre><code class="yaml">PolicySource:
+  - Drutiny\PolicySource\DrutinyGitHubIO
+  - Drutiny\PolicySource\LocalFs
+</code></pre>
+
+<h2 id="cache">Cache</h2>
+<p>The <code>Cache</code>directive provides PSR-6 storage classes for mapped cache bins.</p>
+<pre><code class="yaml">Cache:
+  exec: Symfony\Component\Cache\Adapter\FilesystemAdapter
+</code></pre>
                 
                   
                 
