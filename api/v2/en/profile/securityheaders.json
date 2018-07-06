@@ -1,0 +1,1 @@
+{"title":"Security headers","policies":{"HTTP:Cache-Control":[],"HTTP:Content-Security-Policy":[],"HTTP:HSTS":[],"HTTP:ReferrerPolicy":[],"HTTP:X-Content-Type-Options":[],"HTTP:X-Frame-Options":[],"HTTP:X-XSS-Protection":[]},"name":"securityheaders","language":"en","description":"","signature":"b4f4e5e7d3642ac87d9a82f3682d599c6ced4b36"}
