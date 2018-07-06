@@ -1,3 +1,5 @@
 deploy.sh
 drutiny_travis-id_rsa.enc
 ghp-id_rsa.enc
+
+/vendor/

@@ -1,0 +1,14 @@
+{
+    "name": "drutiny/website",
+    "description": "Drutiny website",
+    "type": "website",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Josh Waihi",
+            "email": "josh.waihi@acquia.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
