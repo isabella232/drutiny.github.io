@@ -1,0 +1,1 @@
+{"title":"Drupal 8 on Acquia Cloud with Edge","policies":{"Acquia:CloudEdgeNoPurge":null,"Acquia:PurgePlugin":null},"include":["cloud"],"name":"edge.profile","language":"en","description":"","signature":"e212ba4dcc1ae72dce6a087f2960b10a6a43e583"}
