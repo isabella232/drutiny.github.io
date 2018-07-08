@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="./assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.2">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
     
     
       
@@ -595,8 +595,20 @@
 
 
   <li class="md-nav__item">
-    <a href="policies/drutiny-plugin-drupal-7/" title="drutiny/plugin-drupal-7" class="md-nav__link">
-      drutiny/plugin-drupal-7
+    <a href="policies/drutiny-content/" title="drutiny/content" class="md-nav__link">
+      drutiny/content
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="policies/drutiny-http/" title="drutiny/http" class="md-nav__link">
+      drutiny/http
     </a>
   </li>
 
@@ -631,44 +643,8 @@
 
 
   <li class="md-nav__item">
-    <a href="policies/drutiny-cloudflare/" title="drutiny/cloudflare" class="md-nav__link">
-      drutiny/cloudflare
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="policies/drutiny-acquia/" title="drutiny/acquia" class="md-nav__link">
       drutiny/acquia
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="policies/drutiny-http/" title="drutiny/http" class="md-nav__link">
-      drutiny/http
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="policies/drutiny-drutiny/" title="drutiny/drutiny" class="md-nav__link">
-      drutiny/drutiny
     </a>
   </li>
 
@@ -1006,17 +982,17 @@
 <a href="https://packagist.org/drutiny/drutiny"><img alt="Total Downloads" src="https://poser.pugx.org/drutiny/drutiny/downloads" /></a>
 <a href="https://packagist.org/drutiny/drutiny"><img alt="Latest Unstable Version" src="https://poser.pugx.org/drutiny/drutiny/v/unstable" /></a>
 <a href="https://packagist.org/drutiny/drutiny"><img alt="License" src="https://poser.pugx.org/drutiny/drutiny/license" /></a></p>
-<p>This is a generic Drupal site auditing and optional remediation tool.</p>
+<p>A generic Drupal site auditing and optional remediation tool. <em>Fun Fact:</em> The name is a <a href="https://en.wikipedia.org/wiki/Portmanteau">portmanteau</a> of "Drupal" and "scrutiny."</p>
 <h2 id="installation">Installation</h2>
 <p>You can install Drutiny into your project with <a href="https://getcomposer.org">composer</a>. Drutiny is a require-dev type dependency.</p>
 <pre><code>composer require --dev drutiny/drutiny 2.1.*@dev
 </code></pre>
 
-<p>Alternately, Drutiny can be built as a standalone tool:</p>
+<p>Alternately, Drutiny can be built as a standalone tool.</p>
 <pre><code>composer create-project --no-interaction --prefer-source -s dev drutiny/project-dev drutiny-dev
 </code></pre>
 
-<p><a href="http://docs.drush.org/en/master/">Drush</a> is also required. Its not specifically marked as a dependency as the version of Drush to use will depend on the site you're auditing.</p>
+<p><a href="http://docs.drush.org/en/master/">Drush</a> is also required. It's not specifically marked as a dependency as the version of Drush to use will depend on the site you're auditing.</p>
 <pre><code>composer require --global drush/drush
 </code></pre>
 
@@ -1025,15 +1001,15 @@
 <pre><code>./vendor/bin/drutiny
 </code></pre>
 
-<p>(Substitute <code>./bin/drutiny</code> if using Drutiny as a standalone tool.)</p>
+<p>If you're running Drutiny as a standalone tool, substitute <code>./bin/drutiny</code>.</p>
 <h3 id="finding-policies-available-to-run">Finding policies available to run</h3>
 <p>Drutiny comes with a <code>policy:list</code> command that lists all the policies available to audit against.</p>
 <pre><code>./vendor/bin/drutiny policy:list
 </code></pre>
 
-<p>Policies provided by other packages such as <a href="https://github.com/drutiny/plugin-distro-common">drutiny/plugin-distro-common</a> will also appear here if they are installed.</p>
+<p>Policies provided by other packages such as <a href="https://github.com/drutiny/plugin-distro-common">drutiny/plugin-distro-common</a> will also appear here, if they are installed.</p>
 <h3 id="installing-drutiny-plugins">Installing Drutiny Plugins</h3>
-<p>Additional Drutiny policies, audits, profiles and commands can be installed from composer.</p>
+<p>Additional Drutiny policies, audits, profiles and commands can be installed with composer.</p>
 <pre><code>$ composer search drutiny
 </code></pre>
 
@@ -1051,7 +1027,7 @@
 <pre><code>./vendor/bin/drutiny policy:audit -p max_age=600 Drupal-8:PageCacheExpiry @drupalvm.dev
 </code></pre>
 
-<p>Audits are simple self contained classes that are simple to read and understand. Policies are simple YAML files that determine how to use Audit classes. Drutiny can be extended very easily to audit for your own unique requirements. Pull requests are welcome as well, please see the <a href="https://drutiny.github.io/2.2.x/CONTRIBUTING/">contributing guide</a>.</p>
+<p>Audits are self-contained classes that are simple to read and understand. Policies are simple YAML files that determine how to use Audit classes. Therefore, Drutiny can be extended very easily to audit for your own unique requirements. Pull requests are welcome as well, please see the <a href="https://drutiny.github.io/2.2.x/CONTRIBUTING/">contributing guide</a>.</p>
 <h3 id="remediation">Remediation</h3>
 <p>Some checks have redemptive capability. Passing the <code>--remediate</code> flag into the call with "auto-heal" the site if the check fails on first pass.</p>
 <pre><code>./vendor/bin/drutiny policy:audit -p max_age=600 --remediate Drupal-8:PageCacheExpiry @drupalvm.dev
@@ -1150,7 +1126,7 @@ policies:
     
       <script src="./assets/javascripts/application.a59e2a89.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:"."}})</script>
+      <script>app.initialize({version:"0.17.5",url:{base:"."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
       
