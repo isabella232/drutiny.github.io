@@ -1012,13 +1012,13 @@
 
 <p>The command above would audit the site that resolved to the <code>@drupalvm.dev</code> drush alias against the <code>Drupal-8:PageCacheExpiry</code> policy.</p>
 <p>Some policies have parameters you can specify which can be passed in at call time. Use <code>policy:info</code> to find out more about the parameters available for a check.</p>
-<pre><code>./vendor/bin/drutiny policy:audit -p max_age=600 Drupal-8:PageCacheExpiry @drupalvm.dev
+<pre><code>./vendor/bin/drutiny policy:audit -p value=600 Drupal-8:PageCacheExpiry @drupalvm.dev
 </code></pre>
 
 <p>Audits are self-contained classes that are simple to read and understand. Policies are simple YAML files that determine how to use Audit classes. Therefore, Drutiny can be extended very easily to audit for your own unique requirements. Pull requests are welcome as well, please see the <a href="https://drutiny.github.io/2.2.x/CONTRIBUTING/">contributing guide</a>.</p>
 <h3 id="remediation">Remediation</h3>
 <p>Some checks have redemptive capability. Passing the <code>--remediate</code> flag into the call with "auto-heal" the site if the check fails on first pass.</p>
-<pre><code>./vendor/bin/drutiny policy:audit -p max_age=600 --remediate Drupal-8:PageCacheExpiry @drupalvm.dev
+<pre><code>./vendor/bin/drutiny policy:audit -p value=600 --remediate Drupal-8:PageCacheExpiry @drupalvm.dev
 </code></pre>
 
 <h3 id="running-a-profile-of-checks">Running a profile of checks</h3>
