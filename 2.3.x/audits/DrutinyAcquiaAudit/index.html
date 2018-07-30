@@ -1,0 +1,1821 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This is a generic Drupal site auditing and optional remediation tool.">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.4">
+    
+    
+      
+        <title>Acquia  - Drutiny</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../css/tweaks.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#acsfdeployworkspacecleaned" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Drutiny" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Drutiny
+              </span>
+              <span class="md-header-nav__topic">
+                Acquia 
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Drutiny" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Drutiny
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Usage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Usage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reports/" title="Reports" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../plugins/" title="Plugins" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      API Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Audit" class="md-nav__link">
+      Audit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sandbox/" title="Sandbox" class="md-nav__link">
+      Sandbox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../profiles/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../config/" title="Config" class="md-nav__link">
+      Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../creds/" title="Credential Manager" class="md-nav__link">
+      Credential Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../domains/" title="Domain Provider" class="md-nav__link">
+      Domain Provider
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../charts/" title="Charts" class="md-nav__link">
+      Charts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Policy Library
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Policy Library
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy-library/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policies/drutiny-content/" title="drutiny/content" class="md-nav__link">
+      drutiny/content
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Audit Library
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Audit Library
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Acquia 
+      </label>
+    
+    <a href="./" title="Acquia " class="md-nav__link md-nav__link--active">
+      Acquia 
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acsfdeployworkspacecleaned" title="AcsfDeployWorkspaceCleaned" class="md-nav__link">
+    AcsfDeployWorkspaceCleaned
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appinfo" title="AppInfo" class="md-nav__link">
+    AppInfo
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_1" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customdomains" title="CustomDomains" class="md-nav__link">
+    CustomDomains
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_2" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environmentanalysis" title="EnvironmentAnalysis" class="md-nav__link">
+    EnvironmentAnalysis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_3" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_3" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filesperdirectory" title="FilesPerDirectory" class="md-nav__link">
+    FilesPerDirectory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_4" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_4" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searchdb" title="SearchDB" class="md-nav__link">
+    SearchDB
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_5" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_1" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_5" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#securedomains" title="SecureDomains" class="md-nav__link">
+    SecureDomains
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_6" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_6" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAudit/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditApache/" title="Apache" class="md-nav__link">
+      Apache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditDNS/" title="DNS" class="md-nav__link">
+      DNS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditDatabase/" title="Database" class="md-nav__link">
+      Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditDrupal/" title="Drupal" class="md-nav__link">
+      Drupal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditFilesystem/" title="Filesystem" class="md-nav__link">
+      Filesystem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditTemplate/" title="Template" class="md-nav__link">
+      Template
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyCloudflareAudit/" title="Cloudflare " class="md-nav__link">
+      Cloudflare 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyHttpAudit/" title="Http " class="md-nav__link">
+      Http 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyPluginDrupal7Audit/" title="Plugin Drupal7 " class="md-nav__link">
+      Plugin Drupal7 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyPluginDrupal7AuditSecurity/" title="Plugin Drupal7 Security" class="md-nav__link">
+      Plugin Drupal7 Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyPluginDrupal8Audit/" title="Plugin Drupal8 " class="md-nav__link">
+      Plugin Drupal8 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinySumoLogicAudit/" title="SumoLogic " class="md-nav__link">
+      SumoLogic 
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acsfdeployworkspacecleaned" title="AcsfDeployWorkspaceCleaned" class="md-nav__link">
+    AcsfDeployWorkspaceCleaned
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appinfo" title="AppInfo" class="md-nav__link">
+    AppInfo
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_1" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customdomains" title="CustomDomains" class="md-nav__link">
+    CustomDomains
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_2" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environmentanalysis" title="EnvironmentAnalysis" class="md-nav__link">
+    EnvironmentAnalysis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_3" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_3" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filesperdirectory" title="FilesPerDirectory" class="md-nav__link">
+    FilesPerDirectory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_4" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_4" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searchdb" title="SearchDB" class="md-nav__link">
+    SearchDB
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_5" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_1" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_5" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#securedomains" title="SecureDomains" class="md-nav__link">
+    SecureDomains
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_6" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_6" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/drutiny/drutiny/edit/master/docs/audits/DrutinyAcquiaAudit.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Acquia </h1>
+                
+                <h2 id="acsfdeployworkspacecleaned">AcsfDeployWorkspaceCleaned</h2>
+<p>Ensure the ACSF deploy workspace is clear. This can bloat ephemeral storage.</p>
+<p>Class: <code>Drutiny\Acquia\Audit\AcsfDeployWorkspaceCleaned</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/acquia</code></p>
+<p>This class can <strong>remediate</strong> failed audits.</p>
+<h3 id="policies">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acquia:CheckSiteFactoryWorkspace</td>
+<td>ACSF Deployment Workspace</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $output = $sandbox-&gt;exec('find /mnt/tmp/repo_* -maxdepth 1 -mindepth 1 -ctime +1 -type d');
+    $lines = array_filter(explode(PHP_EOL, $output));
+
+    $sandbox-&gt;setParameter('directories', $lines);
+
+    return empty($lines);
+  }
+
+</code></pre>
+
+<h2 id="appinfo">AppInfo</h2>
+<p>Ensure an environment has custom domains set.</p>
+<p>Class: <code>Drutiny\Acquia\Audit\AppInfo</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/acquia</code></p>
+<h3 id="policies_1">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acquia:AppInfo</td>
+<td>Acquia Application Information</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_1">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $target = $sandbox-&gt;getTarget();
+    if ($target instanceof AcquiaTargetInterface) {
+      $env = $target-&gt;getEnvironment();
+      $app = CloudApiV2::get('applications/' . $env['application']['uuid']);
+    }
+    else {
+      $options = $target-&gt;getOptions();
+      $app = CloudApiDrushAdaptor::findApplication($options['ac-realm'], $options['ac-site']);
+    }
+
+    $sandbox-&gt;setParameter('app', $app);
+
+    return Audit::NOTICE;
+  }
+
+</code></pre>
+
+<h2 id="customdomains">CustomDomains</h2>
+<p>Ensure an environment has custom domains set.</p>
+<p>Class: <code>Drutiny\Acquia\Audit\CustomDomains</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/acquia</code></p>
+<h3 id="policies_2">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acquia:CustomDomains</td>
+<td>Custom Domains Registered</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_2">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $environment = CloudApiDrushAdaptor::getEnvironment($sandbox-&gt;getTarget());
+
+    $domains = array_filter($environment['domains'], function ($domain) {
+      // Do not include ELB domains or Acquia default domains.
+      return !(strpos($domain, 'acquia-sites.com') || strpos($domain, 'elb.amazonaws.com') || strpos($domain, 'acsitefactory.com'));
+    });
+
+    if (empty($domains)) {
+      return FALSE;
+    }
+
+    $sandbox-&gt;setParameter('domains', array_values($domains));
+
+    return TRUE;
+  }
+
+</code></pre>
+
+<h2 id="environmentanalysis">EnvironmentAnalysis</h2>
+<p>Check to ensure Production Mode is enabled on Acquia Cloud.</p>
+<p>Class: <code>Drutiny\Acquia\Audit\EnvironmentAnalysis</code><br />
+Extends: <code>Drutiny\Audit\AbstractAnalysis</code><br />
+Package: <code>drutiny/acquia</code></p>
+<h3 id="policies_3">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acquia:ProductionMode</td>
+<td>Acquia Production Mode</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_3">Source</h4>
+<pre><code class="php">  final public function audit(Sandbox $sandbox)
+  {
+    $this-&gt;gather($sandbox);
+    $expressionLanguage = new ExpressionLanguage();
+    $variables  = $sandbox-&gt;getParameterTokens();
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
+
+    $expression = $sandbox-&gt;getParameter('not_applicable', 'false');
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    if ($expressionLanguage-&gt;evaluate($expression, $variables)) {
+      return self::NOT_APPLICABLE;
+    }
+
+    $expression = $sandbox-&gt;getParameter('expression', 'true');
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    return $expressionLanguage-&gt;evaluate($expression, $variables);
+  }
+
+</code></pre>
+
+<h2 id="filesperdirectory">FilesPerDirectory</h2>
+<p>Class: <code>Drutiny\Acquia\Audit\FilesPerDirectory</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/acquia</code></p>
+<h3 id="policies_4">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acquia:FilesPerDirectory</td>
+<td>Less than 2,500 files per directory</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The limit of files per directory.</td>
+<td>2500</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The limit of files per directory.</td>
+<td>2500</td>
+</tr>
+<tr>
+<td>directories</td>
+<td>array</td>
+<td>A multidimensional array containing directory data breaching the limit.</td>
+<td>{  }</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_4">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    // Build a count of files in every directory in the public filesystem.
+    $stat = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;status();
+    $files = implode('/', [$stat['root'], $stat['files']]);
+    $limit = $sandbox-&gt;getParameter('limit');
+
+    // Note the trailing slash at the end of $files to ensure find works over
+    // symlinks.
+    $command = &quot;find $files/ -type f -exec dirname {} \; | uniq -c | awk '\$1 &gt; $limit'&quot;;
+
+    // Execute and clean the output into usable data.
+    $output = $sandbox-&gt;exec($command);
+    $lines = array_filter(explode(PHP_EOL, $output));
+    $directories = [];
+    foreach ($lines as $line) {
+      list($count, $directory) = explode(' ', trim($line));
+      $directories[] = [
+        'directory' =&gt; str_replace($stat['root'] . '/', '', $directory),
+        'file_count' =&gt; $count,
+      ];
+    }
+
+    // No limits breached, return as pass.
+    if (empty($directories)) {
+      return TRUE;
+    }
+
+    $sandbox-&gt;setParameter('directories', $directories);
+
+    return FALSE;
+  }
+
+</code></pre>
+
+<h2 id="searchdb">SearchDB</h2>
+<p>Ensure there is no use of search indexes in the database.</p>
+<p>Class: <code>Drutiny\Acquia\Audit\SearchDB</code><br />
+Extends: <code>Drutiny\Plugin\Drupal7\Audit\ModuleDisabled</code><br />
+Package: <code>drutiny/acquia</code></p>
+<p>This class can <strong>remediate</strong> failed audits.</p>
+<h3 id="policies_5">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acquia:Drupal7:NoDbSearch</td>
+<td>No Database Search Indexes for Drupal 7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters_1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>string</td>
+<td>The module to check is enabled.</td>
+<td>search_api_db</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokens_1">Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>string</td>
+<td>The module to check is enabled.</td>
+<td>search_api_db</td>
+</tr>
+<tr>
+<td>indexes</td>
+<td>array</td>
+<td>An array of index names found in the database. Only available on failure.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>items</td>
+<td>integer</td>
+<td>The number of indexed items in the database. Only available on failure.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_5">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $sandbox-&gt;setParameter('module', 'search_api_db');
+    if (parent::audit($sandbox)) {
+      return TRUE;
+    }
+
+    // Find out if there are active indexes using the db service class.
+    $output = $sandbox-&gt;drush()-&gt;sqlq(&quot;SELECT COUNT(i.machine_name) as count FROM {search_api_index} i LEFT JOIN {search_api_server} s ON i.server = s.machine_name WHERE i.status &gt; 0 AND s.class = 'search_api_db_service';&quot;);
+    if (empty($output)) {
+      return TRUE;
+    }
+    elseif (count($output) == 1) {
+      $number_of_db_indexes = (int) $output[0];
+    }
+    else {
+      $number_of_db_indexes = (int) $output[1];
+    }
+
+    $sandbox-&gt;setParameter('indexes', $number_of_db_indexes);
+
+    $output = $sandbox-&gt;drush()-&gt;sqlq('SELECT COUNT(item_id) FROM {search_api_db_default_node_index};');
+
+    $sandbox-&gt;setParameter('items', $output);
+
+    return FALSE;
+  }
+
+</code></pre>
+
+<h2 id="securedomains">SecureDomains</h2>
+<p>Ensure an environment has custom domains set.</p>
+<p>Class: <code>Drutiny\Acquia\Audit\SecureDomains</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/acquia</code></p>
+<h3 id="policies_6">Policies</h3>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acquia:SecureDomains</td>
+<td>Secured Domains</td>
+</tr>
+</tbody>
+</table>
+<h4 id="source_6">Source</h4>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $environment = CloudApiDrushAdaptor::getEnvironment($sandbox-&gt;getTarget());
+
+    // Check each IP associated with the &quot;front&quot; of the environment.
+    $ssl_domains = $environment['ips'];
+
+    // Default domain will point at either the Acquia balancers or the ELB.
+    $ssl_domains[] = $environment['default_domain'];
+
+    // Build a list of domains that &quot;should&quot; be secured by SSL certed hosted in
+    // $ssl_domains with the exception of domains hosted at the edge.
+    $domains = array_filter($environment['domains'], function ($domain) {
+      // Do not include ELB domains or Acquia default domains.
+      return !(strpos($domain, 'acquia-sites.com') || strpos($domain, 'elb.amazonaws.com') || strpos($domain, 'acsitefactory.com'));
+    });
+
+    $domain_details = [];
+    foreach ($domains as $domain) {
+      $domain_details[$domain] = [
+        'name' =&gt; $domain,
+        'secure' =&gt; FALSE,
+        'certificate' =&gt; FALSE,
+        'host' =&gt; FALSE,
+      ];
+    }
+    $checked_certs = [];
+
+    foreach ($ssl_domains as $host) {
+      foreach ($domains as $sni_domain) {
+        // No need to try any further certs for SNI domain if already confirmed
+        // as secure.
+        if ($domain_details[$sni_domain]['secure']) {
+          continue;
+        }
+
+        try {
+          $cert = $this-&gt;getCertificate($host, $sni_domain);
+        }
+        catch (\Exception $e) {
+          $sandbox-&gt;logger()-&gt;warning($e-&gt;getMessage());
+          continue;
+        }
+
+        // No need to check the same cert if we've picked it up from somewhere else.
+        if (in_array($cert['extensions']['subjectKeyIdentifier'], $checked_certs)) {
+          continue;
+        }
+        $checked_certs[] = $cert['extensions']['subjectKeyIdentifier'];
+
+        // SANs are the only places where we can check for the domain.
+        if (!isset($cert['extensions']['subjectAltName'])) {
+          continue;
+        }
+
+        $san = $cert['extensions']['subjectAltName'];
+
+        $secured_domains = array_filter($domains, function ($domain) use ($san) {
+          return preg_match(&quot;/DNS:$domain(,|$)/&quot;, $san);
+        });
+
+        foreach ($secured_domains as $domain) {
+          $domain_details[$domain]['secure'] = TRUE;
+          $domain_details[$domain]['certificate'] = strtr('CN - O', $cert['subject']);
+          $domain_details[$domain]['host'] = $host;
+        }
+      }
+    }
+
+    $insecured = array_filter($domain_details, function ($domain) {
+      return !$domain['secure'];
+    });
+
+    $sandbox-&gt;setParameter('domains', array_values($domain_details));
+
+    if (count($insecured) == count($domain_details)) {
+      return FALSE;
+    }
+
+    return count($insecured) ? Audit::WARNING : TRUE;
+  }
+
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../policies/drutiny-content/" title="drutiny/content" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                drutiny/content
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../DrutinyAudit/" title="General" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                General
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.30f6b8b1.js"></script>
+      
+      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-116046012-1","drutiny.github.io"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
