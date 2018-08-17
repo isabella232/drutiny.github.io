@@ -768,6 +768,46 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#stackmetrics" title="StackMetrics" class="md-nav__link">
+    StackMetrics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_2" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_7" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1202,6 +1242,46 @@
         
           <li class="md-nav__item">
   <a href="#source_6" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stackmetrics" title="StackMetrics" class="md-nav__link">
+    StackMetrics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_2" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_7" title="Source" class="md-nav__link">
     Source
   </a>
   
@@ -1704,6 +1784,72 @@ Package: <code>drutiny/acquia</code></p>
     }
 
     return count($insecured) ? Audit::WARNING : TRUE;
+  }
+
+</code></pre>
+
+<h3 id="stackmetrics">StackMetrics</h3>
+<p>Ensure an environment has custom domains set.</p>
+<p>Class: <code>Drutiny\Acquia\Audit\StackMetrics</code><br />
+Extends: <code>Drutiny\Audit\AbstractAnalysis</code><br />
+Package: <code>drutiny/acquia</code></p>
+<h4 id="parameters_2">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>metrics</td>
+<td>array</td>
+<td>one of apache-requests, bal-cpu, bal-memory, cron-memory, db-cpu, db-disk-size, db-disk-usage, db-memory, file-disk-size, file-cpu, file-disk-usage, file-memory, http-2xx, http-3xx, http-4xx, http-5xx, mysql-slow-query-count, nginx-requests, out-of-memory, php-proc-max-reached-site, php-proc-max-reached-total, php-proc-site, php-proc-total, varnish-cache-hit-rate, varnish-requests, web-cpu, web-memory</td>
+<td>- web-cpu<br>- web-memory<br></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokens_2">Tokens</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>metrics</td>
+<td>array</td>
+<td>one of apache-requests, bal-cpu, bal-memory, cron-memory, db-cpu, db-disk-size, db-disk-usage, db-memory, file-disk-size, file-cpu, file-disk-usage, file-memory, http-2xx, http-3xx, http-4xx, http-5xx, mysql-slow-query-count, nginx-requests, out-of-memory, php-proc-max-reached-site, php-proc-max-reached-total, php-proc-site, php-proc-total, varnish-cache-hit-rate, varnish-requests, web-cpu, web-memory</td>
+<td>- web-cpu<br>- web-memory<br></td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_7">Source</h5>
+<pre><code class="php">  final public function audit(Sandbox $sandbox)
+  {
+    $this-&gt;gather($sandbox);
+
+    $expressionLanguage = new ExpressionLanguage($sandbox);
+
+    $variables  = $sandbox-&gt;getParameterTokens();
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
+
+    $expression = $sandbox-&gt;getParameter('not_applicable', 'false');
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    if (@$expressionLanguage-&gt;evaluate($expression, $variables)) {
+      return self::NOT_APPLICABLE;
+    }
+
+    $expression = $sandbox-&gt;getParameter('expression', 'true');
+    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    return @$expressionLanguage-&gt;evaluate($expression, $variables);
   }
 
 </code></pre>
