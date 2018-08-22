@@ -1031,6 +1031,14 @@ Package: <code>drutiny/cloudflare</code></p>
 </thead>
 <tbody>
 <tr>
+<td>cloudflare:threats</td>
+<td>Cloudflare Threat Management</td>
+</tr>
+<tr>
+<td>cloudflare:http_status</td>
+<td>Cloudflare HTTP Status Codes</td>
+</tr>
+<tr>
 <td>cloudflare:caching</td>
 <td>Cloudflare Caching</td>
 </tr>
@@ -1041,14 +1049,6 @@ Package: <code>drutiny/cloudflare</code></p>
 <tr>
 <td>cloudflare:encryption</td>
 <td>Cloudflare Encryption</td>
-</tr>
-<tr>
-<td>cloudflare:http_status</td>
-<td>Cloudflare HTTP Status Codes</td>
-</tr>
-<tr>
-<td>cloudflare:threats</td>
-<td>Cloudflare Threat Management</td>
 </tr>
 </tbody>
 </table>
@@ -1104,10 +1104,10 @@ Package: <code>drutiny/cloudflare</code></p>
     $expressionLanguage = new ExpressionLanguage($sandbox);
 
     $variables  = $sandbox-&gt;getParameterTokens();
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
+    $sandbox-&gt;logger()-&gt;debug(__CLASS__ . ': ' . Yaml::dump($variables));
 
     $expression = $sandbox-&gt;getParameter('not_applicable', 'false');
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    $sandbox-&gt;logger()-&gt;debug(__CLASS__ . ': ' . $expression);
     if (@$expressionLanguage-&gt;evaluate($expression, $variables)) {
       return self::NOT_APPLICABLE;
     }
@@ -1232,10 +1232,10 @@ Package: <code>drutiny/cloudflare</code></p>
     $expressionLanguage = new ExpressionLanguage($sandbox);
 
     $variables  = $sandbox-&gt;getParameterTokens();
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
+    $sandbox-&gt;logger()-&gt;debug(__CLASS__ . ': ' . Yaml::dump($variables));
 
     $expression = $sandbox-&gt;getParameter('not_applicable', 'false');
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    $sandbox-&gt;logger()-&gt;debug(__CLASS__ . ': ' . $expression);
     if (@$expressionLanguage-&gt;evaluate($expression, $variables)) {
       return self::NOT_APPLICABLE;
     }
@@ -1262,12 +1262,12 @@ Package: <code>drutiny/cloudflare</code></p>
 </thead>
 <tbody>
 <tr>
-<td>cloudflare:redirect_apex</td>
-<td>Cloudflare redirect Apex to primary domain</td>
-</tr>
-<tr>
 <td>cloudflare:always_use_https</td>
 <td>Cloudflare always use HTTPS</td>
+</tr>
+<tr>
+<td>cloudflare:redirect_apex</td>
+<td>Cloudflare redirect Apex to primary domain</td>
 </tr>
 </tbody>
 </table>

@@ -1274,10 +1274,10 @@ Package: <code>drutiny/drutiny</code></p>
     $expressionLanguage = new ExpressionLanguage($sandbox);
 
     $variables  = $sandbox-&gt;getParameterTokens();
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
+    $sandbox-&gt;logger()-&gt;debug(__CLASS__ . ': ' . Yaml::dump($variables));
 
     $expression = $sandbox-&gt;getParameter('not_applicable', 'false');
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    $sandbox-&gt;logger()-&gt;debug(__CLASS__ . ': ' . $expression);
     if (@$expressionLanguage-&gt;evaluate($expression, $variables)) {
       return self::NOT_APPLICABLE;
     }

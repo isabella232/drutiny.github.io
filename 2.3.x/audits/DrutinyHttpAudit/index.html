@@ -1547,10 +1547,10 @@ Package: <code>drutiny/http</code></p>
     $expressionLanguage = new ExpressionLanguage($sandbox);
 
     $variables  = $sandbox-&gt;getParameterTokens();
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
+    $sandbox-&gt;logger()-&gt;debug(__CLASS__ . ': ' . Yaml::dump($variables));
 
     $expression = $sandbox-&gt;getParameter('not_applicable', 'false');
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    $sandbox-&gt;logger()-&gt;debug(__CLASS__ . ': ' . $expression);
     if (@$expressionLanguage-&gt;evaluate($expression, $variables)) {
       return self::NOT_APPLICABLE;
     }
@@ -1577,20 +1577,20 @@ Package: <code>drutiny/http</code></p>
 </thead>
 <tbody>
 <tr>
-<td>HTTP:Content-Security-Policy</td>
-<td>HTTP Content-Security-Policy</td>
+<td>HTTP:ReferrerPolicy</td>
+<td>HTTP Referrer Policy</td>
 </tr>
 <tr>
 <td>HTTP:X-Frame-Options</td>
 <td>HTTP X-Frame-Options</td>
 </tr>
 <tr>
-<td>HTTP:HSTS</td>
-<td>HTTP HSTS</td>
+<td>HTTP:Content-Security-Policy</td>
+<td>HTTP Content-Security-Policy</td>
 </tr>
 <tr>
-<td>HTTP:ReferrerPolicy</td>
-<td>HTTP Referrer Policy</td>
+<td>HTTP:HSTS</td>
+<td>HTTP HSTS</td>
 </tr>
 </tbody>
 </table>
@@ -1666,16 +1666,16 @@ Package: <code>drutiny/http</code></p>
 </thead>
 <tbody>
 <tr>
-<td>Acquia:CloudEdgeCaching</td>
-<td>Cloud Edge Caching</td>
+<td>HTTP:X-XSS-Protection</td>
+<td>HTTP X-XSS-Protection</td>
 </tr>
 <tr>
 <td>HTTP:X-Content-Type-Options</td>
 <td>HTTP X-Content-Type-Options</td>
 </tr>
 <tr>
-<td>HTTP:X-XSS-Protection</td>
-<td>HTTP X-XSS-Protection</td>
+<td>Acquia:CloudEdgeCaching</td>
+<td>Cloud Edge Caching</td>
 </tr>
 </tbody>
 </table>
@@ -1760,12 +1760,12 @@ Package: <code>drutiny/http</code></p>
 </thead>
 <tbody>
 <tr>
-<td>HTTP:X-Drupal-Cache-Tags</td>
-<td>X-Drupal-Cache-Tags Header Disabled</td>
-</tr>
-<tr>
 <td>HTTP:Authorization</td>
 <td>HTTP Authorization Disabled</td>
+</tr>
+<tr>
+<td>HTTP:X-Drupal-Cache-Tags</td>
+<td>X-Drupal-Cache-Tags Header Disabled</td>
 </tr>
 </tbody>
 </table>
@@ -2126,10 +2126,10 @@ Package: <code>drutiny/http</code></p>
     $expressionLanguage = new ExpressionLanguage($sandbox);
 
     $variables  = $sandbox-&gt;getParameterTokens();
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . Yaml::dump($variables));
+    $sandbox-&gt;logger()-&gt;debug(__CLASS__ . ': ' . Yaml::dump($variables));
 
     $expression = $sandbox-&gt;getParameter('not_applicable', 'false');
-    $sandbox-&gt;logger()-&gt;info(__CLASS__ . ': ' . $expression);
+    $sandbox-&gt;logger()-&gt;debug(__CLASS__ . ': ' . $expression);
     if (@$expressionLanguage-&gt;evaluate($expression, $variables)) {
       return self::NOT_APPLICABLE;
     }
