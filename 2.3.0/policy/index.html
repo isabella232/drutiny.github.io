@@ -1,0 +1,1288 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This is a generic Drupal site auditing and optional remediation tool.">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+    
+    
+      
+        <title>Policy - Drutiny</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.78aab2dc.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../css/tweaks.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#policy" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Drutiny" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Drutiny
+              </span>
+              <span class="md-header-nav__topic">
+                Policy
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Drutiny
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Usage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Usage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reports/" title="Reports" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/" title="Plugins" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      API Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/" title="Audit" class="md-nav__link">
+      Audit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sandbox/" title="Sandbox" class="md-nav__link">
+      Sandbox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Policy
+      </label>
+    
+    <a href="./" title="Policy" class="md-nav__link md-nav__link--active">
+      Policy
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#policy" title="Policy" class="md-nav__link">
+    Policy
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policy-structure" title="Policy structure" class="md-nav__link">
+    Policy structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#title-required" title="title (required)" class="md-nav__link">
+    title (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-required" title="name (required)" class="md-nav__link">
+    name (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-required" title="class (required)" class="md-nav__link">
+    class (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-default-audit" title="type (default: audit)" class="md-nav__link">
+    type (default: audit)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description-required" title="description (required)" class="md-nav__link">
+    description (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#success-required" title="success (required)" class="md-nav__link">
+    success (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failure-required" title="failure (required)" class="md-nav__link">
+    failure (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remediation-required" title="remediation (required)" class="md-nav__link">
+    remediation (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="parameters" class="md-nav__link">
+    parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" title="tags" class="md-nav__link">
+    tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depends" title="depends" class="md-nav__link">
+    depends
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-fail" title="On fail" class="md-nav__link">
+    On fail
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#severity" title="severity" class="md-nav__link">
+    severity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart" title="chart" class="md-nav__link">
+    chart
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-tokens-in-message-renders" title="Using Tokens in message renders." class="md-nav__link">
+    Using Tokens in message renders.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-tokens" title="Available Tokens" class="md-nav__link">
+    Available Tokens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../profiles/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../config/" title="Config" class="md-nav__link">
+      Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../creds/" title="Credential Manager" class="md-nav__link">
+      Credential Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../domains/" title="Domain Provider" class="md-nav__link">
+      Domain Provider
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../charts/" title="Charts" class="md-nav__link">
+      Charts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../explang-library/" title="Expression Language Syntax" class="md-nav__link">
+      Expression Language Syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../policy-library/" title="Policy Library" class="md-nav__link">
+      Policy Library
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Audit Library
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Audit Library
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAcquiaAudit/" title="Acquia " class="md-nav__link">
+      Acquia 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAudit/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditApache/" title="Apache" class="md-nav__link">
+      Apache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditDNS/" title="DNS" class="md-nav__link">
+      DNS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditDatabase/" title="Database" class="md-nav__link">
+      Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditDrupal/" title="Drupal" class="md-nav__link">
+      Drupal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditFilesystem/" title="Filesystem" class="md-nav__link">
+      Filesystem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyAuditTemplate/" title="Template" class="md-nav__link">
+      Template
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyCloudflareAudit/" title="Cloudflare " class="md-nav__link">
+      Cloudflare 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyHttpAudit/" title="Http " class="md-nav__link">
+      Http 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyPluginDrupal7Audit/" title="Plugin Drupal7 " class="md-nav__link">
+      Plugin Drupal7 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyPluginDrupal7AuditSecurity/" title="Plugin Drupal7 Security" class="md-nav__link">
+      Plugin Drupal7 Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinyPluginDrupal8Audit/" title="Plugin Drupal8 " class="md-nav__link">
+      Plugin Drupal8 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../audits/DrutinySumoLogicAudit/" title="SumoLogic " class="md-nav__link">
+      SumoLogic 
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#policy" title="Policy" class="md-nav__link">
+    Policy
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policy-structure" title="Policy structure" class="md-nav__link">
+    Policy structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#title-required" title="title (required)" class="md-nav__link">
+    title (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-required" title="name (required)" class="md-nav__link">
+    name (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-required" title="class (required)" class="md-nav__link">
+    class (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-default-audit" title="type (default: audit)" class="md-nav__link">
+    type (default: audit)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description-required" title="description (required)" class="md-nav__link">
+    description (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#success-required" title="success (required)" class="md-nav__link">
+    success (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failure-required" title="failure (required)" class="md-nav__link">
+    failure (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remediation-required" title="remediation (required)" class="md-nav__link">
+    remediation (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="parameters" class="md-nav__link">
+    parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" title="tags" class="md-nav__link">
+    tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depends" title="depends" class="md-nav__link">
+    depends
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-fail" title="On fail" class="md-nav__link">
+    On fail
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#severity" title="severity" class="md-nav__link">
+    severity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart" title="chart" class="md-nav__link">
+    chart
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-tokens-in-message-renders" title="Using Tokens in message renders." class="md-nav__link">
+    Using Tokens in message renders.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-tokens" title="Available Tokens" class="md-nav__link">
+    Available Tokens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/drutiny/drutiny/edit/master/docs/policy.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Policy</h1>
+                
+                <h2 id="policy">Policy</h2>
+<p>Policies are structured YAML files that provide the human readable context for
+an audit. Drutiny scans for these files and looks for files ending in <code>.policy.yml</code>.
+The convention is to store these files in a directory called <code>Policy</code>.</p>
+<p><a href="../policy-library">View list of policies</a> managed under the Drutiny project.</p>
+<h3 id="policy-structure">Policy structure</h3>
+<h4 id="title-required">title (required)</h4>
+<p>The human readable name and title of a given policy. The title should accurately
+indicate what the audit is for in as few words as possible. An expanded context
+can be given in the <strong>description</strong> field.</p>
+<pre><code class="yaml">title: Shield module is enabled
+</code></pre>
+
+<h4 id="name-required">name (required)</h4>
+<p>The machine readable name of the policy. This is used to call the policy in
+<code>policy:audit</code> and to list in profiles. The naming convention is to use camel
+case and to delineate namespaces with colons.</p>
+<pre><code class="yaml">name: Drupal:ShieldEnabled
+</code></pre>
+
+<h4 id="class-required">class (required)</h4>
+<p>The audit class used to assess the policy. The entire namespace should be given
+including a leading forward slash. If this class does not exist, Drutiny will
+fail when attempting to use this policy.</p>
+<pre><code class="yaml">class: \Drutiny\Audit\Drupal\ModuleEnabled
+</code></pre>
+
+<h4 id="type-default-audit">type (default: audit)</h4>
+<p>Policies can be of two types: audit (the default) or data.</p>
+<p>Audit types evaluate the target for a pass/fail result. Data types simply
+collect and display the data.</p>
+<p>This property helps define how to best display the policy in an HTML report.</p>
+<pre><code class="yaml">type: data
+</code></pre>
+
+<h4 id="description-required">description (required)</h4>
+<p>A human readable description of the policy. The description should be informative
+enough for a human to read the description and be able to interpret the audit
+findings.</p>
+<p>This field is interpreted as <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a></p>
+<pre><code class="yaml">description: |
+  Using the pipe (|) symbol in yaml,
+  I'm able to provide my description
+  across multiple lines.
+</code></pre>
+
+<h4 id="success-required">success (required)</h4>
+<p>The success message to provide if the audit returns successfully.
+This field supports <a href="https://mustache.github.io/mustache.5.html">mustache templates</a>
+to display parameters given at runtime or tokens generated by the audit.</p>
+<p>This field is interpreted as <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a></p>
+<pre><code class="yaml">success: The module {{module_name}} is enabled.
+</code></pre>
+
+<h4 id="failure-required">failure (required)</h4>
+<p>If the audit fails or is unable to complete due to an error, this message will
+be displayed. This field supports <a href="https://mustache.github.io/mustache.5.html">mustache templates</a>
+to display parameters given at runtime or generated by the audit.</p>
+<p>This field is interpreted as <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a></p>
+<pre><code class="yaml">failure: {{module_name}} is not enabled.
+</code></pre>
+
+<h4 id="remediation-required">remediation (required)</h4>
+<p>This text is displayed to advise the reader how to go about remediating the policy.
+This field supports <a href="https://mustache.github.io/mustache.5.html">mustache templates</a>
+to display parameters given at runtime or tokens generated by the audit.</p>
+<p>This field is interpreted as <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a></p>
+<pre><code class="yaml">remediation: |
+  Please enable the {{module_name}} module using drush
+  `drush en {{module_name}} -y`
+</code></pre>
+
+<h4 id="parameters">parameters</h4>
+<p>Parameters allow a policy to define values for variables used by the Audit. They
+are also used in <code>policy:info</code> to inform on the parameters available to customize.
+A parameter consists of three key value pairs:</p>
+<ul>
+<li><strong>default</strong> (required): The actual value to pass through to the audit.</li>
+<li><strong>type</strong>: The data type of the parameter. Used to advise profile builders on how to use the parameter.</li>
+<li><strong>description</strong>: A description of what the parameter is used for. Used to advise profile builders.</li>
+</ul>
+<pre><code class="yaml">parameters:
+  module_name:
+    default: shield
+    type: string
+    description: The name of the module to check is enabled.
+</code></pre>
+
+<h4 id="tags">tags</h4>
+<p>The tags key is simply a mechanism to allow policies to be grouped together.
+For example "Drupal 7" or "Performance".</p>
+<pre><code class="yaml">tags:
+  - Drupal 7
+  - Performance
+</code></pre>
+
+<h4 id="depends">depends</h4>
+<p>The depends directive allows policies to only apply if one or more conditions are
+meet such as an enabled module or the value of a target environmental variable (like OS).</p>
+<p>Drutiny uses <a href="https://symfony.com/doc/3.4/components/expression_language.html">Symfony Expression Language</a>
+to evaluate the outcome of each dependency. Drutiny extends this language to provide
+additional functions available in the evaluation process. See more docs <a href="../explang-library/">Expression Language</a>.</p>
+<pre><code class="yaml">depends:
+  - expression: Policy('fs:largeFiles') == 'success'
+    on_fail: 'error'
+  - expression: drupal_module_enabled('syslog') &amp;&amp; semver_gt(target('php_version'), '5.5')
+</code></pre>
+
+<p>Each depends item must have an associated <code>expression</code> key with the expression to evaluate.
+Optionally, an <code>on_fail</code> property can be added to indicate the failure behaviour:</p>
+<h5 id="on-fail">On fail</h5>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fail</code></td>
+<td>Omit policy from report</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>Report policy as error</td>
+</tr>
+<tr>
+<td><code>report_only</code></td>
+<td>Report as not applicable</td>
+</tr>
+</tbody>
+</table>
+<h4 id="severity">severity</h4>
+<p>Not all policies are of equal importance. Severity allows you to specify how
+critical a failure or warning is. Possible values in order of importance:</p>
+<ul>
+<li>none (only option for <code>data</code> type policies)</li>
+<li>low</li>
+<li>medium (default)</li>
+<li>high</li>
+<li>critical</li>
+</ul>
+<pre><code class="yaml">severity: 'high'
+</code></pre>
+
+<h4 id="chart">chart</h4>
+<p>Chart declarations allow you to provide metadata about how to build a chart for
+display in the html format. This then produces a chart token that can be used in the success, failure, warning or remediation fields to render a chart in place.</p>
+<pre><code class="yaml">chart:
+  requests:
+    type: doughnut
+    labels: tr td:first-child
+    hide-table: false
+    title: Request Distribution by Domain
+    series:
+      - tr td:nth-child(4)
+</code></pre>
+
+<p>See <a href="" title="charts.md">charts documentation</a> for more information.</p>
+<h3 id="using-tokens-in-message-renders">Using Tokens in message renders.</h3>
+<p>Tokens are variables you can use in the render of policy messaging.
+This includes success, failure, warning and description fields defined in a policy.</p>
+<h4 id="available-tokens">Available Tokens</h4>
+<p>Use the <code>policy:info</code> command to identify which tokens are available in a policy
+for use in the render.</p>
+<p><code>bash
+$ drutiny policy:info fs:largeFiles</code></p>
+<p>You can see in the above example output, that <code>fs:largeFiles</code> contains three
+ tokens: <code>_max_size</code>, <code>issues</code> and <code>plural</code>. These tokens are available to use as
+ template variables when writting messaging for a policy:</p>
+<p><code>yaml
+ failure: |
+   Large public file{{plural}} found over {{max_size}}
+   {{#issues}}
+     - `{{ . }}`
+   {{/issues}}</code></p>
+<p>These variables are rendered using <a href="https://mustache.github.io/mustache.5.html">mustache templates</a>.
+ The messages are also parsed by a markdown parser when rendering out to HTML.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../sandbox/" title="Sandbox" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Sandbox
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../profiles/" title="Profile" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Profile
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.8eb9be28.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../js/highlight.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-116046012-1","drutiny.github.io"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
