@@ -1031,24 +1031,24 @@ Package: <code>drutiny/cloudflare</code></p>
 </thead>
 <tbody>
 <tr>
-<td>cloudflare:threats</td>
-<td>Cloudflare Threat Management</td>
-</tr>
-<tr>
-<td>cloudflare:http_status</td>
-<td>Cloudflare HTTP Status Codes</td>
-</tr>
-<tr>
-<td>cloudflare:caching</td>
-<td>Cloudflare Caching</td>
-</tr>
-<tr>
 <td>cloudflare:content</td>
 <td>Cloudflare Content</td>
 </tr>
 <tr>
 <td>cloudflare:encryption</td>
 <td>Cloudflare Encryption</td>
+</tr>
+<tr>
+<td>cloudflare:http_status</td>
+<td>Cloudflare HTTP Status Codes</td>
+</tr>
+<tr>
+<td>cloudflare:threats</td>
+<td>Cloudflare Threat Management</td>
+</tr>
+<tr>
+<td>cloudflare:caching</td>
+<td>Cloudflare Caching</td>
 </tr>
 </tbody>
 </table>
@@ -1097,7 +1097,27 @@ Package: <code>drutiny/cloudflare</code></p>
 </tbody>
 </table>
 <h5 id="source">Source</h5>
-<pre><code class="php">  final public function audit(Sandbox $sandbox)
+<pre><code class="php">  public function gather(Sandbox $sandbox)
+  {
+    $uri = $sandbox-&gt;getTarget()-&gt;uri();
+    $host = strpos($uri, 'http') === 0 ? parse_url($uri, PHP_URL_HOST) : $uri;
+    $sandbox-&gt;setParameter('host', $host);
+
+    $zone  = $this-&gt;zoneInfo($sandbox-&gt;getParameter('zone', $host));
+    $sandbox-&gt;setParameter('zone', $zone['name']);
+
+    $query = http_build_query([
+      'since' =&gt; $sandbox-&gt;getReportingPeriodStart()-&gt;format(\DateTime::RFC3339),
+      'until' =&gt; $sandbox-&gt;getReportingPeriodEnd()-&gt;format(\DateTime::RFC3339),
+    ]);
+
+    $response = $this-&gt;api()-&gt;request(&quot;GET&quot;, &quot;zones/{$zone['id']}/analytics/dashboard?$query&quot;);
+
+    foreach ($response as $key =&gt; $value) {
+      $sandbox-&gt;setParameter($key, $value);
+    }
+  }
+  final public function audit(Sandbox $sandbox)
   {
     $this-&gt;gather($sandbox);
 
@@ -1225,7 +1245,57 @@ Package: <code>drutiny/cloudflare</code></p>
 </tbody>
 </table>
 <h5 id="source_1">Source</h5>
-<pre><code class="php">  final public function audit(Sandbox $sandbox)
+<pre><code class="php">  public function gather(Sandbox $sandbox)
+  {
+    $uri = $sandbox-&gt;getTarget()-&gt;uri();
+    $host = strpos($uri, 'http') === 0 ? parse_url($uri, PHP_URL_HOST) : $uri;
+    $sandbox-&gt;setParameter('host', $host);
+
+    $zone  = $this-&gt;zoneInfo($sandbox-&gt;getParameter('zone', $host));
+    $sandbox-&gt;setParameter('zone', $zone['name']);
+
+    $response = $this-&gt;api()-&gt;request('GET', &quot;zones/{$zone['id']}/pagerules&quot;);
+
+    // Create a reusable translation function to allow settings to use variables.
+    $t = function ($v) use ($zone, $host) {
+      return strtr($v, [
+        ':zone' =&gt; $zone['name'],
+        ':host' =&gt; $host
+      ]);
+    };
+
+    $constraint = $t($sandbox-&gt;getParameter('rule'));
+
+
+    $rules = array_filter($response['result'], function ($rule) use ($constraint) {
+      return $rule['targets'][0]['constraint']['value'] == $constraint;
+    });
+
+    // If we couldn't find an explicit match, see if there is a match on another
+    // page rule.
+    if (!count($rules)) {
+
+      $rules = array_filter($response['result'], function ($rule) use ($constraint) {
+        return fnmatch($rule['targets'][0]['constraint']['value'], $constraint);
+      });
+
+      if (!count($rules)) {
+        throw new \Exception(&quot;Cannot find a rule for $constraint.&quot;);
+      }
+    }
+
+    // Build action array.
+    $rule = array_shift($rules);
+    $sandbox-&gt;setParameter('settings', $rule);
+    $sandbox-&gt;setParameter('rule', $rule['targets'][0]['constraint']['value']);
+
+    foreach ($rule['actions'] as $value) {
+      $rule[$value['id']] = isset($value['value']) ? $value['value'] : TRUE;
+    }
+
+    $sandbox-&gt;setParameter('settings', $rule);
+  }
+  final public function audit(Sandbox $sandbox)
   {
     $this-&gt;gather($sandbox);
 
@@ -1262,12 +1332,12 @@ Package: <code>drutiny/cloudflare</code></p>
 </thead>
 <tbody>
 <tr>
-<td>cloudflare:always_use_https</td>
-<td>Cloudflare always use HTTPS</td>
-</tr>
-<tr>
 <td>cloudflare:redirect_apex</td>
 <td>Cloudflare redirect Apex to primary domain</td>
+</tr>
+<tr>
+<td>cloudflare:always_use_https</td>
+<td>Cloudflare always use HTTPS</td>
 </tr>
 </tbody>
 </table>

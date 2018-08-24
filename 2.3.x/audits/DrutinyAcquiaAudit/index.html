@@ -1458,7 +1458,15 @@ Package: <code>drutiny/acquia</code></p>
 </tbody>
 </table>
 <h5 id="source_3">Source</h5>
-<pre><code class="php">  final public function audit(Sandbox $sandbox)
+<pre><code class="php">  public function gather(Sandbox $sandbox) {
+
+    $environment = CloudApiDrushAdaptor::getEnvironment($sandbox-&gt;getTarget());
+    $app = CloudApiV2::get('applications/' . $environment['application']['uuid']);
+
+    $sandbox-&gt;setParameter('environment', $environment);
+    $sandbox-&gt;setParameter('app', $app);
+  }
+  final public function audit(Sandbox $sandbox)
   {
     $this-&gt;gather($sandbox);
 
@@ -1832,7 +1840,56 @@ Package: <code>drutiny/acquia</code></p>
 </tbody>
 </table>
 <h5 id="source_7">Source</h5>
-<pre><code class="php">  final public function audit(Sandbox $sandbox)
+<pre><code class="php">  public function gather(Sandbox $sandbox) {
+
+    $target = $sandbox-&gt;getTarget();
+    $env = ($target instanceof AcquiaTargetInterface) ? $target-&gt;getEnvironment() : CloudApiDrushAdaptor::getEnvironment($target);
+
+    $metrics = $sandbox-&gt;getParameter('metrics');
+
+    $response = CloudApiV2::get('environments/' . $env['id'] . '/metrics/stackmetrics/data', [
+      'filter' =&gt; implode(',', array_map(function ($metric) {
+        return 'metric:' . $metric;
+      }, $metrics)),
+      'from' =&gt; $sandbox-&gt;getReportingPeriodStart()-&gt;format(\DateTime::ISO8601),
+      'to' =&gt; $sandbox-&gt;getReportingPeriodEnd()-&gt;format(\DateTime::ISO8601),
+    ]);
+
+    $table_headers = [];
+    $table_rows = [];
+
+
+    foreach ($response['_embedded']['items'] as $item) {
+      $name = empty($item['host']) ? $item['metric'] : sprintf('%s:%s', $item['host'], $item['metric']);
+      $table_headers[] = $name;
+    }
+    sort($table_headers);
+
+    array_unshift($table_headers, 'Date');
+
+    foreach ($response['_embedded']['items'] as &amp;$item) {
+      $name = empty($item['host']) ? $item['metric'] : sprintf('%s:%s', $item['host'], $item['metric']);
+
+      $idx = array_search($name, $table_headers);
+      foreach ($item['datapoints'] as &amp;$plot) {
+        // Convert unix timestamp plot point to readable datetime.
+        if (!isset($table_rows[$plot[1]])) {
+          $table_rows[$plot[1]] = [date('Y-m-d H:i:s', $plot[1])];
+        }
+
+        $table_rows[$plot[1]][$idx] = $plot[0];
+      }
+    }
+
+    // Sort the table columns by index.
+    array_walk($table_rows, 'ksort');
+
+    $sandbox-&gt;setParameter('result', $response);
+    $sandbox-&gt;setParameter('env', $env);
+    $sandbox-&gt;setParameter('table_headers', $table_headers);
+    $sandbox-&gt;setParameter('table_rows', array_values($table_rows));
+  }
+  final public function audit(Sandbox $sandbox)
   {
     $this-&gt;gather($sandbox);
 

@@ -1540,7 +1540,22 @@ Package: <code>drutiny/http</code></p>
 </tbody>
 </table>
 <h5 id="source">Source</h5>
-<pre><code class="php">  final public function audit(Sandbox $sandbox)
+<pre><code class="php">  protected function gather(Sandbox $sandbox)
+  {
+    $use_cache = $sandbox-&gt;getParameter('use_cache', FALSE);
+    // For checking caching functionality, add a listener
+    // to pre-warm the origin.
+    if ($sandbox-&gt;setParameter('send_warming_request', FALSE)) {
+      $sandbox-&gt;setParameter('use_cache', FALSE);
+      $response = $this-&gt;getHttpResponse($sandbox);
+      $sandbox-&gt;setParameter('cold_headers', $this-&gt;gatherHeaders($response));
+    }
+
+    $sandbox-&gt;setParameter('use_cache', $use_cache);
+    $response = $this-&gt;getHttpResponse($sandbox);
+    $sandbox-&gt;setParameter('headers', $this-&gt;gatherHeaders($response));
+  }
+  final public function audit(Sandbox $sandbox)
   {
     $this-&gt;gather($sandbox);
 
@@ -1577,20 +1592,20 @@ Package: <code>drutiny/http</code></p>
 </thead>
 <tbody>
 <tr>
-<td>HTTP:ReferrerPolicy</td>
-<td>HTTP Referrer Policy</td>
-</tr>
-<tr>
 <td>HTTP:X-Frame-Options</td>
 <td>HTTP X-Frame-Options</td>
 </tr>
 <tr>
-<td>HTTP:Content-Security-Policy</td>
-<td>HTTP Content-Security-Policy</td>
+<td>HTTP:ReferrerPolicy</td>
+<td>HTTP Referrer Policy</td>
 </tr>
 <tr>
 <td>HTTP:HSTS</td>
 <td>HTTP HSTS</td>
+</tr>
+<tr>
+<td>HTTP:Content-Security-Policy</td>
+<td>HTTP Content-Security-Policy</td>
 </tr>
 </tbody>
 </table>
@@ -1666,12 +1681,12 @@ Package: <code>drutiny/http</code></p>
 </thead>
 <tbody>
 <tr>
-<td>HTTP:X-XSS-Protection</td>
-<td>HTTP X-XSS-Protection</td>
-</tr>
-<tr>
 <td>HTTP:X-Content-Type-Options</td>
 <td>HTTP X-Content-Type-Options</td>
+</tr>
+<tr>
+<td>HTTP:X-XSS-Protection</td>
+<td>HTTP X-XSS-Protection</td>
 </tr>
 <tr>
 <td>Acquia:CloudEdgeCaching</td>
@@ -2119,7 +2134,31 @@ Package: <code>drutiny/http</code></p>
 </tbody>
 </table>
 <h5 id="source_7">Source</h5>
-<pre><code class="php">  final public function audit(Sandbox $sandbox)
+<pre><code class="php">  public function gather(Sandbox $sandbox)
+  {
+    if (!$url = $sandbox-&gt;getParameter('host')) {
+      $url = $sandbox-&gt;getTarget()-&gt;uri();
+    }
+
+    $host = (strpos($url, '://') !== FALSE) ? parse_url($url, PHP_URL_HOST) : $url;
+    $sandbox-&gt;setParameter('host', $host);
+    $port = $sandbox-&gt;getParameter('port');
+
+    $url = 'ssl://' . $host . ':' . $port;
+
+    $context = stream_context_create([&quot;ssl&quot; =&gt; [&quot;capture_peer_cert&quot; =&gt; true]]);
+    if (!$client = @stream_socket_client($url, $errno, $errstr, 30, STREAM_CLIENT_CONNECT, $context)) {
+      throw new AuditValidationException(&quot;$host did not accept an SSL connection on port $port&quot;);
+    }
+
+    $cert = stream_context_get_params($client);
+    $certinfo = openssl_x509_parse($cert['options']['ssl']['peer_certificate']);
+
+    $certinfo['issued'] = date('Y-m-d H:i:s', $certinfo['validFrom_time_t']);
+
+    $sandbox-&gt;setParameter('cert', $certinfo);
+  }
+  final public function audit(Sandbox $sandbox)
   {
     $this-&gt;gather($sandbox);
 
