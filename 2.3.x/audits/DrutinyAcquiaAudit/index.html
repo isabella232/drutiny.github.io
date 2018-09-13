@@ -1847,6 +1847,10 @@ Package: <code>drutiny/acquia</code></p>
 
     $metrics = $sandbox-&gt;getParameter('metrics');
 
+    if (!is_array($metrics)) {
+      throw new AuditValidationException(&quot;Metrics parameter must be an array. &quot; . ucwords(gettype($metrics)) . ' given.');
+    }
+
     $response = CloudApiV2::get('environments/' . $env['id'] . '/metrics/stackmetrics/data', [
       'filter' =&gt; implode(',', array_map(function ($metric) {
         return 'metric:' . $metric;
@@ -1855,29 +1859,33 @@ Package: <code>drutiny/acquia</code></p>
       'to' =&gt; $sandbox-&gt;getReportingPeriodEnd()-&gt;format(\DateTime::ISO8601),
     ]);
 
-    $table_headers = [];
+    $table_headers = ['Date'];
     $table_rows = [];
 
-
     foreach ($response['_embedded']['items'] as $item) {
-      $name = empty($item['host']) ? $item['metric'] : sprintf('%s:%s', $item['host'], $item['metric']);
-      $table_headers[] = $name;
-    }
-    sort($table_headers);
+      if (!empty($item['host'])) {
+        list($item['name'],) = explode('.', $item['host'], 2);
+      }
+      if (!isset($item['name'])) {
+        $item['name'] = $item['metric'];
+      }
+      elseif (count($metrics) &gt; 1) {
+        $item['name'] .= ':' . $item['metric'];
+      }
+      $table_headers[] = $item['name'];
 
-    array_unshift($table_headers, 'Date');
+      $idx = array_search($item['name'], $table_headers);
+      foreach ($item['datapoints'] as $plot) {
+        // $y == value
+        // $x == epoch
+        list($y, $x) = $plot;
 
-    foreach ($response['_embedded']['items'] as &amp;$item) {
-      $name = empty($item['host']) ? $item['metric'] : sprintf('%s:%s', $item['host'], $item['metric']);
-
-      $idx = array_search($name, $table_headers);
-      foreach ($item['datapoints'] as &amp;$plot) {
         // Convert unix timestamp plot point to readable datetime.
-        if (!isset($table_rows[$plot[1]])) {
-          $table_rows[$plot[1]] = [date('Y-m-d H:i:s', $plot[1])];
+        if (!isset($table_rows[$x])) {
+          $table_rows[$x] = [ date('Y-m-d H:i:s', $x) ];
         }
 
-        $table_rows[$plot[1]][$idx] = $plot[0];
+        $table_rows[$x][$idx] = $y;
       }
     }
 
@@ -1888,6 +1896,39 @@ Package: <code>drutiny/acquia</code></p>
     $sandbox-&gt;setParameter('env', $env);
     $sandbox-&gt;setParameter('table_headers', $table_headers);
     $sandbox-&gt;setParameter('table_rows', array_values($table_rows));
+
+    // graph
+
+    $graph = [
+      'type' =&gt; 'line',
+      'labels' =&gt; 'tr td:first-child',
+      'hide-table' =&gt; TRUE,
+      'height' =&gt; 250,
+      'width' =&gt; 400,
+      'stacked' =&gt; FALSE,
+      'title' =&gt; $sandbox-&gt;getPolicy()-&gt;get('title'),
+      'y-axis' =&gt; 'Percentage',
+      'series' =&gt; [],
+      'series-labels' =&gt; [],
+    ];
+
+    foreach ($table_headers as $idx =&gt; $name) {
+      if ($name == 'Date') {
+        continue;
+      }
+      $nth = $idx + 1;
+      $graph['series'][] = 'tr td:nth-child(' . $nth . ')';
+      $graph['series-labels'][] = 'tr th:nth-child(' . $nth . ')';
+    }
+    $graph['series'] = implode(',', $graph['series']);
+    $graph['series-labels'] = implode(',', $graph['series-labels']);
+
+    $element = [];
+    foreach ($graph as $key =&gt; $value) {
+      $element[] = $key . '=&quot;' . $value . '&quot;';
+    }
+    $element = '[[[' . implode(' ', $element) . ']]]';
+    $sandbox-&gt;setParameter('graph', $element);
   }
   final public function audit(Sandbox $sandbox)
   {

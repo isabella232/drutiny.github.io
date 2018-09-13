@@ -2329,8 +2329,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#drupal-theme-security" title="Drupal Theme Security" class="md-nav__link">
-    Drupal Theme Security
+  <a href="#drupal-theme-security-performance" title="Drupal Theme Security &amp; Performance" class="md-nav__link">
+    Drupal Theme Security &amp; Performance
   </a>
   
     <nav class="md-nav">
@@ -4959,8 +4959,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#drupal-theme-security" title="Drupal Theme Security" class="md-nav__link">
-    Drupal Theme Security
+  <a href="#drupal-theme-security-performance" title="Drupal Theme Security &amp; Performance" class="md-nav__link">
+    Drupal Theme Security &amp; Performance
   </a>
   
     <nav class="md-nav">
@@ -8279,7 +8279,7 @@ module.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="drupal-theme-security">Drupal Theme Security</h3>
+<h3 id="drupal-theme-security-performance">Drupal Theme Security &amp; Performance</h3>
 <p><strong>Name</strong>: <code>Drupal:ThemeSecurity</code> [<a href="https://github.com/drutiny/content/tree/master/Policy/drupal/ThemeSecurity.policy.yml">View Source</a>]<br />
 <strong>Package</strong>: <code>drutiny/content</code><br />
 <strong>Class</strong>: <code>Drutiny\Audit\Filesystem\CodeScan</code></p>
@@ -8313,7 +8313,7 @@ code review.</p>
 <td>patterns</td>
 <td>array</td>
 <td>patterns to run over each matching file.</td>
-<td>- _POST<br>- exec(<br>- db_query<br>- db_select<br>- db_merge<br>- db_update<br>- db_write_record<br>- -&gt;query<br>- drupal_http_request<br>- curl_init<br>- passthru<br>- proc_open<br>- system(<br>- sleep(<br></td>
+<td>- <em>POST<br>- exec(<br>- db_query<br>- db_select<br>- db_merge<br>- db_update<br>- db_write_record<br>- -&gt;query<br>- drupal_http_request<br>- curl_init<br>- passthru<br>- proc_open<br>- system(<br>- sleep(<br>- mysql</em><br>- mysqli<br>- sqlite<br>- db_query<br>- db_fetch<br>- db_result<br>- pager_query<br>- db_set_active<br>- db_select<br>- db_insert<br>- db_update<br>- db_delete<br>- fetchAll<br>- fetchField<br>- fetchObject<br>- fetchAssoc<br>- countQuery<br></td>
 </tr>
 </tbody>
 </table>
