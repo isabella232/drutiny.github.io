@@ -1362,17 +1362,14 @@ Package: <code>drutiny/drutiny</code></p>
 
     $path = strtr($path, $stat['%paths']);
 
-    $size = $sandbox-&gt;exec(&quot;du -d 0 $path | awk '{print $1}'&quot;);
+    $size = trim($sandbox-&gt;exec(&quot;du -d 0 -m $path | awk '{print $1}'&quot;));
 
     $max_size = (int) $sandbox-&gt;getParameter('max_size', 20);
 
     // Set the size in MB for rendering
-    $sandbox-&gt;setParameter('size', ceil($size * 1024 * 1024));
+    $sandbox-&gt;setParameter('size', $size);
     // Set the actual path.
     $sandbox-&gt;setParameter('path', $path);
-
-    // Convert max_size into bytes.
-    $max_size = $max_size * 1024 * 1024;
 
     return $size &lt; $max_size;
   }
