@@ -1,0 +1,3789 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This is a generic Drupal site auditing and optional remediation tool.">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+    
+    
+      
+        <title>Plugin Drupal7  - Drutiny</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/tweaks.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#blacklistpermissions" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Drutiny" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Drutiny
+              </span>
+              <span class="md-header-nav__topic">
+                Plugin Drupal7 
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Drutiny
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/drutiny/drutiny/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Usage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Usage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reports/" title="Reports" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../plugins/" title="Plugins" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      API Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        API Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Audit" class="md-nav__link">
+      Audit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sandbox/" title="Sandbox" class="md-nav__link">
+      Sandbox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/" title="Policy" class="md-nav__link">
+      Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../profiles/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../config/" title="Config" class="md-nav__link">
+      Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../creds/" title="Credential Manager" class="md-nav__link">
+      Credential Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../domains/" title="Domain Provider" class="md-nav__link">
+      Domain Provider
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../charts/" title="Charts" class="md-nav__link">
+      Charts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../explang-library/" title="Expression Language Syntax" class="md-nav__link">
+      Expression Language Syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../policy-library/" title="Policy Library" class="md-nav__link">
+      Policy Library
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Audit Library
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Audit Library
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAcquiaAudit/" title="Acquia " class="md-nav__link">
+      Acquia 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAudit/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditApache/" title="Apache" class="md-nav__link">
+      Apache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditDNS/" title="DNS" class="md-nav__link">
+      DNS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditDatabase/" title="Database" class="md-nav__link">
+      Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditDrupal/" title="Drupal" class="md-nav__link">
+      Drupal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditFilesystem/" title="Filesystem" class="md-nav__link">
+      Filesystem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyAuditTemplate/" title="Template" class="md-nav__link">
+      Template
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyCloudflareAudit/" title="Cloudflare " class="md-nav__link">
+      Cloudflare 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyHttpAudit/" title="Http " class="md-nav__link">
+      Http 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Plugin Drupal7 
+      </label>
+    
+    <a href="./" title="Plugin Drupal7 " class="md-nav__link md-nav__link--active">
+      Plugin Drupal7 
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blacklistpermissions" title="BlacklistPermissions" class="md-nav__link">
+    BlacklistPermissions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronlast" title="CronLast" class="md-nav__link">
+    CronLast
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_1" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duplicatemodules" title="DuplicateModules" class="md-nav__link">
+    DuplicateModules
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_2" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entityreferenceautocomplete" title="EntityReferenceAutocomplete" class="md-nav__link">
+    EntityReferenceAutocomplete
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_3" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_1" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_3" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missingmodules" title="MissingModules" class="md-nav__link">
+    MissingModules
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_4" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_2" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_4" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduledisabled" title="ModuleDisabled" class="md-nav__link">
+    ModuleDisabled
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_5" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_3" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_5" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulesenabled" title="ModulesEnabled" class="md-nav__link">
+    ModulesEnabled
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_6" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_4" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_6" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#noadministrators" title="NoAdministrators" class="md-nav__link">
+    NoAdministrators
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_7" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_7" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searchapidb" title="SearchApiDb" class="md-nav__link">
+    SearchApiDb
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_8" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_8" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#untrustedroles" title="UntrustedRoles" class="md-nav__link">
+    UntrustedRoles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_9" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_5" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_9" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user1" title="User1" class="md-nav__link">
+    User1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_10" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_6" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_10" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variablecompare" title="VariableCompare" class="md-nav__link">
+    VariableCompare
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_11" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_7" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_11" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewscache" title="ViewsCache" class="md-nav__link">
+    ViewsCache
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_12" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_12" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewspagination" title="ViewsPagination" class="md-nav__link">
+    ViewsPagination
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_13" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_8" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_13" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zenrebuildregistry" title="ZenRebuildRegistry" class="md-nav__link">
+    ZenRebuildRegistry
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_14" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_14" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyPluginDrupal7AuditSecurity/" title="Plugin Drupal7 Security" class="md-nav__link">
+      Plugin Drupal7 Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinyPluginDrupal8Audit/" title="Plugin Drupal8 " class="md-nav__link">
+      Plugin Drupal8 
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../DrutinySumoLogicAudit/" title="SumoLogic " class="md-nav__link">
+      SumoLogic 
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blacklistpermissions" title="BlacklistPermissions" class="md-nav__link">
+    BlacklistPermissions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronlast" title="CronLast" class="md-nav__link">
+    CronLast
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_1" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_1" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duplicatemodules" title="DuplicateModules" class="md-nav__link">
+    DuplicateModules
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_2" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_2" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entityreferenceautocomplete" title="EntityReferenceAutocomplete" class="md-nav__link">
+    EntityReferenceAutocomplete
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_3" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_1" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_3" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missingmodules" title="MissingModules" class="md-nav__link">
+    MissingModules
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_4" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_2" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_4" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduledisabled" title="ModuleDisabled" class="md-nav__link">
+    ModuleDisabled
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_5" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_3" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_5" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulesenabled" title="ModulesEnabled" class="md-nav__link">
+    ModulesEnabled
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_6" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_4" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_6" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#noadministrators" title="NoAdministrators" class="md-nav__link">
+    NoAdministrators
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_7" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_7" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searchapidb" title="SearchApiDb" class="md-nav__link">
+    SearchApiDb
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_8" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_8" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#untrustedroles" title="UntrustedRoles" class="md-nav__link">
+    UntrustedRoles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_9" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_5" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_9" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user1" title="User1" class="md-nav__link">
+    User1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_10" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_6" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_10" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variablecompare" title="VariableCompare" class="md-nav__link">
+    VariableCompare
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_11" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_7" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_11" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewscache" title="ViewsCache" class="md-nav__link">
+    ViewsCache
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_12" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_12" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewspagination" title="ViewsPagination" class="md-nav__link">
+    ViewsPagination
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_13" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens_8" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_13" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zenrebuildregistry" title="ZenRebuildRegistry" class="md-nav__link">
+    ZenRebuildRegistry
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policies_14" title="Policies" class="md-nav__link">
+    Policies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source_14" title="Source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/drutiny/drutiny/edit/master/docs/audits/DrutinyPluginDrupal7Audit.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Plugin Drupal7 </h1>
+                
+                <h3 id="blacklistpermissions">BlacklistPermissions</h3>
+<p>BlackList Permissions</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\BlacklistPermissions</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:BlackListPermissions</td>
+<td>BlackList Permissions</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>permissions</td>
+<td>array</td>
+<td>An array of permissions to ensure are not available to non-administrator roles</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokens">Tokens</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>permissions</td>
+<td>array</td>
+<td>An array of permissions to ensure are not available to non-administrator roles</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $perms = $sandbox-&gt;getParameter('permissions');
+
+    if (empty($perms)) {
+      return TRUE;
+    }
+
+    $where = [];
+    foreach ($perms as $perm) {
+      $where[] = 'rp.permission = \'' . $perm . '\'';
+    }
+
+    // We don't care about the 'administrator' role having access.
+    $variable = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;variableGet('user_admin_role');
+    $user_admin_role = $variable['user_admin_role'];
+
+    try {
+      $output = $sandbox-&gt;drush()-&gt;sqlQuery('SELECT r.rid, r.name, rp.permission FROM role r INNER JOIN role_permission rp ON rp.rid = r.rid WHERE r.rid != ' . $user_admin_role . ' AND (' . implode(' OR ', $where) . ');');
+      $output = array_filter($output);
+    }
+    catch (\Exception $e) {
+      $sandbox-&gt;logger()-&gt;info(get_class($e) . ': ' . $e-&gt;getMessage());
+      return FALSE;
+    }
+
+    if (empty($output)) {
+      return TRUE;
+    }
+
+    $black_roles = [];
+    foreach ($output as $line) {
+      list($rid, $role, $permission) = explode(&quot;\t&quot;, $line);
+      $black_roles[$role][] = $permission;
+    }
+
+    $roles = [];
+
+    foreach ($black_roles as $role =&gt; $perms) {
+      $roles[] = [
+        'role' =&gt; $role,
+        'perms' =&gt; $perms,
+      ];
+    }
+
+    $sandbox-&gt;setParameter('roles', $roles);
+
+    return FALSE;
+  }
+
+</code></pre>
+
+<h3 id="cronlast">CronLast</h3>
+<p>Check a configuration is set correctly.</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\CronLast</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_1">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:CronLast</td>
+<td>Cron running regularly</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_1">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    try {
+      $vars = $sandbox-&gt;drush([
+        'format' =&gt; 'json'
+        ])-&gt;variableGet();
+
+      if (!isset($vars['cron_last'])) {
+        return FALSE;
+      }
+
+      $sandbox-&gt;setParameter('cron_last', date('l jS \of F Y h:i:s A', $vars['cron_last']));
+
+      $time_diff = time() - $vars['cron_last'];
+      // Fail if cron hasn't run in the last 24 hours.
+      if ($time_diff &gt; 86400) {
+        return FALSE;
+      }
+      return TRUE;
+    }
+    catch (DrushFormatException $e) {
+      return Audit::ERROR;
+    }
+  }
+
+</code></pre>
+
+<h3 id="duplicatemodules">DuplicateModules</h3>
+<p>Duplicate modules.</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\DuplicateModules</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_2">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:NoDuplicateModules</td>
+<td>Duplicate modules</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_2">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $config = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;status();
+    $docroot = $config['root'];
+
+    $command = &lt;&lt;&lt;CMD
+find $docroot -name '*.module' -type f |\
+grep -Ev 'drupal_system_listing_(in)?compatible_test' |\
+grep -oe '[^/]*\.module' | grep -Ev '^\.module' | cut -d'.' -f1 | sort |\
+uniq -c | sort -nr | awk '{print $2&quot;: &quot;$1}'
+CMD;
+
+    $output = $sandbox-&gt;exec($command);
+    $duplicateModules = array_filter(Yaml::parse($output), function ($count) {
+      return $count &gt; 1;
+    });
+
+    $modules = [];
+    foreach ($duplicateModules as $module =&gt; $count) {
+      $modules[] = [
+        'module' =&gt; $module,
+        'count' =&gt; $count,
+      ];
+    }
+
+    $sandbox-&gt;setParameter('modules', $modules);
+    return count($modules) === 0;
+  }
+
+</code></pre>
+
+<h3 id="entityreferenceautocomplete">EntityReferenceAutocomplete</h3>
+<p>Entity reference autocomplete</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\EntityReferenceAutocomplete</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_3">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:entityreference</td>
+<td>EntityReference Autocomplete Performance</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>threshold</td>
+<td>integer</td>
+<td>The limit of references allowed</td>
+<td>100</td>
+</tr>
+<tr>
+<td>errors_count</td>
+<td>integer</td>
+<td>The number of errors found</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokens_1">Tokens</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>threshold</td>
+<td>integer</td>
+<td>The limit of references allowed</td>
+<td>100</td>
+</tr>
+<tr>
+<td>errors</td>
+<td>array</td>
+<td>An array of errors if any</td>
+<td>{  }</td>
+</tr>
+<tr>
+<td>errors_count</td>
+<td>integer</td>
+<td>The number of errors found</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_3">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox)
+  {
+
+    $errors = $sandbox-&gt;drush()-&gt;evaluate(function () {
+      $results = db_query(&quot;SELECT fc.field_name, fc.data as field_info, fci.data as field_instance_info
+        FROM {field_config} fc
+        JOIN {field_config_instance} fci ON fc.id = fci.field_id
+        WHERE fc.type = 'entityreference'&quot;);
+
+      $errors = [];
+      foreach ($results as $record) {
+        if (!$record-&gt;field_info = unserialize($record-&gt;field_info)) {
+          continue;
+        }
+
+        // Correct configuration is to use an autocomplete as this will limit
+        // the number of referenced entities from being rendered.
+        if (strpos($record-&gt;field_instance_info['widget']['type'], 'autocomplete') &gt; -1) {
+          continue;
+        }
+
+        $record-&gt;field_instance_info = unserialize($record-&gt;field_instance_info);
+        if (!$record-&gt;field_instance_info = unserialize($record-&gt;field_instance_info)) {
+          continue;
+        }
+
+        $args = [];
+
+        $handler_settings = isset($record-&gt;field_info['settings']['handler_settings']) ? $record-&gt;field_info['settings']['handler_settings'] : NULL;
+
+        // Attempt to find the node types in the $field_info.
+        if (isset($handler_settings['target_bundles'])) {
+          $args = array_keys($handler_settings['target_bundles']);
+        }
+        elseif (isset($handler_settings['view']['args'])) {
+          $args = [];
+          foreach ($handler_settings['view']['args'] as $arg) {
+            // If we're using views we can pass multiple entity types in
+            // contextually separated by a +.
+            $args = array_merge($args, explode('+', $arg));
+          }
+        }
+
+        switch ($record-&gt;field_info['settings']['target_type']) {
+          case 'node':
+            $count = db_query(&quot;SELECT count(*) as count FROM {node} node WHERE node.type in (&quot; . $args . &quot;)&quot;);
+            break;
+
+          case 'taxonomy_term':
+            $count = db_query(&quot;SELECT count(*) as count FROM {taxonomy_term_data}&quot;)-&gt;fetchField();
+            break;
+        }
+
+        if ($count &gt; $sandbox-&gt;getParameter('threshold', 100)) {
+          $errors[] = &quot;{$record-&gt;field_instance_info['label']} `{$record-&gt;field_instance['label']}`, found *{$count}* referenced entities.&quot;;
+        }
+      }
+      return $errors;
+    });
+
+    $sandbox-&gt;setParameter('errors', $errors);
+    $sandbox-&gt;setParameter('errors_count', count($errors));
+
+    return count($errors) == 0;
+  }
+
+</code></pre>
+
+<h3 id="missingmodules">MissingModules</h3>
+<p>Missing modules.</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\MissingModules</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_4">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:MissingModules</td>
+<td>Missing modules</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_2">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>The name of the variable to compare.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokens_2">Tokens</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>The name of the variable to compare.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_4">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $rows = $sandbox-&gt;drush()-&gt;evaluate(function () {
+      $rows = [];
+
+      // Grab all the modules in the system table.
+      $query = db_query(&quot;SELECT filename, type, name FROM {system}&quot;);
+      // Go through the query and check to see if the module exists in the directory.
+      foreach ($query-&gt;fetchAll() as $record) {
+        if ($record-&gt;name == 'default') {
+          continue;
+        }
+
+        // Grab the checker.
+        $check = drupal_get_filename($record-&gt;type, $record-&gt;name, $record-&gt;filename, FALSE);
+        // If drupal_get_filename returns null = we got problems.
+        if (!is_null($check)) {
+          continue;
+        }
+
+        // Go ahead and set the row if all is well.
+        $rows[$record-&gt;name] = array(
+          'name' =&gt; $record-&gt;name,
+          'type' =&gt; $record-&gt;type,
+          'filename' =&gt; $record-&gt;filename,
+        );
+      }
+      return $rows;
+    });
+
+    $sandbox-&gt;setParameter('messages', array_values(array_map(function ($row) {
+      return &quot;Cannot file {$row['type']} `{$row['name']}`. Expected to be in {$row['filename']}.&quot;;
+    }, $rows)));
+
+    print_r($sandbox-&gt;getParameter('messages'));
+
+    return empty($rows);
+  }
+
+</code></pre>
+
+<h3 id="moduledisabled">ModuleDisabled</h3>
+<p>Generic module is disabled check.</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\ModuleDisabled</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<p>This class can <strong>remediate</strong> failed audits.</p>
+<h4 id="policies_5">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:fileCacheGlusterDisabled</td>
+<td>File Cache with Gluster is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:recaptchaDisabled</td>
+<td>reCAPTCHA is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:supercookieDisabled</td>
+<td>Super Cookie is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:DblogModuleDisabled</td>
+<td>Database logging disabled</td>
+</tr>
+<tr>
+<td>Drupal-7:blockcacheAlterDisabled</td>
+<td>Block Cache Alter is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:fbconnectDisabled</td>
+<td>Facebook Connect is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:textSizeDisabled</td>
+<td>Text Size is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:sessionAPIDisabled</td>
+<td>Session API is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:viewsFilterHarmonizerDisabled</td>
+<td>Views Filter Harmonizer is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:Search404ModuleDisabled</td>
+<td>Search404 module disabled</td>
+</tr>
+<tr>
+<td>Drupal-7:smartIPDisabled</td>
+<td>Smart IP is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:ipGeolocDisabled</td>
+<td>IP Geolocation is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:sessionCacheDisabled</td>
+<td>Session Cache API is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:ShieldModuleDisabled</td>
+<td>Shield Disabled</td>
+</tr>
+<tr>
+<td>Drupal-7:h5pDisabled</td>
+<td>H5P is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:PhpModuleDisabled</td>
+<td>PHP</td>
+</tr>
+<tr>
+<td>Drupal-7:UpdateModuleDisabled</td>
+<td>Update</td>
+</tr>
+<tr>
+<td>Drupal-7:tbMegaMenuDisabled</td>
+<td>TB Mega Menu is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:SimpletestModuleDisabled</td>
+<td>Simpletest</td>
+</tr>
+<tr>
+<td>Drupal-7:globalFilterDisabled</td>
+<td>Views Global Filter is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:StatisticsModuleDisabled</td>
+<td>Statistics</td>
+</tr>
+<tr>
+<td>Drupal-7:purgeDisabled</td>
+<td>Purge Module is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:roleMemoryLimitDisabled</td>
+<td>Role Memory Limit is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:NoBackupAndMigrate</td>
+<td>Backup and Migrate is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:memcacheStorageDisabled</td>
+<td>Memcache Storage is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:ViewsUIDisabled</td>
+<td>Views UI module is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:OverlayModuleDisabled</td>
+<td>Overlay module disabled</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaSerialDisabled</td>
+<td>Serial is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaShibAuthDisabled</td>
+<td>Shibboleth Authentication is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaHTMLPurifierDisabled</td>
+<td>HTML Purifier is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaLinkCheckerDisabled</td>
+<td>Link Checker is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaAutoSlaveDisabled</td>
+<td>AutoSlave is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaSearch404Disabled</td>
+<td>Search 404 is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaLDAPDisabled</td>
+<td>Lightweight Directory Access Protocol (LDAP) is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaCASDisabled</td>
+<td>CAS is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaHTTPRLDisabled</td>
+<td>HTTPRL is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaPrintDisabled</td>
+<td>Print is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaDBMaintenanceDisabled</td>
+<td>DB Maintenance is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaOptimizeDBDisabled</td>
+<td>Optimize DB is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaCFPurgeDisabled</td>
+<td>CloudFlare Purge is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaWURFLDisabled</td>
+<td>WURFL is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaAuthcacheDisabled</td>
+<td>Authcache is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaNodeViewCountDisabled</td>
+<td>Node view count is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaElysiaCronDisabled</td>
+<td>Elysia Cron is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaWorkbenchModerationDisabled</td>
+<td>Workbench Moderation is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaDevinciDisabled</td>
+<td>Devinci is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaFilefieldSourcesDisabled</td>
+<td>Filefield Sources is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaR4032LoginDisabled</td>
+<td>Redirect 403 to User Login is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaApacheSolrFileDisabled</td>
+<td>Apache Solr File is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaVarnishModuleDisabled</td>
+<td>Varnish Module is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaAPCDisabled</td>
+<td>APC is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaRadioactivityDisabled</td>
+<td>Radioactivity is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaBoostDisabled</td>
+<td>Boost is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaTCPDFDisabled</td>
+<td>TCPDF is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaConfigMgmtDisabled</td>
+<td>Configuration Management is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaAdaptiveImageDisabled</td>
+<td>Adaptive Image is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaCiviCRMDisabled</td>
+<td>CiviCRM is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaBeanDisabled</td>
+<td>Bean is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaContactImporterDisabled</td>
+<td>Contact Importer is not installed</td>
+</tr>
+<tr>
+<td>Drupal-7:acquiaWYSIWYGCKFinderDisabled</td>
+<td>WYSIWYG CKFinder is not installed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_3">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>string</td>
+<td>The name of the module to check is disabled.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokens_3">Tokens</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>string</td>
+<td>The name of the module to check is disabled.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_5">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $module = $sandbox-&gt;getParameter('module');
+
+    try {
+      $info = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;pmList();
+    }
+    catch (DrushFormatException $e) {
+      return strpos($e-&gt;getOutput(), $module . ' was not found.') !== FALSE;
+    }
+
+    if (!isset($info[$module])) {
+      return TRUE;
+    }
+
+    $status = strtolower($info[$module]['status']);
+
+    return ($status == 'not installed');
+  }
+
+</code></pre>
+
+<h3 id="modulesenabled">ModulesEnabled</h3>
+<p>Generic modules are enabled check.</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\ModulesEnabled</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<p>This class can <strong>remediate</strong> failed audits.</p>
+<h4 id="policies_6">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:ModulesEnabled</td>
+<td>Modules enabled</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_4">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>array</td>
+<td>List of modules to check that are enabled.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokens_4">Tokens</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modules</td>
+<td>array</td>
+<td>List of modules to check that are enabled.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_6">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $modules = $sandbox-&gt;getParameter('modules');
+    if (empty($modules)) {
+      return TRUE;
+    }
+
+    $notEnabled = [];
+    foreach ($modules as $moduleName) {
+      try {
+        if (!$sandbox-&gt;drush()-&gt;moduleEnabled($moduleName)) {
+          throw new \Exception($moduleName);
+        }
+      }
+      catch (\Exception $e) {
+        $notEnabled[] = $moduleName;
+      }
+    }
+    if (!empty($notEnabled)) {
+      $sandbox-&gt;setParameter('notEnabled', $notEnabled);
+      return FALSE;
+    }
+    // Seems like the best way to comma separate things.
+    else {
+      $sandbox-&gt;setParameter('enabled', '`' . implode('`, `', $modules) . '`');
+    }
+
+    return TRUE;
+  }
+
+</code></pre>
+
+<h3 id="noadministrators">NoAdministrators</h3>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\NoAdministrators</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_7">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:NoAdmins</td>
+<td>No Administrators</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_7">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $variable = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;vget('user_admin_role');
+    $admin_rid = (int) $variable['user_admin_role'];
+    $role_list = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;roleList();
+
+    $roles = [];
+    foreach ($role_list as $role) {
+      // Find out the role name of the role ID defined in 'user_admin_role'.
+      if ($role['rid'] === $admin_rid) {
+        $roles[$admin_rid] = $role['label'];
+      }
+      elseif ($role['label'] === 'administrator') {
+        $roles[$role['rid']] = $role['label'];
+      }
+    }
+
+    // No administrator roles defined, and no roles called 'administrator' in
+    // Drupal.
+    if (empty($roles)) {
+      return;
+    }
+
+    // '0' is disabled.
+    // @see https://github.com/drupal/drupal/blob/7.x/modules/user/user.admin.inc#L305
+    if (count($roles) === 1 &amp;&amp; $admin_rid === 0) {
+      return;
+    }
+
+    $rows = $sandbox-&gt;drush()
+    -&gt;sqlQuery(&quot;SELECT CONCAT(ur.uid, ',', u.name)
+      FROM {users_roles} ur
+      LEFT JOIN {users} u ON ur.uid = u.uid
+      WHERE ur.uid &gt; 1 AND ur.rid IN (&quot; . implode(',', array_keys($roles)) . &quot;);&quot;
+    );
+
+    // Remove blank rows.
+    $rows = array_filter($rows);
+
+    // Format rows into token data.
+    $rows = array_map(function ($row) {
+      $row = trim($row);
+      list($uid, $name) = explode(',', $row, 2);
+      return &quot;{$name} - [UID {$uid}]&quot;;
+    }, $rows);
+
+    $sandbox-&gt;setParameter('count', count($rows));
+    $sandbox-&gt;setParameter('issues', $rows);
+    $sandbox-&gt;setParameter('plural', count($rows) &gt; 1 ? 's' : '');
+
+    return empty($rows);
+  }
+
+</code></pre>
+
+<h3 id="searchapidb">SearchApiDb</h3>
+<p>Search API Database.</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\SearchApiDb</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_8">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:SearchApiDb</td>
+<td>Search API Database</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_8">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    if (!$sandbox-&gt;drush()-&gt;moduleEnabled('search_api_db')) {
+      return Audit::NOT_APPLICABLE;
+    }
+
+    // Find out if there are active indexes using the db service class.
+    $output = $sandbox-&gt;drush()-&gt;sqlQuery(&quot;SELECT COUNT(i.machine_name) as count FROM {search_api_index} i LEFT JOIN {search_api_server} s ON i.server = s.machine_name WHERE i.status &gt; 0 AND s.class = 'search_api_db_service';&quot;);
+    if (empty($output)) {
+      $number_of_db_indexes = 0;
+    }
+    elseif (count($output) === 1) {
+      $number_of_db_indexes = (int) $output[0];
+    }
+    else {
+      $number_of_db_indexes = (int) $output[1];
+    }
+    $sandbox-&gt;setParameter('number_of_db_indexes', $number_of_db_indexes);
+    $number_of_db_indexes &gt; 1 ? $sandbox-&gt;setParameter('plural_index', 'es') : $sandbox-&gt;setParameter('plural_index', '');
+    // No database indexes.
+    if ($number_of_db_indexes === 0) {
+      return Audit::SUCCESS;
+    }
+    // If the database is in use, find out how many nodes are in it.
+    $output = $sandbox-&gt;drush()-&gt;sqlQuery('SELECT COUNT(item_id) FROM {search_api_db_default_node_index};');
+    // There are some differences in running the command on site factory then
+    // locally.
+    if (count($output) == 1) {
+      $nodes_in_search = (int) $output[0];
+    }
+    else {
+      $nodes_in_search = (int) $output[1];
+    }
+    $sandbox-&gt;setParameter('nodes_in_search', $nodes_in_search);
+    $max_size = (int) $sandbox-&gt;getParameter('max_size');
+    if ($nodes_in_search &lt; $max_size) {
+      return Audit::WARNING;
+    }
+    return Audit::FAILURE;
+  }
+
+</code></pre>
+
+<h3 id="untrustedroles">UntrustedRoles</h3>
+<p>Check untrusted roles for administrative permissions.</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\UntrustedRoles</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_9">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:UntrustedRoles</td>
+<td>Untrusted Roles with administrative permissions</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_5">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>untrusted_roles</td>
+<td>array</td>
+<td>The names of untrusted Roles.</td>
+<td>'[''anonymous user'',''authenticated user'']'</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokens_5">Tokens</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>untrusted_roles</td>
+<td>array</td>
+<td>The names of untrusted Roles.</td>
+<td>'[''anonymous user'',''authenticated user'']'</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_9">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $rows = $sandbox-&gt;drush()-&gt;evaluate(function ($roles) {
+      $rows = [];
+      $all_roles = user_roles();
+      $untrusted_roles = array_intersect($all_roles, $roles);
+
+      foreach ($untrusted_roles as $rid =&gt; $role_name) {
+        $untrusted_permissions = [];
+
+        // Grab all permissions associated with the role.
+        $permissions = user_role_permissions([$rid =&gt; $role_name]);
+
+        // Check each permission assigned to the untrusted role and determine if
+        // it is administrative. Administrative permissions contain the string
+        // &quot;administer&quot; in the name.
+        $output['permissions'][$role_name] = $permissions;
+        foreach ($permissions[$rid] as $permission =&gt; $foo) {
+          if (strstr($permission, 'administer') !== FALSE ) {
+            $untrusted_permissions[] = $permission;
+
+          }
+        }
+
+        // Add the untrusted role and administrative permission to an output array
+        if (!empty($untrusted_permissions)) {
+          $rows[] = [
+            'role' =&gt; $role_name,
+            'permissions' =&gt; implode(', ', $untrusted_permissions),
+          ];
+        }
+      }
+      return $rows;
+    }, [
+      'roles' =&gt; $sandbox-&gt;getParameter('untrusted_roles')
+    ]);
+
+    $sandbox-&gt;setParameter('rows', $rows);
+
+    return empty($rows) ? AUDIT::SUCCESS : AUDIT::FAIL;
+  }
+
+</code></pre>
+
+<h3 id="user1">User1</h3>
+<p>User #1 Locked Down</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\User1</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<p>This class can <strong>remediate</strong> failed audits.</p>
+<h4 id="policies_10">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:User1LockDown</td>
+<td>User #1 Locked Down</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_6">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blacklist</td>
+<td>string</td>
+<td>The usernames of the the uid:1 user that are considered forbidden. Expression maybe a regular expression to match patterns.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>The email that the uid:1 user should have. If an empty string is provided then this check is omitted.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>Ensures the uid:1 user status reflects the same as this argument. Defaults to active (1).</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokens_6">Tokens</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blacklist</td>
+<td>string</td>
+<td>The usernames of the the uid:1 user that are considered forbidden. Expression maybe a regular expression to match patterns.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>The email that the uid:1 user should have. If an empty string is provided then this check is omitted.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer</td>
+<td>Ensures the uid:1 user status reflects the same as this argument. Defaults to active (1).</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_10">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    // Get the details for user #1.
+    $user = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;userInformation(1);
+    $user = (object) array_pop($user);
+
+    $errors = [];
+
+    // Username.
+    $pattern = $sandbox-&gt;getParameter('blacklist');
+    if (preg_match(&quot;#${pattern}#i&quot;, $user-&gt;name)) {
+      $errors[] = &quot;Username '$user-&gt;name' is too easy to guess.&quot;;
+    }
+    $sandbox-&gt;setParameter('username', $user-&gt;name);
+
+    // Email address.
+    $email = $sandbox-&gt;getParameter('email');
+    if (!empty($email) &amp;&amp; ($email !== $user-&gt;mail)) {
+      $errors[] = &quot;Email address '$user-&gt;mail' is not set correctly.&quot;;
+    }
+
+    // Status.
+    $status = (bool) $sandbox-&gt;getParameter('status');
+    if ($status !== (bool) $user-&gt;status) {
+      $errors[] = 'Status is not set correctly. Should be ' . ($user-&gt;status ? 'active' : 'inactive') . '.';
+    }
+
+    $sandbox-&gt;setParameter('errors', $errors);
+    return empty($errors);
+  }
+
+</code></pre>
+
+<h3 id="variablecompare">VariableCompare</h3>
+<p>Check a configuration is set correctly.</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\VariableCompare</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_11">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:SecureHTTPRedirect</td>
+<td>Secure Pages: HTTP Redirect</td>
+</tr>
+<tr>
+<td>Drupal-7:SecurePagesConfig:Enabled</td>
+<td>Secure Pages Config: Enabled</td>
+</tr>
+<tr>
+<td>Drupal-7:SecurePagesListed</td>
+<td>Secure Pages Listed</td>
+</tr>
+<tr>
+<td>Drupal-7:ViewsSqlSignature</td>
+<td>Views SQL Signature</td>
+</tr>
+<tr>
+<td>Drupal-7:XMLSitemapBaseURL</td>
+<td>XML sitemap base URL</td>
+</tr>
+<tr>
+<td>Drupal-7:PoorMansCronDisabled</td>
+<td>Poor Mans Cron Disabled</td>
+</tr>
+<tr>
+<td>Drupal-7:NoPageCompression</td>
+<td>No Page Compression</td>
+</tr>
+<tr>
+<td>Drupal-7:ErrorLevel</td>
+<td>Error Level</td>
+</tr>
+<tr>
+<td>Drupal-7:InstallTaskCompleted</td>
+<td>Installation Complete</td>
+</tr>
+<tr>
+<td>Drupal-7:JsAggregation</td>
+<td>Js Aggregation</td>
+</tr>
+<tr>
+<td>Drupal-7:CSSAggregation</td>
+<td>CSS Aggregation</td>
+</tr>
+<tr>
+<td>Drupal-7:SecurePagesConfig:NoDowngrade</td>
+<td>Secure Pages Config: No Downgrade</td>
+</tr>
+<tr>
+<td>Drupal-7:ImageDerivatives</td>
+<td>Image Derivatives</td>
+</tr>
+<tr>
+<td>Drupal-7:PageCacheMaximumAge</td>
+<td>Page Cache Control Max Age</td>
+</tr>
+<tr>
+<td>Drupal-7:CacheLifetime</td>
+<td>Application Page Cache</td>
+</tr>
+<tr>
+<td>Drupal-7:UserRegistrationDisabled</td>
+<td>User Registration Disabled</td>
+</tr>
+<tr>
+<td>Acquia:SiteFactory:SearchAutoSwitch</td>
+<td>Acquia Search Auto Switch (D7)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_7">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>The name of the variable to compare.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>value</td>
+<td>mixed</td>
+<td>The value to compare against</td>
+<td>null</td>
+</tr>
+<tr>
+<td>comp_type</td>
+<td>string</td>
+<td>The comparison operator to use</td>
+<td>'=='</td>
+</tr>
+<tr>
+<td>required_modules</td>
+<td>array</td>
+<td>An optional array of modules required in order to check variables</td>
+<td>{  }</td>
+</tr>
+<tr>
+<td>default</td>
+<td>mixed</td>
+<td>An optional default value if a value is not found</td>
+<td>no-value-provided</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokens_7">Tokens</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>The name of the variable to compare.</td>
+<td>null</td>
+</tr>
+<tr>
+<td>value</td>
+<td>mixed</td>
+<td>The value to compare against</td>
+<td>null</td>
+</tr>
+<tr>
+<td>comp_type</td>
+<td>string</td>
+<td>The comparison operator to use</td>
+<td>'=='</td>
+</tr>
+<tr>
+<td>required_modules</td>
+<td>array</td>
+<td>An optional array of modules required in order to check variables</td>
+<td>{  }</td>
+</tr>
+<tr>
+<td>default</td>
+<td>mixed</td>
+<td>An optional default value if a value is not found</td>
+<td>no-value-provided</td>
+</tr>
+<tr>
+<td>reading</td>
+<td>mixed</td>
+<td>The value read from the Drupal variables system</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_11">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $key = $sandbox-&gt;getParameter('key');
+    $value = $sandbox-&gt;getParameter('value');
+
+    if ($required_modules = $sandbox-&gt;getParameter('required_modules')) {
+      $required_modules = is_array($required_modules) ? $required_modules : [$required_modules];
+      $info = $sandbox-&gt;drush(['format' =&gt; 'json'])-&gt;pmList();
+      $missing_modules = array_diff($required_modules, array_keys($info));
+
+      if (!empty($missing_modules)) {
+        return Audit::NOT_APPLICABLE;
+      }
+    }
+
+    try {
+      $vars = $sandbox-&gt;drush([
+        'format' =&gt; 'json'
+        ])-&gt;variableGet();
+
+      if (!isset($vars[$key])) {
+        throw new DrushFormatException(__CLASS__ . &quot;: $key is not a set variable.&quot;, '');
+      }
+      $reading = $vars[$key];
+    }
+    catch (DrushFormatException $e) {
+      $sandbox-&gt;setParameter('exception', $e-&gt;getMessage());
+
+      $default_value = $sandbox-&gt;getParameter('default', 'no-value-provided');
+
+      // If no default value was provided then we can not provide an accruate
+      // outcome based on the absense of a successful drush command.
+      if ($default_value === 'no-value-provided') {
+        return FALSE;
+      }
+
+      $reading = $default_value;
+    }
+
+    $sandbox-&gt;setParameter('reading', $reading);
+
+    $comp_type = $sandbox-&gt;getParameter('comp_type', '==');
+    $sandbox-&gt;logger()-&gt;info('Comparative config values: ' . var_export([
+      'reading' =&gt; $reading,
+      'value' =&gt; $value,
+      'expression' =&gt; 'reading ' . $comp_type . ' value',
+    ], TRUE));
+
+    switch ($comp_type) {
+      case 'lt':
+      case '&lt;':
+        return $reading &lt; $value;
+      case 'gt':
+      case '&gt;':
+        return $reading &gt; $value;
+      case 'lte':
+      case '&lt;=':
+        return $reading &lt;= $value;
+      case 'gte':
+      case '&gt;=':
+        return $reading &gt;= $value;
+      case 'ne':
+      case '!=':
+        return $reading != $value;
+      case 'nie':
+      case '!==':
+        return $reading !== $value;
+      case 'matches':
+      case '~':
+        return strpos($reading, $value) !== FALSE;
+      case 'identical':
+      case '===':
+        return $value === $reading;
+      case 'in_array':
+        return in_array($reading, $value);
+      case 'regex':
+        return preg_match(&quot;#${value}#&quot;, $reading);
+      case 'equal':
+      case '==':
+      default:
+        return $value == $reading;
+    }
+  }
+
+</code></pre>
+
+<h3 id="viewscache">ViewsCache</h3>
+<p>Views Cache</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\ViewsCache</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_12">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:ViewsCache</td>
+<td>Views Cache</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_12">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $views = $sandbox-&gt;drush()-&gt;evaluate(function () {
+      $bad_views = [];
+      foreach (views_get_all_views() as $view_name =&gt; $view) {
+        foreach ($view-&gt;display as $display_name =&gt; $display) {
+          if (empty($display-&gt;display_options['cache'])) {
+            $bad_views[] = &quot;$view_name:$display_name&quot;;
+            continue;
+          }
+          $cache = $display-&gt;display_options['cache'];
+          if ($cache['type'] == 'none') {
+            $bad_views[] = &quot;$view_name:$display_name&quot;;
+          }
+        }
+      }
+      return $bad_views;
+    });
+
+    if (empty($views)) {
+      return TRUE;
+    }
+
+    $sandbox-&gt;setParameter('views', $views);
+    return FALSE;
+
+
+    // $valid = 0;
+    // $errors = [];
+    //
+    // // View settings are set per display so we need to query the views display table.
+    // $views = $this-&gt;context-&gt;drush-&gt;sqlQuery(&quot;SELECT vd.vid, vd.display_title, vd.display_options, vv.name, vv.human_name FROM {views_display} vd JOIN {views_view} vv ON vv.vid = vd.vid&quot;);
+    //
+    // foreach ($views as $view) {
+    //   list($display_id, $display_name, $display_options, $view_machine_name, $view_name) = explode(&quot;\t&quot;, $view);
+    //   $display_options = Serializer::unserialize($display_options);
+    //
+    //   if (empty($display_options['pager']['options']['items_per_page'])) {
+    //     continue;
+    //   }
+    //
+    //   if ($display_options['pager']['options']['items_per_page'] &gt; $this-&gt;getOption('threshold', 30)) {
+    //     $errors[] = &quot;&lt;strong&gt;$view_name&lt;/strong&gt; &lt;code&gt;[$display_name]&lt;/code&gt; is displaying &lt;code&gt;{$display_options['pager']['options']['items_per_page']}&lt;/code&gt;&quot;;
+    //     continue;
+    //   }
+    //
+    //   $valid++;
+    // }
+    //
+    // $this-&gt;setToken('total', $valid);
+    // $this-&gt;setToken('plural', $valid &gt; 1 ? 's' : '');
+    // $this-&gt;setToken('error', implode('&lt;/li&gt;&lt;li&gt;', $errors));
+    // $this-&gt;setToken('threshold', $this-&gt;getOption('threshold', 30));
+    // $this-&gt;setToken('error_count', count($errors));
+    //
+    // return empty($errors) ? AuditResponse::AUDIT_SUCCESS : AuditResponse::AUDIT_FAILURE;
+  }
+
+</code></pre>
+
+<h3 id="viewspagination">ViewsPagination</h3>
+<p>Views Pagination</p>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\ViewsPagination</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_13">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:ViewsPagination</td>
+<td>Views Pagination</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_8">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The maximum number of rows a view can list</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tokens_8">Tokens</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The maximum number of rows a view can list</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_13">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+    $views = $sandbox-&gt;drush()-&gt;evaluate(function ($limit) {
+      $bad_views = [];
+      foreach (views_get_all_views() as $view_name =&gt; $view) {
+        foreach ($view-&gt;display as $display_name =&gt; $display) {
+          if ($display-&gt;display_options['pager']['options']['items_per_page'] &gt; $limit) {
+            $bad_views[] = &quot;$view_name:$display_name contains &quot; .  $display-&gt;display_options['pager']['options']['items_per_page'] . &quot; per page.&quot;;
+          }
+        }
+      }
+      return $bad_views;
+    }, ['limit' =&gt; $sandbox-&gt;getParameter('limit', 60)]);
+
+    if (empty($views)) {
+      return TRUE;
+    }
+
+    $sandbox-&gt;setParameter('views', $views);
+    return FALSE;
+
+
+    // $valid = 0;
+    // $errors = [];
+    //
+    // // View settings are set per display so we need to query the views display table.
+    // $views = $this-&gt;context-&gt;drush-&gt;sqlQuery(&quot;SELECT vd.vid, vd.display_title, vd.display_options, vv.name, vv.human_name FROM {views_display} vd JOIN {views_view} vv ON vv.vid = vd.vid&quot;);
+    //
+    // foreach ($views as $view) {
+    //   list($display_id, $display_name, $display_options, $view_machine_name, $view_name) = explode(&quot;\t&quot;, $view);
+    //   $display_options = Serializer::unserialize($display_options);
+    //
+    //   if (empty($display_options['pager']['options']['items_per_page'])) {
+    //     continue;
+    //   }
+    //
+    //   if ($display_options['pager']['options']['items_per_page'] &gt; $this-&gt;getOption('threshold', 30)) {
+    //     $errors[] = &quot;&lt;strong&gt;$view_name&lt;/strong&gt; &lt;code&gt;[$display_name]&lt;/code&gt; is displaying &lt;code&gt;{$display_options['pager']['options']['items_per_page']}&lt;/code&gt;&quot;;
+    //     continue;
+    //   }
+    //
+    //   $valid++;
+    // }
+    //
+    // $this-&gt;setToken('total', $valid);
+    // $this-&gt;setToken('plural', $valid &gt; 1 ? 's' : '');
+    // $this-&gt;setToken('error', implode('&lt;/li&gt;&lt;li&gt;', $errors));
+    // $this-&gt;setToken('threshold', $this-&gt;getOption('threshold', 30));
+    // $this-&gt;setToken('error_count', count($errors));
+    //
+    // return empty($errors) ? AuditResponse::AUDIT_SUCCESS : AuditResponse::AUDIT_FAILURE;
+  }
+
+</code></pre>
+
+<h3 id="zenrebuildregistry">ZenRebuildRegistry</h3>
+<p>Class: <code>Drutiny\Plugin\Drupal7\Audit\ZenRebuildRegistry</code><br />
+Extends: <code>Drutiny\Audit</code><br />
+Package: <code>drutiny/plugin-drupal-7</code></p>
+<h4 id="policies_14">Policies</h4>
+<p>These are the policies that use this class:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drupal-7:ZenRegistryRebuild</td>
+<td>Zen rebuild registry disabled</td>
+</tr>
+</tbody>
+</table>
+<h5 id="source_14">Source</h5>
+<pre><code class="php">  public function audit(Sandbox $sandbox) {
+
+    $output = $sandbox-&gt;drush()-&gt;sqlQuery(&quot;SELECT * FROM {variable} WHERE name LIKE 'theme_%';&quot;);
+    $themes_with_rebuild_enabled = [];
+    foreach ($output as $row) {
+      preg_match('/^theme_([a-zA-Z_]+)_settings/', $row, $matches);
+
+      // 'theme_default' is also a variable we want to exclude.
+      if (empty($matches)) {
+        continue;
+      }
+
+      $theme_name = $matches[1];
+
+      if (preg_match('/zen_rebuild_registry.;i:1/', $row)) {
+        $themes_with_rebuild_enabled[] = $theme_name;
+      }
+    }
+
+    if (count($themes_with_rebuild_enabled) &gt; 0) {
+      $sandbox-&gt;setParameter('number_of_themes', count($themes_with_rebuild_enabled));
+      $sandbox-&gt;setParameter('themes', '&lt;code&gt;' . implode('&lt;/code&gt;, &lt;code&gt;', $themes_with_rebuild_enabled) . '&lt;/code&gt;');
+      $sandbox-&gt;setParameter('plural', count($themes_with_rebuild_enabled) &gt; 1 ? 's' : '');
+      $sandbox-&gt;setParameter('prefix', count($themes_with_rebuild_enabled) &gt; 1 ? 'are' : 'is');
+      return FALSE;
+    }
+
+    return TRUE;
+  }
+
+</code></pre>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../DrutinyHttpAudit/" title="Http " class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Http 
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../DrutinyPluginDrupal7AuditSecurity/" title="Plugin Drupal7 Security" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Plugin Drupal7 Security
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.8eb9be28.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      
+        <script src="../../js/highlight.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-116046012-1","drutiny.github.io"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
