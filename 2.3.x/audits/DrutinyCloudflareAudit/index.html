@@ -1106,12 +1106,10 @@ Package: <code>drutiny/cloudflare</code></p>
     $zone  = $this-&gt;zoneInfo($sandbox-&gt;getParameter('zone', $host));
     $sandbox-&gt;setParameter('zone', $zone['name']);
 
-    $query = http_build_query([
+    $response = $this-&gt;api()-&gt;request(&quot;GET&quot;, &quot;zones/{$zone['id']}/analytics/dashboard&quot;, [], TRUE, [
       'since' =&gt; $sandbox-&gt;getReportingPeriodStart()-&gt;format(\DateTime::RFC3339),
       'until' =&gt; $sandbox-&gt;getReportingPeriodEnd()-&gt;format(\DateTime::RFC3339),
     ]);
-
-    $response = $this-&gt;api()-&gt;request(&quot;GET&quot;, &quot;zones/{$zone['id']}/analytics/dashboard?$query&quot;);
 
     foreach ($response as $key =&gt; $value) {
       $sandbox-&gt;setParameter($key, $value);
