@@ -2341,10 +2341,24 @@ Package: <code>drutiny/drutiny</code></p>
 <pre><code class="php">  public function audit(Sandbox $sandbox) {
     $output = $sandbox-&gt;drush()-&gt;updb('-n');
 
-    if (strpos($output, 'No database updates required') &gt;= 0 || empty($output)) {
-      return TRUE;
+    if (strpos($output, self::AFFIRMATIVE_UPDATES_STRING) !== FALSE) {
+
+      $lines = array_filter(explode(PHP_EOL, $output));
+      $updates = [];
+      while (strpos(current($lines), self::AFFIRMATIVE_UPDATES_STRING) === FALSE) {
+        preg_match(&quot;/\s*([\w\s]*\w)\s+(\d+)\s+(.*)/&quot;, current($lines), $matches);
+        list(, $module, $revision, $message) = $matches;
+        $updates[] = [
+          'module' =&gt; $module,
+          'revision' =&gt; $revision,
+          'message' =&gt; $message
+        ];
+        next($lines);
+      }
+      $sandbox-&gt;setParameter('updates', $updates);
+      return FALSE;
     }
-    return FALSE;
+    return TRUE;
   }
 
 </code></pre>
